@@ -1,0 +1,1023 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Geo-DB Service",
+    "description": "Finally an easy-to-use developer-centric REST API for getting global city and region data. Easily obtain country, region, and city data for use in your apps! Filter cities by name prefix, country, location, and even minimum population. Get all country regions. Get all cities in a given region. Developer-friendly RESTful API adheres to industry best-practices, including HATEOS-style links to facilitate paging results. Backed by Amazon AWS load-balanced infrastructure for resiliency and performance! Data is periodically refreshed from GeoNames.org."
+  },
+  "host": "https://wft-geo-db.p.mashape.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "geo-controller",
+      "description": "Geo Controller"
+    },
+    {
+      "name": "locale-controller",
+      "description": "Locale Controller"
+    }
+  ],
+  "paths": {
+    "/v1/geo/cities": {
+      "get": {
+        "tags": [
+          "geo-controller"
+        ],
+        "summary": "Find cities",
+        "description": "Find cities",
+        "operationId": "findCitiesUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "namePrefix",
+            "in": "query",
+            "description": "The city name prefix filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "description": "The country-code filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "minPopulation",
+            "in": "query",
+            "description": "The minimum-population filter",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nearLocation",
+            "in": "query",
+            "description": "The near-location filter center in ISO 6709 format: ±DD.DDDD±DDD.DDDD",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "nearLocationRadius",
+            "in": "query",
+            "description": "The near-location filter radius",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nearLocationRadiusUnit",
+            "in": "query",
+            "description": "The near-location filter radius unit",
+            "required": false,
+            "type": "string",
+            "default": "MI"
+          },
+          {
+            "name": "includeDeleted",
+            "in": "query",
+            "description": "Directs how recently to include any deleted cities in the results: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "required": false,
+            "type": "string",
+            "default": "NONE"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to retrieve",
+            "required": false,
+            "type": "integer",
+            "default": 10,
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The zero-ary offset index into the results",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CitiesResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/v1/geo/cities/{cityId}": {
+      "get": {
+        "tags": [
+          "geo-controller"
+        ],
+        "summary": "Get city details",
+        "description": "Get city details",
+        "operationId": "getCityUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "cityId",
+            "in": "path",
+            "description": "cityId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CityResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/v1/geo/countries": {
+      "get": {
+        "tags": [
+          "geo-controller"
+        ],
+        "summary": "Get known countries",
+        "description": "Get known countries",
+        "operationId": "getCountriesUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "currencyCode",
+            "in": "query",
+            "description": "The currency-unit filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to retrieve",
+            "required": false,
+            "type": "integer",
+            "default": 10,
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The zero-ary offset index into the results",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CountriesResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/v1/geo/countries/{countryCode}": {
+      "get": {
+        "tags": [
+          "geo-controller"
+        ],
+        "summary": "Get country details",
+        "description": "Get country details",
+        "operationId": "getCountryUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "countryCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CountryResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/v1/geo/countries/{countryCode}/regions": {
+      "get": {
+        "tags": [
+          "geo-controller"
+        ],
+        "summary": "Get country regions",
+        "description": "Get country regions",
+        "operationId": "getRegionsUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "countryCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to retrieve",
+            "required": false,
+            "type": "integer",
+            "default": 10,
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The zero-ary offset index into the results",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RegionsResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/v1/geo/countries/{countryCode}/regions/{regionCode}": {
+      "get": {
+        "tags": [
+          "geo-controller"
+        ],
+        "summary": "Get region details",
+        "description": "Get region details",
+        "operationId": "getRegionUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "countryCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "regionCode",
+            "in": "path",
+            "description": "regionCode",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/RegionResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/v1/geo/countries/{countryCode}/regions/{regionCode}/cities": {
+      "get": {
+        "tags": [
+          "geo-controller"
+        ],
+        "summary": "Get country region cities",
+        "description": "Get country region cities",
+        "operationId": "findRegionCitiesUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "countryCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "regionCode",
+            "in": "path",
+            "description": "regionCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "minPopulation",
+            "in": "query",
+            "description": "The minimum-population filter",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "includeDeleted",
+            "in": "query",
+            "description": "Directs how recently to include any deleted cities in the results: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "required": false,
+            "type": "string",
+            "default": "NONE"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to retrieve",
+            "required": false,
+            "type": "integer",
+            "default": 10,
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The zero-ary offset index into the results",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CitiesResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/v1/locale/currencies": {
+      "get": {
+        "tags": [
+          "locale-controller"
+        ],
+        "summary": "Get known currencies",
+        "description": "Get known currencies",
+        "operationId": "getCurrenciesUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "query",
+            "description": "The country-code filter",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to retrieve",
+            "required": false,
+            "type": "integer",
+            "default": 10,
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The zero-ary offset index into the results",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/CurrenciesResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/v1/locale/locales": {
+      "get": {
+        "tags": [
+          "locale-controller"
+        ],
+        "summary": "Get available locales",
+        "description": "Get available locales",
+        "operationId": "getLocalesUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of results to retrieve",
+            "required": false,
+            "type": "integer",
+            "default": 10,
+            "format": "int32"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The zero-ary offset index into the results",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/LocalesResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CitiesResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CitySummary"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WftError"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        }
+      }
+    },
+    "CityDetails": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "boolean"
+        },
+        "elevationMeters": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "location": {
+          "$ref": "#/definitions/GeoLocation"
+        },
+        "population": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "region": {
+          "type": "string"
+        },
+        "regionCode": {
+          "type": "string"
+        }
+      }
+    },
+    "CityResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/CityDetails"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WftError"
+          }
+        }
+      }
+    },
+    "CitySummary": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "region": {
+          "type": "string"
+        },
+        "regionCode": {
+          "type": "string"
+        }
+      }
+    },
+    "CountriesResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CountryDescriptor"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WftError"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        }
+      }
+    },
+    "CountryDescriptor": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "currencyCode": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "CountryDetails": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "numRegions": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "CountryResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/CountryDetails"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WftError"
+          }
+        }
+      }
+    },
+    "CurrenciesResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CurrencyDescriptor"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WftError"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        }
+      }
+    },
+    "CurrencyDescriptor": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "countryCodes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "DeferredResultHandler": {
+      "type": "object"
+    },
+    "DeferredResult«ResponseEntity«WftResult«Void»»»": {
+      "type": "object",
+      "properties": {
+        "completionCallback": {
+          "$ref": "#/definitions/Runnable"
+        },
+        "expired": {
+          "type": "boolean"
+        },
+        "result": {
+          "type": "object"
+        },
+        "resultHandler": {
+          "$ref": "#/definitions/DeferredResultHandler"
+        },
+        "setOrExpired": {
+          "type": "boolean"
+        },
+        "timeout": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "timeoutCallback": {
+          "$ref": "#/definitions/Runnable"
+        },
+        "timeoutResult": {
+          "type": "object"
+        }
+      }
+    },
+    "GeoLocation": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "Link": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "rel": {
+          "type": "string"
+        },
+        "templated": {
+          "type": "boolean"
+        }
+      }
+    },
+    "LocaleDescriptor": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        }
+      }
+    },
+    "LocalesResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LocaleDescriptor"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WftError"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        }
+      }
+    },
+    "Metadata": {
+      "type": "object",
+      "properties": {
+        "totalCount": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "RegionDetails": {
+      "type": "object",
+      "properties": {
+        "capital": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "fipsCode": {
+          "type": "string"
+        },
+        "hascCode": {
+          "type": "string"
+        },
+        "isoCode": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "numCities": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "RegionResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/RegionDetails"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WftError"
+          }
+        }
+      }
+    },
+    "RegionSummary": {
+      "type": "object",
+      "properties": {
+        "countryCode": {
+          "type": "string"
+        },
+        "fipsCode": {
+          "type": "string"
+        },
+        "hascCode": {
+          "type": "string"
+        },
+        "isoCode": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "RegionsResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RegionSummary"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WftError"
+          }
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        }
+      }
+    },
+    "Runnable": {
+      "type": "object"
+    },
+    "WftError": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "$ref": "#/definitions/WftErrorCode"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "WftErrorCode": {
+      "type": "object"
+    },
+    "WftResult": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "object"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WftError"
+          }
+        }
+      }
+    },
+    "WftResult«Void»": {
+      "type": "object",
+      "properties": {
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WftError"
+          }
+        }
+      }
+    }
+  }
+}

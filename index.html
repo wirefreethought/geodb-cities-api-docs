@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Geo-Data Service | API Reference</title>
+    <title>Geo-DB Service | API Reference</title>
     <link rel="stylesheet" href="stylesheets/foundation.min.css" />
     <link rel="stylesheet" href="stylesheets/spectacle.min.css" />
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -16,18 +16,12 @@
         <button class="close-button" aria-label="Close menu" type="button" data-drawer-close>
           <span aria-hidden="true">×</span>
         </button>
+        <div id="logo">
+          <img src="images/logo.png" title="Geo-DB Service" /> </div>
         <nav id="nav" role="navigation">
           <h5>API Reference</h5>
           <a href="#introduction">Introduction</a>
           <h5>Operations</h5>
-          <section>
-            <a href="#tag-admin-controller">admin-controller</a>
-            <ul>
-              <li>
-                <a href="#operation--admin-op-refreshData-post"> Refresh data </a>
-              </li>
-            </ul>
-          </section>
           <section>
             <a href="#tag-geo-controller">geo-controller</a>
             <ul>
@@ -101,130 +95,21 @@
         <div class="example-box doc-content"></div>
         <article>
           <div id="introduction" data-traverse-target="introduction">
-            <h1 class="doc-title">Geo-Data Service
+            <h1 class="doc-title">Geo-DB Service
               <span>API Reference</span>
             </h1>
             <div class="doc-row">
-              <div class="doc-copy"> undefined </div>
+              <div class="doc-copy">
+                <p>Finally an easy-to-use developer-centric REST API for getting global city and region data. Easily obtain country, region, and city data for use in your apps! Filter cities by name prefix, country, location, and even minimum population. Get all country regions. Get all cities in a given region. Developer-friendly RESTful API adheres to industry best-practices, including HATEOS-style links to facilitate paging results. Backed by Amazon AWS load-balanced infrastructure for resiliency and performance! Data is periodically refreshed from GeoNames.org.</p>
+              </div>
               <div class="doc-examples">
                 <section>
                   <h5>API Endpoint</h5>
-                  <!-- <div class="hljs"> --><pre><code>http://wft-geo-db-stack-2069211878.us-west-2.elb.amazonaws.com/</code></pre>
+                  <!-- <div class="hljs"> --><pre><code>http://https://wft-geo-db.p.mashape.com/</code></pre>
                   <!-- </div> -->
                   <h5>Version:
                     <span>1.0.0</span>
                   </h5>
-                </section>
-              </div>
-            </div>
-          </div>
-          <h1 id="tag-admin-controller" class="swagger-summary-tag" data-traverse-target="tag-admin-controller">admin-controller</h1>
-          <div class="tag-description doc-row">
-            <div class="doc-copy">
-              <p>Admin Controller</p>
-            </div>
-          </div>
-          <div id="operation--admin-op-refreshData-post" class="operation panel" data-traverse-target="operation--admin-op-refreshData-post">
-            <!-- <section class="operation-tags row"> -->
-            <!-- <div class="doc-copy"> -->
-            <div class="operation-tags">
-              <a class="label" href="#tag-admin-controller">admin-controller</a>
-              <!---->
-            </div>
-            <!-- </div> -->
-            <!-- </section> -->
-            <h2 class="operation-title">
-              <span class="operation-summary">Refresh data</span>
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-operation-path">
-                  <span class="operation-method">POST</span>
-                  <span class="operation-path">/admin/op/refreshData</span>
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-operation-description">
-                  <p>Refresh data</p>
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy"> </div>
-              <div class="doc-examples"></div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-responses">
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">200 OK</div>
-                      <div class="prop-ref">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/WftResult">WftResult</a>
-                        </span>
-                      </div>
-                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
-                    </div>
-                    <div class="prop-value">
-                      <p>OK</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">201 Created</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Created</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">401 Unauthorized</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Unauthorized</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">403 Forbidden</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Forbidden</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">404 Not Found</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Not Found</p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <h5>Response Content-Types:
-                  <span>application/json</span>
-                </h5>
-                <section>
-                  <h5>Response Example
-                    <span>(200 OK)</span>
-                  </h5>
-                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;errors&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ]
-}
-</code></pre>
-                  <!-- </div> -->
                 </section>
               </div>
             </div>
