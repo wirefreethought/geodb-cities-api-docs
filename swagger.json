@@ -2,26 +2,26 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Geo-DB Service",
-    "description": "Finally an easy-to-use developer-centric REST API for getting global city and region data. Easily obtain country, region, and city data for use in your apps! Filter cities by name prefix, country, location, and even minimum population. Get all country regions. Get all cities in a given region. Developer-friendly RESTful API adheres to industry best-practices, including HATEOS-style links to facilitate paging results. Backed by Amazon AWS load-balanced infrastructure for resiliency and performance! Data is periodically refreshed from GeoNames.org."
+    "title": "Geo DB API",
+    "description": "Finally an easy-to-use developer-centric REST API for getting global city and region data. Easily obtain country, region, and city data for use in your apps! <ul><li>Filter cities by name prefix, country, location, and even minimum population.</li> <li>Get all country regions.</li> <li>Get all cities in a given region.</li> <li>Developer-friendly RESTful API adheres to industry best-practices, including HATEOS-style links to facilitate paging results.</li> <li>Backed by Amazon AWS load-balanced infrastructure for resiliency and performance!</li> <li>Data is periodically refreshed from GeoNames.org.</li></ul>"
   },
   "host": "https://wft-geo-db.p.mashape.com",
   "basePath": "/",
   "tags": [
     {
-      "name": "geo-controller",
-      "description": "Geo Controller"
+      "name": "Geo",
+      "description": "Geo Endpoints"
     },
     {
-      "name": "locale-controller",
-      "description": "Locale Controller"
+      "name": "Locale",
+      "description": "Locale Endpoints"
     }
   ],
   "paths": {
     "/v1/geo/cities": {
       "get": {
         "tags": [
-          "geo-controller"
+          "Geo"
         ],
         "summary": "Find cities",
         "description": "Find cities",
@@ -127,7 +127,7 @@
     "/v1/geo/cities/{cityId}": {
       "get": {
         "tags": [
-          "geo-controller"
+          "Geo"
         ],
         "summary": "Get city details",
         "description": "Get city details",
@@ -170,7 +170,7 @@
     "/v1/geo/countries": {
       "get": {
         "tags": [
-          "geo-controller"
+          "Geo"
         ],
         "summary": "Get known countries",
         "description": "Get known countries",
@@ -230,7 +230,7 @@
     "/v1/geo/countries/{countryCode}": {
       "get": {
         "tags": [
-          "geo-controller"
+          "Geo"
         ],
         "summary": "Get country details",
         "description": "Get country details",
@@ -272,7 +272,7 @@
     "/v1/geo/countries/{countryCode}/regions": {
       "get": {
         "tags": [
-          "geo-controller"
+          "Geo"
         ],
         "summary": "Get country regions",
         "description": "Get country regions",
@@ -332,7 +332,7 @@
     "/v1/geo/countries/{countryCode}/regions/{regionCode}": {
       "get": {
         "tags": [
-          "geo-controller"
+          "Geo"
         ],
         "summary": "Get region details",
         "description": "Get region details",
@@ -381,7 +381,7 @@
     "/v1/geo/countries/{countryCode}/regions/{regionCode}/cities": {
       "get": {
         "tags": [
-          "geo-controller"
+          "Geo"
         ],
         "summary": "Get country region cities",
         "description": "Get country region cities",
@@ -464,7 +464,7 @@
     "/v1/locale/currencies": {
       "get": {
         "tags": [
-          "locale-controller"
+          "Locale"
         ],
         "summary": "Get known currencies",
         "description": "Get known currencies",
@@ -524,7 +524,7 @@
     "/v1/locale/locales": {
       "get": {
         "tags": [
-          "locale-controller"
+          "Locale"
         ],
         "summary": "Get available locales",
         "description": "Get available locales",

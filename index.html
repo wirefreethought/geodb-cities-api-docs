@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Geo-DB Service | API Reference</title>
+    <title>Geo DB API | API Reference</title>
     <link rel="stylesheet" href="stylesheets/foundation.min.css" />
     <link rel="stylesheet" href="stylesheets/spectacle.min.css" />
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -16,14 +16,12 @@
         <button class="close-button" aria-label="Close menu" type="button" data-drawer-close>
           <span aria-hidden="true">×</span>
         </button>
-        <div id="logo">
-          <img src="images/logo.png" title="Geo-DB Service" /> </div>
         <nav id="nav" role="navigation">
           <h5>API Reference</h5>
           <a href="#introduction">Introduction</a>
           <h5>Operations</h5>
           <section>
-            <a href="#tag-geo-controller">geo-controller</a>
+            <a href="#tag-Geo">Geo</a>
             <ul>
               <li>
                 <a href="#operation--v1-geo-cities-get"> Find cities </a>
@@ -49,7 +47,7 @@
             </ul>
           </section>
           <section>
-            <a href="#tag-locale-controller">locale-controller</a>
+            <a href="#tag-Locale">Locale</a>
             <ul>
               <li>
                 <a href="#operation--v1-locale-currencies-get"> Get known currencies </a>
@@ -95,12 +93,21 @@
         <div class="example-box doc-content"></div>
         <article>
           <div id="introduction" data-traverse-target="introduction">
-            <h1 class="doc-title">Geo-DB Service
+            <h1 class="doc-title">Geo DB API
               <span>API Reference</span>
             </h1>
             <div class="doc-row">
               <div class="doc-copy">
-                <p>Finally an easy-to-use developer-centric REST API for getting global city and region data. Easily obtain country, region, and city data for use in your apps! Filter cities by name prefix, country, location, and even minimum population. Get all country regions. Get all cities in a given region. Developer-friendly RESTful API adheres to industry best-practices, including HATEOS-style links to facilitate paging results. Backed by Amazon AWS load-balanced infrastructure for resiliency and performance! Data is periodically refreshed from GeoNames.org.</p>
+                <p>Finally an easy-to-use developer-centric REST API for getting global city and region data. Easily obtain country, region, and city data for use in your apps!
+                  <ul>
+                    <li>Filter cities by name prefix, country, location, and even minimum population.</li>
+                    <li>Get all country regions.</li>
+                    <li>Get all cities in a given region.</li>
+                    <li>Developer-friendly RESTful API adheres to industry best-practices, including HATEOS-style links to facilitate paging results.</li>
+                    <li>Backed by Amazon AWS load-balanced infrastructure for resiliency and performance!</li>
+                    <li>Data is periodically refreshed from GeoNames.org.</li>
+                  </ul>
+                </p>
               </div>
               <div class="doc-examples">
                 <section>
@@ -114,17 +121,17 @@
               </div>
             </div>
           </div>
-          <h1 id="tag-geo-controller" class="swagger-summary-tag" data-traverse-target="tag-geo-controller">geo-controller</h1>
+          <h1 id="tag-Geo" class="swagger-summary-tag" data-traverse-target="tag-Geo">Geo</h1>
           <div class="tag-description doc-row">
             <div class="doc-copy">
-              <p>Geo Controller</p>
+              <p>Geo Endpoints</p>
             </div>
           </div>
           <div id="operation--v1-geo-cities-get" class="operation panel" data-traverse-target="operation--v1-geo-cities-get">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-geo-controller">geo-controller</a>
+              <a class="label" href="#tag-Geo">Geo</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -421,7 +428,7 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-geo-controller">geo-controller</a>
+              <a class="label" href="#tag-Geo">Geo</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -556,7 +563,7 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-geo-controller">geo-controller</a>
+              <a class="label" href="#tag-Geo">Geo</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -732,7 +739,7 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-geo-controller">geo-controller</a>
+              <a class="label" href="#tag-Geo">Geo</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -856,7 +863,7 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-geo-controller">geo-controller</a>
+              <a class="label" href="#tag-Geo">Geo</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -1035,7 +1042,7 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-geo-controller">geo-controller</a>
+              <a class="label" href="#tag-Geo">Geo</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -1183,7 +1190,7 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-geo-controller">geo-controller</a>
+              <a class="label" href="#tag-Geo">Geo</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -1419,17 +1426,17 @@
               </div>
             </div>
           </div>
-          <h1 id="tag-locale-controller" class="swagger-summary-tag" data-traverse-target="tag-locale-controller">locale-controller</h1>
+          <h1 id="tag-Locale" class="swagger-summary-tag" data-traverse-target="tag-Locale">Locale</h1>
           <div class="tag-description doc-row">
             <div class="doc-copy">
-              <p>Locale Controller</p>
+              <p>Locale Endpoints</p>
             </div>
           </div>
           <div id="operation--v1-locale-currencies-get" class="operation panel" data-traverse-target="operation--v1-locale-currencies-get">
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-locale-controller">locale-controller</a>
+              <a class="label" href="#tag-Locale">Locale</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -1606,7 +1613,7 @@
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-locale-controller">locale-controller</a>
+              <a class="label" href="#tag-Locale">Locale</a>
               <!---->
             </div>
             <!-- </div> -->
