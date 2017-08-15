@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Geo DB API",
-    "description": "Finally an easy-to-use developer-centric REST API for getting global city and region data. Easily obtain country, region, and city data for use in your apps! <ul><li>Filter cities by name prefix, country, location, and even minimum population.</li> <li>Get all country regions.</li> <li>Get all cities in a given region.</li> <li>Developer-friendly RESTful API adheres to industry best-practices, including HATEOS-style links to facilitate paging results.</li> <li>Backed by Amazon AWS load-balanced infrastructure for resiliency and performance!</li> <li>Data is periodically refreshed from GeoNames.org.</li></ul>"
+    "description": "Finally an easy-to-use developer-centric REST API for getting global city and region data. Easily obtain country, region, and city data for use in your apps! <ul><li>Filter cities by name prefix, country, location, and even minimum population.</li> <li>Get all country regions.</li> <li>Get all cities in a given region.</li> <li>Developer-friendly RESTful API adheres to industry best-practices, including HATEOS-style links to facilitate paging results.</li> <li>Backed by Amazon AWS load-balanced infrastructure for resiliency and performance!</li> <li>Data is periodically refreshed from GeoNames.org.</li></ul><br><p>NOTE: Since the database is periodically updated, this may <strong>very rarely</strong> result in certain cities being marked deleted (e.g., duplicates removed). By default, endpoints returning city data will exclude cities marked deleted. However, in the unlikely event that this occurs while your app is paging through a set of affected results - and you care about the paged results suddenly changing underneath - specify <tt>includeDeleted=SINCE_YESTERDAY</tt> (or <tt>SINCE_LAST_WEEK</tt> if you're really paranoid!)."
   },
   "host": "https://wft-geo-db.p.mashape.com",
   "basePath": "/",
@@ -23,8 +23,8 @@
         "tags": [
           "Geo"
         ],
-        "summary": "Find cities",
-        "description": "Find cities",
+        "summary": "Get cities.",
+        "description": "Get cities, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.)",
         "operationId": "findCitiesUsingGET",
         "consumes": [
           "application/json"
@@ -36,21 +36,21 @@
           {
             "name": "namePrefix",
             "in": "query",
-            "description": "The city name prefix filter",
+            "description": "Only cities whose names start with this prefix",
             "required": false,
             "type": "string"
           },
           {
             "name": "countryCode",
             "in": "query",
-            "description": "The country-code filter",
+            "description": "Only cities in this country",
             "required": false,
             "type": "string"
           },
           {
             "name": "minPopulation",
             "in": "query",
-            "description": "The minimum-population filter",
+            "description": "Only cities having at least this population",
             "required": false,
             "type": "integer",
             "format": "int32"
@@ -58,14 +58,14 @@
           {
             "name": "nearLocation",
             "in": "query",
-            "description": "The near-location filter center in ISO 6709 format: ±DD.DDDD±DDD.DDDD",
+            "description": "Only cities near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD",
             "required": false,
             "type": "string"
           },
           {
             "name": "nearLocationRadius",
             "in": "query",
-            "description": "The near-location filter radius",
+            "description": "The location radius within which to find cities",
             "required": false,
             "type": "integer",
             "format": "int32"
@@ -73,7 +73,7 @@
           {
             "name": "nearLocationRadiusUnit",
             "in": "query",
-            "description": "The near-location filter radius unit",
+            "description": "The location radius unit of distance: MI | KM",
             "required": false,
             "type": "string",
             "default": "MI"
@@ -81,7 +81,7 @@
           {
             "name": "includeDeleted",
             "in": "query",
-            "description": "Directs how recently to include any deleted cities in the results: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "description": "Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
             "required": false,
             "type": "string",
             "default": "NONE"
@@ -130,7 +130,7 @@
           "Geo"
         ],
         "summary": "Get city details",
-        "description": "Get city details",
+        "description": "Get the details for a specific city, including location coordinates, population, and elevation above sea-level (if available).",
         "operationId": "getCityUsingGET",
         "consumes": [
           "application/json"
@@ -142,7 +142,7 @@
           {
             "name": "cityId",
             "in": "path",
-            "description": "cityId",
+            "description": "The city id",
             "required": true,
             "type": "integer",
             "format": "int32"
@@ -172,8 +172,8 @@
         "tags": [
           "Geo"
         ],
-        "summary": "Get known countries",
-        "description": "Get known countries",
+        "summary": "Get countries",
+        "description": "Get countries, filtering by optional criteria. If no criteria are set, you will get back all known countries.",
         "operationId": "getCountriesUsingGET",
         "consumes": [
           "application/json"
@@ -185,7 +185,7 @@
           {
             "name": "currencyCode",
             "in": "query",
-            "description": "The currency-unit filter",
+            "description": "Only countries supporting this currency",
             "required": false,
             "type": "string"
           },
@@ -233,7 +233,7 @@
           "Geo"
         ],
         "summary": "Get country details",
-        "description": "Get country details",
+        "description": "Get the details for a specific country, including number of regions.",
         "operationId": "getCountryUsingGET",
         "consumes": [
           "application/json"
@@ -245,7 +245,7 @@
           {
             "name": "countryCode",
             "in": "path",
-            "description": "countryCode",
+            "description": "An ISO-3166 country code",
             "required": true,
             "type": "string"
           }
@@ -275,7 +275,7 @@
           "Geo"
         ],
         "summary": "Get country regions",
-        "description": "Get country regions",
+        "description": "Get all regions in a specific country. These could be states, provinces, districts, or otherwise major political divisions.",
         "operationId": "getRegionsUsingGET",
         "consumes": [
           "application/json"
@@ -287,7 +287,7 @@
           {
             "name": "countryCode",
             "in": "path",
-            "description": "countryCode",
+            "description": "An ISO-3166 country code",
             "required": true,
             "type": "string"
           },
@@ -335,7 +335,7 @@
           "Geo"
         ],
         "summary": "Get region details",
-        "description": "Get region details",
+        "description": "Get the details of a specific country region, including number of cities.",
         "operationId": "getRegionUsingGET",
         "consumes": [
           "application/json"
@@ -347,14 +347,14 @@
           {
             "name": "countryCode",
             "in": "path",
-            "description": "countryCode",
+            "description": "An ISO-3166 country code",
             "required": true,
             "type": "string"
           },
           {
             "name": "regionCode",
             "in": "path",
-            "description": "regionCode",
+            "description": "An HASC, ISO-3166, or FIPS region code",
             "required": true,
             "type": "string"
           }
@@ -384,7 +384,7 @@
           "Geo"
         ],
         "summary": "Get country region cities",
-        "description": "Get country region cities",
+        "description": "Get the cities in a specific country region.",
         "operationId": "findRegionCitiesUsingGET",
         "consumes": [
           "application/json"
@@ -396,21 +396,21 @@
           {
             "name": "countryCode",
             "in": "path",
-            "description": "countryCode",
+            "description": "An ISO-3166 country code",
             "required": true,
             "type": "string"
           },
           {
             "name": "regionCode",
             "in": "path",
-            "description": "regionCode",
+            "description": "An HASC, ISO-3166, or FIPS region code",
             "required": true,
             "type": "string"
           },
           {
             "name": "minPopulation",
             "in": "query",
-            "description": "The minimum-population filter",
+            "description": "Only cities having at least this population",
             "required": false,
             "type": "integer",
             "format": "int32"
@@ -418,7 +418,7 @@
           {
             "name": "includeDeleted",
             "in": "query",
-            "description": "Directs how recently to include any deleted cities in the results: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+            "description": "Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
             "required": false,
             "type": "string",
             "default": "NONE"
@@ -466,8 +466,8 @@
         "tags": [
           "Locale"
         ],
-        "summary": "Get known currencies",
-        "description": "Get known currencies",
+        "summary": "Get currencies",
+        "description": "Get currencies, filtering by optional criteria. If no criteria are set, you will get back all known currencies.",
         "operationId": "getCurrenciesUsingGET",
         "consumes": [
           "application/json"
@@ -479,7 +479,7 @@
           {
             "name": "countryCode",
             "in": "query",
-            "description": "The country-code filter",
+            "description": "Only currencies supported by this country",
             "required": false,
             "type": "string"
           },
@@ -526,8 +526,8 @@
         "tags": [
           "Locale"
         ],
-        "summary": "Get available locales",
-        "description": "Get available locales",
+        "summary": "Get locales",
+        "description": "Get all known locales",
         "operationId": "getLocalesUsingGET",
         "consumes": [
           "application/json"
@@ -580,18 +580,21 @@
       "type": "object",
       "properties": {
         "data": {
+          "description": "A list of CitySummaries",
           "type": "array",
           "items": {
             "$ref": "#/definitions/CitySummary"
           }
         },
         "errors": {
+          "description": "A list of WftErrors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/WftError"
           }
         },
         "links": {
+          "description": "A list of Links",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Link"
@@ -647,6 +650,7 @@
           "$ref": "#/definitions/CityDetails"
         },
         "errors": {
+          "description": "A list of WftErrors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/WftError"
@@ -682,18 +686,21 @@
       "type": "object",
       "properties": {
         "data": {
+          "description": "A list of CountryDescriptors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/CountryDescriptor"
           }
         },
         "errors": {
+          "description": "A list of WftErrors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/WftError"
           }
         },
         "links": {
+          "description": "A list of Links",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Link"
@@ -711,6 +718,7 @@
           "type": "string"
         },
         "currencyCode": {
+          "description": "A ISO-4217 currency code",
           "type": "string"
         },
         "name": {
@@ -740,6 +748,7 @@
           "$ref": "#/definitions/CountryDetails"
         },
         "errors": {
+          "description": "A list of WftErrors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/WftError"
@@ -751,18 +760,21 @@
       "type": "object",
       "properties": {
         "data": {
+          "description": "A list of CurrencyDescriptors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/CurrencyDescriptor"
           }
         },
         "errors": {
+          "description": "A list of WftErrors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/WftError"
           }
         },
         "links": {
+          "description": "A list of Links",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Link"
@@ -777,46 +789,15 @@
       "type": "object",
       "properties": {
         "code": {
+          "description": "A ISO-4217 currency code",
           "type": "string"
         },
         "countryCodes": {
+          "description": "A list of ISO-3166 country codes",
           "type": "array",
           "items": {
             "type": "string"
           }
-        }
-      }
-    },
-    "DeferredResultHandler": {
-      "type": "object"
-    },
-    "DeferredResult«ResponseEntity«WftResult«Void»»»": {
-      "type": "object",
-      "properties": {
-        "completionCallback": {
-          "$ref": "#/definitions/Runnable"
-        },
-        "expired": {
-          "type": "boolean"
-        },
-        "result": {
-          "type": "object"
-        },
-        "resultHandler": {
-          "$ref": "#/definitions/DeferredResultHandler"
-        },
-        "setOrExpired": {
-          "type": "boolean"
-        },
-        "timeout": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "timeoutCallback": {
-          "$ref": "#/definitions/Runnable"
-        },
-        "timeoutResult": {
-          "type": "object"
         }
       }
     },
@@ -841,9 +822,6 @@
         },
         "rel": {
           "type": "string"
-        },
-        "templated": {
-          "type": "boolean"
         }
       }
     },
@@ -859,18 +837,21 @@
       "type": "object",
       "properties": {
         "data": {
+          "description": "A list of LocalDescriptors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/LocaleDescriptor"
           }
         },
         "errors": {
+          "description": "A list of WftErrors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/WftError"
           }
         },
         "links": {
+          "description": "A list of Links",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Link"
@@ -897,6 +878,7 @@
           "type": "string"
         },
         "countryCode": {
+          "description": "An ISO-3166 country code",
           "type": "string"
         },
         "fipsCode": {
@@ -909,6 +891,7 @@
           "type": "string"
         },
         "name": {
+          "description": "The well-known internationally recognized name for this region",
           "type": "string"
         },
         "numCities": {
@@ -924,6 +907,7 @@
           "$ref": "#/definitions/RegionDetails"
         },
         "errors": {
+          "description": "A list of WftErrors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/WftError"
@@ -935,6 +919,7 @@
       "type": "object",
       "properties": {
         "countryCode": {
+          "description": "An ISO-3166 country code",
           "type": "string"
         },
         "fipsCode": {
@@ -955,18 +940,21 @@
       "type": "object",
       "properties": {
         "data": {
+          "description": "A list of RegionSummaries",
           "type": "array",
           "items": {
             "$ref": "#/definitions/RegionSummary"
           }
         },
         "errors": {
+          "description": "A list of WftErrors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/WftError"
           }
         },
         "links": {
+          "description": "A list of Links",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Link"
@@ -976,9 +964,6 @@
           "$ref": "#/definitions/Metadata"
         }
       }
-    },
-    "Runnable": {
-      "type": "object"
     },
     "WftError": {
       "type": "object",
@@ -992,32 +977,8 @@
       }
     },
     "WftErrorCode": {
-      "type": "object"
-    },
-    "WftResult": {
-      "type": "object",
-      "properties": {
-        "data": {
-          "type": "object"
-        },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/WftError"
-          }
-        }
-      }
-    },
-    "WftResult«Void»": {
-      "type": "object",
-      "properties": {
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/WftError"
-          }
-        }
-      }
+      "type": "string",
+      "enum": ["ACCESS_DENIED", "ENTITY_NOT_FOUND", "PARAM_INVALID"]
     }
   }
 }

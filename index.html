@@ -26,13 +26,13 @@
             <a href="#tag-Geo">Geo</a>
             <ul>
               <li>
-                <a href="#operation--v1-geo-cities-get"> Find cities </a>
+                <a href="#operation--v1-geo-cities-get"> Get cities. </a>
               </li>
               <li>
                 <a href="#operation--v1-geo-cities--cityId--get"> Get city details </a>
               </li>
               <li>
-                <a href="#operation--v1-geo-countries-get"> Get known countries </a>
+                <a href="#operation--v1-geo-countries-get"> Get countries </a>
               </li>
               <li>
                 <a href="#operation--v1-geo-countries--countryCode--get"> Get country details </a>
@@ -52,10 +52,10 @@
             <a href="#tag-Locale">Locale</a>
             <ul>
               <li>
-                <a href="#operation--v1-locale-currencies-get"> Get known currencies </a>
+                <a href="#operation--v1-locale-currencies-get"> Get currencies </a>
               </li>
               <li>
-                <a href="#operation--v1-locale-locales-get"> Get available locales </a>
+                <a href="#operation--v1-locale-locales-get"> Get locales </a>
               </li>
             </ul>
           </section>
@@ -70,8 +70,6 @@
           <a href="#definition-CountryResponse"> CountryResponse </a>
           <a href="#definition-CurrenciesResponse"> CurrenciesResponse </a>
           <a href="#definition-CurrencyDescriptor"> CurrencyDescriptor </a>
-          <a href="#definition-DeferredResultHandler"> DeferredResultHandler </a>
-          <a href="#definition-DeferredResult-ResponseEntity-WftResult-Void---"> DeferredResult«ResponseEntity«WftResult«Void»»» </a>
           <a href="#definition-GeoLocation"> GeoLocation </a>
           <a href="#definition-Link"> Link </a>
           <a href="#definition-LocaleDescriptor"> LocaleDescriptor </a>
@@ -81,11 +79,8 @@
           <a href="#definition-RegionResponse"> RegionResponse </a>
           <a href="#definition-RegionSummary"> RegionSummary </a>
           <a href="#definition-RegionsResponse"> RegionsResponse </a>
-          <a href="#definition-Runnable"> Runnable </a>
           <a href="#definition-WftError"> WftError </a>
           <a href="#definition-WftErrorCode"> WftErrorCode </a>
-          <a href="#definition-WftResult"> WftResult </a>
-          <a href="#definition-WftResult-Void-"> WftResult«Void» </a>
         </nav>
       </div>
       <div id="docs" class="row collapse expanded drawer" data-drawer>
@@ -109,7 +104,11 @@
                     <li>Backed by Amazon AWS load-balanced infrastructure for resiliency and performance!</li>
                     <li>Data is periodically refreshed from GeoNames.org.</li>
                   </ul>
-                </p>
+                  <br>
+                  <p>NOTE: Since the database is periodically updated, this may
+                    <strong>very rarely</strong> result in certain cities being marked deleted (e.g., duplicates removed). By default, endpoints returning city data will exclude cities marked deleted. However, in the unlikely event that this occurs while your app is paging through a set of affected results - and you care about the paged results suddenly changing underneath - specify
+                    <tt>includeDeleted=SINCE_YESTERDAY</tt> (or
+                    <tt>SINCE_LAST_WEEK</tt> if you&#39;re really paranoid!).</p>
               </div>
               <div class="doc-examples">
                 <section>
@@ -139,7 +138,7 @@
             <!-- </div> -->
             <!-- </section> -->
             <h2 class="operation-title">
-              <span class="operation-summary">Find cities</span>
+              <span class="operation-summary">Get cities.</span>
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
@@ -152,7 +151,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Find cities</p>
+                  <p>Get cities, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.)</p>
                 </section>
               </div>
             </div>
@@ -164,7 +163,7 @@
                       <div class="prop-title">namePrefix</div>
                     </div>
                     <div class="prop-value">
-                      <p>The city name prefix filter</p>
+                      <p>Only cities whose names start with this prefix</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -183,7 +182,7 @@
                       <div class="prop-title">countryCode</div>
                     </div>
                     <div class="prop-value">
-                      <p>The country-code filter</p>
+                      <p>Only cities in this country</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -202,7 +201,7 @@
                       <div class="prop-title">minPopulation</div>
                     </div>
                     <div class="prop-value">
-                      <p>The minimum-population filter</p>
+                      <p>Only cities having at least this population</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -222,7 +221,7 @@
                       <div class="prop-title">nearLocation</div>
                     </div>
                     <div class="prop-value">
-                      <p>The near-location filter center in ISO 6709 format: ±DD.DDDD±DDD.DDDD</p>
+                      <p>Only cities near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -241,7 +240,7 @@
                       <div class="prop-title">nearLocationRadius</div>
                     </div>
                     <div class="prop-value">
-                      <p>The near-location filter radius</p>
+                      <p>The location radius within which to find cities</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -261,7 +260,7 @@
                       <div class="prop-title">nearLocationRadiusUnit</div>
                     </div>
                     <div class="prop-value">
-                      <p>The near-location filter radius unit</p>
+                      <p>The location radius unit of distance: MI | KM</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -281,7 +280,7 @@
                       <div class="prop-title">includeDeleted</div>
                     </div>
                     <div class="prop-value">
-                      <p>Directs how recently to include any deleted cities in the results: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -405,15 +404,14 @@
   ],
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;links&quot;</span>: [
     {
       <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
@@ -449,7 +447,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Get city details</p>
+                  <p>Get the details for a specific city, including location coordinates, population, and elevation above sea-level (if available).</p>
                 </section>
               </div>
             </div>
@@ -462,7 +460,7 @@
                       <span class="json-property-required"></span>
                     </div>
                     <div class="prop-value">
-                      <p>cityId</p>
+                      <p>The city id</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -550,7 +548,7 @@
   },
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ]
@@ -571,7 +569,7 @@
             <!-- </div> -->
             <!-- </section> -->
             <h2 class="operation-title">
-              <span class="operation-summary">Get known countries</span>
+              <span class="operation-summary">Get countries</span>
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
@@ -584,7 +582,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Get known countries</p>
+                  <p>Get countries, filtering by optional criteria. If no criteria are set, you will get back all known countries.</p>
                 </section>
               </div>
             </div>
@@ -596,7 +594,7 @@
                       <div class="prop-title">currencyCode</div>
                     </div>
                     <div class="prop-value">
-                      <p>The currency-unit filter</p>
+                      <p>Only countries supporting this currency</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -716,15 +714,14 @@
   ],
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;links&quot;</span>: [
     {
       <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
@@ -760,7 +757,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Get country details</p>
+                  <p>Get the details for a specific country, including number of regions.</p>
                 </section>
               </div>
             </div>
@@ -773,7 +770,7 @@
                       <span class="json-property-required"></span>
                     </div>
                     <div class="prop-value">
-                      <p>countryCode</p>
+                      <p>An ISO-3166 country code</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -850,7 +847,7 @@
   },
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ]
@@ -884,7 +881,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Get country regions</p>
+                  <p>Get all regions in a specific country. These could be states, provinces, districts, or otherwise major political divisions.</p>
                 </section>
               </div>
             </div>
@@ -897,7 +894,7 @@
                       <span class="json-property-required"></span>
                     </div>
                     <div class="prop-value">
-                      <p>countryCode</p>
+                      <p>An ISO-3166 country code</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -1019,15 +1016,14 @@
   ],
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;links&quot;</span>: [
     {
       <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
@@ -1063,7 +1059,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Get region details</p>
+                  <p>Get the details of a specific country region, including number of cities.</p>
                 </section>
               </div>
             </div>
@@ -1076,7 +1072,7 @@
                       <span class="json-property-required"></span>
                     </div>
                     <div class="prop-value">
-                      <p>countryCode</p>
+                      <p>An ISO-3166 country code</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -1096,7 +1092,7 @@
                       <span class="json-property-required"></span>
                     </div>
                     <div class="prop-value">
-                      <p>regionCode</p>
+                      <p>An HASC, ISO-3166, or FIPS region code</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -1177,7 +1173,7 @@
   },
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ]
@@ -1211,7 +1207,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Get country region cities</p>
+                  <p>Get the cities in a specific country region.</p>
                 </section>
               </div>
             </div>
@@ -1224,7 +1220,7 @@
                       <span class="json-property-required"></span>
                     </div>
                     <div class="prop-value">
-                      <p>countryCode</p>
+                      <p>An ISO-3166 country code</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -1244,7 +1240,7 @@
                       <span class="json-property-required"></span>
                     </div>
                     <div class="prop-value">
-                      <p>regionCode</p>
+                      <p>An HASC, ISO-3166, or FIPS region code</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -1263,7 +1259,7 @@
                       <div class="prop-title">minPopulation</div>
                     </div>
                     <div class="prop-value">
-                      <p>The minimum-population filter</p>
+                      <p>Only cities having at least this population</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -1283,7 +1279,7 @@
                       <div class="prop-title">includeDeleted</div>
                     </div>
                     <div class="prop-value">
-                      <p>Directs how recently to include any deleted cities in the results: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -1407,15 +1403,14 @@
   ],
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;links&quot;</span>: [
     {
       <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
@@ -1444,7 +1439,7 @@
             <!-- </div> -->
             <!-- </section> -->
             <h2 class="operation-title">
-              <span class="operation-summary">Get known currencies</span>
+              <span class="operation-summary">Get currencies</span>
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
@@ -1457,7 +1452,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Get known currencies</p>
+                  <p>Get currencies, filtering by optional criteria. If no criteria are set, you will get back all known currencies.</p>
                 </section>
               </div>
             </div>
@@ -1469,7 +1464,7 @@
                       <div class="prop-title">countryCode</div>
                     </div>
                     <div class="prop-value">
-                      <p>The country-code filter</p>
+                      <p>Only currencies supported by this country</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -1590,15 +1585,14 @@
   ],
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;links&quot;</span>: [
     {
       <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
@@ -1621,7 +1615,7 @@
             <!-- </div> -->
             <!-- </section> -->
             <h2 class="operation-title">
-              <span class="operation-summary">Get available locales</span>
+              <span class="operation-summary">Get locales</span>
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
@@ -1634,7 +1628,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Get available locales</p>
+                  <p>Get all known locales</p>
                 </section>
               </div>
             </div>
@@ -1745,15 +1739,14 @@
   ],
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;links&quot;</span>: [
     {
       <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
@@ -1780,21 +1773,30 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="data">
+                    <dt data-property-name="data" class="has-description">
                       <span class="json-property-name">data:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="errors">
+                    <dd>
+                      <p>A list of CitySummaries</p>
+                    </dd>
+                    <dt data-property-name="errors" class="has-description">
                       <span class="json-property-name">errors:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="links">
+                    <dd>
+                      <p>A list of WftErrors</p>
+                    </dd>
+                    <dt data-property-name="links" class="has-description">
                       <span class="json-property-name">links:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>A list of Links</p>
+                    </dd>
                     <dt data-property-name="metadata">
                       <span class="json-property-name">metadata:</span>
                       <span class="json-property-type">
@@ -1823,15 +1825,14 @@
   ],
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;links&quot;</span>: [
     {
       <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
@@ -1963,11 +1964,14 @@
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="errors">
+                    <dt data-property-name="errors" class="has-description">
                       <span class="json-property-name">errors:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>A list of WftErrors</p>
+                    </dd>
                   </dl>
                 </section>
               </div>
@@ -1992,7 +1996,7 @@
   },
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ]
@@ -2080,21 +2084,30 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="data">
+                    <dt data-property-name="data" class="has-description">
                       <span class="json-property-name">data:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="errors">
+                    <dd>
+                      <p>A list of CountryDescriptors</p>
+                    </dd>
+                    <dt data-property-name="errors" class="has-description">
                       <span class="json-property-name">errors:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="links">
+                    <dd>
+                      <p>A list of WftErrors</p>
+                    </dd>
+                    <dt data-property-name="links" class="has-description">
                       <span class="json-property-name">links:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>A list of Links</p>
+                    </dd>
                     <dt data-property-name="metadata">
                       <span class="json-property-name">metadata:</span>
                       <span class="json-property-type">
@@ -2120,15 +2133,14 @@
   ],
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;links&quot;</span>: [
     {
       <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
@@ -2159,11 +2171,14 @@
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="currencyCode">
+                    <dt data-property-name="currencyCode" class="has-description">
                       <span class="json-property-name">currencyCode:</span>
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>A ISO-4217 currency code</p>
+                    </dd>
                     <dt data-property-name="name">
                       <span class="json-property-name">name:</span>
                       <span class="json-property-type">string</span>
@@ -2254,11 +2269,14 @@
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="errors">
+                    <dt data-property-name="errors" class="has-description">
                       <span class="json-property-name">errors:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>A list of WftErrors</p>
+                    </dd>
                   </dl>
                 </section>
               </div>
@@ -2273,7 +2291,7 @@
   },
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ]
@@ -2297,21 +2315,30 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="data">
+                    <dt data-property-name="data" class="has-description">
                       <span class="json-property-name">data:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="errors">
+                    <dd>
+                      <p>A list of CurrencyDescriptors</p>
+                    </dd>
+                    <dt data-property-name="errors" class="has-description">
                       <span class="json-property-name">errors:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="links">
+                    <dd>
+                      <p>A list of WftErrors</p>
+                    </dd>
+                    <dt data-property-name="links" class="has-description">
                       <span class="json-property-name">links:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>A list of Links</p>
+                    </dd>
                     <dt data-property-name="metadata">
                       <span class="json-property-name">metadata:</span>
                       <span class="json-property-type">
@@ -2338,15 +2365,14 @@
   ],
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;links&quot;</span>: [
     {
       <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
@@ -2372,16 +2398,22 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="code">
+                    <dt data-property-name="code" class="has-description">
                       <span class="json-property-name">code:</span>
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="countryCodes">
+                    <dd>
+                      <p>A ISO-4217 currency code</p>
+                    </dd>
+                    <dt data-property-name="countryCodes" class="has-description">
                       <span class="json-property-name">countryCodes:</span>
                       <span class="json-property-type">string[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>A list of ISO-3166 country codes</p>
+                    </dd>
                   </dl>
                 </section>
               </div>
@@ -2393,115 +2425,6 @@
   <span class="hljs-attr">&quot;countryCodes&quot;</span>: [
     <span class="hljs-string">&quot;string&quot;</span>
   ]
-}
-</code></pre>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <div id="definition-DeferredResultHandler" class="definition panel" data-traverse-target="definition-DeferredResultHandler">
-            <h2 class="panel-title">
-              <a name="/definitions/DeferredResultHandler"></a>DeferredResultHandler: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
-              <span class="json-property-range" title="Value limits"></span>
-              
-              
-              </span> -->
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy"> </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Example</h5>
-                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json"><span class="hljs-string">&quot;object&quot;</span>
-</code></pre>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <div id="definition-DeferredResult-ResponseEntity-WftResult-Void---" class="definition panel" data-traverse-target="definition-DeferredResult-ResponseEntity-WftResult-Void---">
-            <h2 class="panel-title">
-              <a name="/definitions/DeferredResult«ResponseEntity«WftResult«Void»»»"></a>DeferredResult«ResponseEntity«WftResult«Void»»»: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
-              <span class="json-property-range" title="Value limits"></span>
-              
-              
-              </span> -->
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="json-schema-properties">
-                  <dl>
-                    <dt data-property-name="completionCallback">
-                      <span class="json-property-name">completionCallback:</span>
-                      <span class="json-property-type">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/Runnable">Runnable</a>
-                        </span>
-                      </span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dt data-property-name="expired">
-                      <span class="json-property-name">expired:</span>
-                      <span class="json-property-type">boolean</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dt data-property-name="result">
-                      <span class="json-property-name">result:</span>
-                      <span class="json-property-type">object</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dt data-property-name="resultHandler">
-                      <span class="json-property-name">resultHandler:</span>
-                      <span class="json-property-type">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/DeferredResultHandler">DeferredResultHandler</a>
-                        </span>
-                      </span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dt data-property-name="setOrExpired">
-                      <span class="json-property-name">setOrExpired:</span>
-                      <span class="json-property-type">boolean</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dt data-property-name="timeout">
-                      <span class="json-property-name">timeout:</span>
-                      <span class="json-property-type">integer</span>
-                      <span class="json-property-format">(int64)</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dt data-property-name="timeoutCallback">
-                      <span class="json-property-name">timeoutCallback:</span>
-                      <span class="json-property-type">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/Runnable">Runnable</a>
-                        </span>
-                      </span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dt data-property-name="timeoutResult">
-                      <span class="json-property-name">timeoutResult:</span>
-                      <span class="json-property-type">object</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                  </dl>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Example</h5>
-                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;completionCallback&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;expired&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
-  <span class="hljs-attr">&quot;result&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;resultHandler&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;setOrExpired&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
-  <span class="hljs-attr">&quot;timeout&quot;</span>: <span class="hljs-string">&quot;integer (int64)&quot;</span>,
-  <span class="hljs-attr">&quot;timeoutCallback&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;timeoutResult&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -2573,11 +2496,6 @@
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="templated">
-                      <span class="json-property-name">templated:</span>
-                      <span class="json-property-type">boolean</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
                   </dl>
                 </section>
               </div>
@@ -2586,8 +2504,7 @@
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-  <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+  <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -2641,21 +2558,30 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="data">
+                    <dt data-property-name="data" class="has-description">
                       <span class="json-property-name">data:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="errors">
+                    <dd>
+                      <p>A list of LocalDescriptors</p>
+                    </dd>
+                    <dt data-property-name="errors" class="has-description">
                       <span class="json-property-name">errors:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="links">
+                    <dd>
+                      <p>A list of WftErrors</p>
+                    </dd>
+                    <dt data-property-name="links" class="has-description">
                       <span class="json-property-name">links:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>A list of Links</p>
+                    </dd>
                     <dt data-property-name="metadata">
                       <span class="json-property-name">metadata:</span>
                       <span class="json-property-type">
@@ -2679,15 +2605,14 @@
   ],
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;links&quot;</span>: [
     {
       <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
@@ -2752,11 +2677,14 @@
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="countryCode">
+                    <dt data-property-name="countryCode" class="has-description">
                       <span class="json-property-name">countryCode:</span>
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>An ISO-3166 country code</p>
+                    </dd>
                     <dt data-property-name="fipsCode">
                       <span class="json-property-name">fipsCode:</span>
                       <span class="json-property-type">string</span>
@@ -2772,11 +2700,14 @@
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="name">
+                    <dt data-property-name="name" class="has-description">
                       <span class="json-property-name">name:</span>
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>The well-known internationally recognized name for this region</p>
+                    </dd>
                     <dt data-property-name="numCities">
                       <span class="json-property-name">numCities:</span>
                       <span class="json-property-type">integer</span>
@@ -2826,11 +2757,14 @@
                       </span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="errors">
+                    <dt data-property-name="errors" class="has-description">
                       <span class="json-property-name">errors:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>A list of WftErrors</p>
+                    </dd>
                   </dl>
                 </section>
               </div>
@@ -2849,7 +2783,7 @@
   },
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ]
@@ -2873,11 +2807,14 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="countryCode">
+                    <dt data-property-name="countryCode" class="has-description">
                       <span class="json-property-name">countryCode:</span>
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>An ISO-3166 country code</p>
+                    </dd>
                     <dt data-property-name="fipsCode">
                       <span class="json-property-name">fipsCode:</span>
                       <span class="json-property-type">string</span>
@@ -2930,21 +2867,30 @@
               <div class="doc-copy">
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="data">
+                    <dt data-property-name="data" class="has-description">
                       <span class="json-property-name">data:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="errors">
+                    <dd>
+                      <p>A list of RegionSummaries</p>
+                    </dd>
+                    <dt data-property-name="errors" class="has-description">
                       <span class="json-property-name">errors:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
-                    <dt data-property-name="links">
+                    <dd>
+                      <p>A list of WftErrors</p>
+                    </dd>
+                    <dt data-property-name="links" class="has-description">
                       <span class="json-property-name">links:</span>
                       <span class="json-property-type">object[]</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dd>
+                      <p>A list of Links</p>
+                    </dd>
                     <dt data-property-name="metadata">
                       <span class="json-property-name">metadata:</span>
                       <span class="json-property-type">
@@ -2972,42 +2918,20 @@
   ],
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;links&quot;</span>: [
     {
       <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;templated&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
   <span class="hljs-attr">&quot;metadata&quot;</span>: {
     <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-string">&quot;integer (int64)&quot;</span>
   }
 }
-</code></pre>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <div id="definition-Runnable" class="definition panel" data-traverse-target="definition-Runnable">
-            <h2 class="panel-title">
-              <a name="/definitions/Runnable"></a>Runnable: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
-              <span class="json-property-range" title="Value limits"></span>
-              
-              
-              </span> -->
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy"> </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Example</h5>
-                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json"><span class="hljs-string">&quot;object&quot;</span>
 </code></pre>
                   <!-- </div> -->
                 </section>
@@ -3048,7 +2972,7 @@
                 <section>
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre>
@@ -3059,29 +2983,12 @@
           </div>
           <div id="definition-WftErrorCode" class="definition panel" data-traverse-target="definition-WftErrorCode">
             <h2 class="panel-title">
-              <a name="/definitions/WftErrorCode"></a>WftErrorCode: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
-              <span class="json-property-range" title="Value limits"></span>
-              
-              
-              </span> -->
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy"> </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Example</h5>
-                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json"><span class="hljs-string">&quot;object&quot;</span>
-</code></pre>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <div id="definition-WftResult" class="definition panel" data-traverse-target="definition-WftResult">
-            <h2 class="panel-title">
-              <a name="/definitions/WftResult"></a>WftResult: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <a name="/definitions/WftErrorCode"></a>WftErrorCode: string
+              <!-- <span class="json-property-type"><span class="json-property-type">string</span>  <span class="json-property-enum" title="Possible values">
+                      <span class="json-property-enum-item">ACCESS_DENIED</span>,
+                      <span class="json-property-enum-item">ENTITY_NOT_FOUND</span>,
+                      <span class="json-property-enum-item">PARAM_INVALID</span>
+                </span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -3089,74 +2996,13 @@
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
-                <section class="json-schema-properties">
-                  <dl>
-                    <dt data-property-name="data">
-                      <span class="json-property-name">data:</span>
-                      <span class="json-property-type">object</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dt data-property-name="errors">
-                      <span class="json-property-name">errors:</span>
-                      <span class="json-property-type">object[]</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                  </dl>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Example</h5>
-                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-  <span class="hljs-attr">&quot;errors&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ]
-}
-</code></pre>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <div id="definition-WftResult-Void-" class="definition panel" data-traverse-target="definition-WftResult-Void-">
-            <h2 class="panel-title">
-              <a name="/definitions/WftResult«Void»"></a>WftResult«Void»: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
-              <span class="json-property-range" title="Value limits"></span>
-              
-              
-              </span> -->
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="json-schema-properties">
-                  <dl>
-                    <dt data-property-name="errors">
-                      <span class="json-property-name">errors:</span>
-                      <span class="json-property-type">object[]</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                  </dl>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <section>
-                  <h5>Example</h5>
-                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;errors&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
-      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ]
-}
-</code></pre>
-                  <!-- </div> -->
-                </section>
+                <span class="json-property-type">string</span>
+                <span class="json-property-enum" title="Possible values">
+                  <span class="json-property-enum-item">ACCESS_DENIED</span>,
+                  <span class="json-property-enum-item">ENTITY_NOT_FOUND</span>,
+                  <span class="json-property-enum-item">PARAM_INVALID</span>
+                </span>
+                <span class="json-property-range" title="Value limits"></span>
               </div>
             </div>
           </div>
