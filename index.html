@@ -107,7 +107,7 @@
                   <p>Notes:
                     <ul>
                       <li>All endpoints implicitly support JSONP-style invocation via an optional
-                        <b>callback</b> param.</li>
+                        <tt>callback</tt> param.</li>
                       <li>Since the database is periodically updated, this may
                         <strong>very rarely</strong> result in certain cities being marked deleted (e.g., duplicates removed). By default, endpoints returning city data will exclude cities marked deleted. However, in the unlikely event that this occurs while your app is paging through a set of affected results - and you care about the paged results suddenly changing underneath - specify
                         <tt>includeDeleted=SINCE_YESTERDAY</tt> (or
