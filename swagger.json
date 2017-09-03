@@ -871,6 +871,10 @@
     "Metadata": {
       "type": "object",
       "properties": {
+        "currentOffset": {
+          "type": "integer",
+          "format": "int64"
+        },
         "totalCount": {
           "type": "integer",
           "format": "int64"
