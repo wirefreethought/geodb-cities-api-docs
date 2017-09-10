@@ -988,7 +988,7 @@
     },
     "WftErrorCode": {
       "type": "string",
-      "enum": ["ACCESS_DENIED", "ENTITY_NOT_FOUND", "PARAM_INVALID"]
+      "enum": ["ACCESS_DENIED", "ENTITY_NOT_FOUND", "PARAM_INVALID", "PARAMS_MUTUALLY_EXCLUSIVE"]
     }
   }
 }
