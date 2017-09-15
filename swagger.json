@@ -23,6 +23,16 @@
       "description": "Locale Endpoints"
     }
   ],
+  "securityDefinitions": {
+    "UserSecurity": {
+      "type": "apiKey",
+      "name": "X-Mashape-Key",
+      "in": "header"
+    }
+  },
+  "security": {
+    "UserSecurity": []
+  },
   "paths": {
     "/v1/geo/cities": {
       "get": {
