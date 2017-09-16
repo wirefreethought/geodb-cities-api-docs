@@ -67,7 +67,7 @@
           <a href="#definition-CityResponse"> CityResponse </a>
           <a href="#definition-CitySummary"> CitySummary </a>
           <a href="#definition-CountriesResponse"> CountriesResponse </a>
-          <a href="#definition-CountryDescriptor"> CountryDescriptor </a>
+          <a href="#definition-CountrySummary"> CountrySummary </a>
           <a href="#definition-CountryDetails"> CountryDetails </a>
           <a href="#definition-CountryResponse"> CountryResponse </a>
           <a href="#definition-CurrenciesResponse"> CurrenciesResponse </a>
@@ -897,6 +897,7 @@
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;data&quot;</span>: {
     <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;currencyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;numRegions&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>
   },
@@ -2150,7 +2151,7 @@
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
-                      <p>A list of CountryDescriptors</p>
+                      <p>A list of CountrySummarys</p>
                     </dd>
                     <dt data-property-name="errors" class="has-description">
                       <span class="json-property-name">errors:</span>
@@ -2214,9 +2215,9 @@
               </div>
             </div>
           </div>
-          <div id="definition-CountryDescriptor" class="definition panel" data-traverse-target="definition-CountryDescriptor">
+          <div id="definition-CountrySummary" class="definition panel" data-traverse-target="definition-CountrySummary">
             <h2 class="panel-title">
-              <a name="/definitions/CountryDescriptor"></a>CountryDescriptor: object
+              <a name="/definitions/CountrySummary"></a>CountrySummary: object
               <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
@@ -2280,6 +2281,14 @@
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dt data-property-name="currencyCode" class="has-description">
+                      <span class="json-property-name">currencyCode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>A ISO-4217 currency code</p>
+                    </dd>
                     <dt data-property-name="name">
                       <span class="json-property-name">name:</span>
                       <span class="json-property-type">string</span>
@@ -2299,6 +2308,7 @@
                   <h5>Example</h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;currencyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;numRegions&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>
 }
@@ -2347,6 +2357,7 @@
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
   <span class="hljs-attr">&quot;data&quot;</span>: {
     <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;currencyCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;numRegions&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>
   },

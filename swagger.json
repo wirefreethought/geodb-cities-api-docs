@@ -702,10 +702,10 @@
       "type": "object",
       "properties": {
         "data": {
-          "description": "A list of CountryDescriptors",
+          "description": "A list of CountrySummarys",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/CountryDescriptor"
+            "$ref": "#/definitions/CountrySummary"
           }
         },
         "errors": {
@@ -727,7 +727,7 @@
         }
       }
     },
-    "CountryDescriptor": {
+    "CountrySummary": {
       "type": "object",
       "properties": {
         "code": {
@@ -746,6 +746,10 @@
       "type": "object",
       "properties": {
         "code": {
+          "type": "string"
+        },
+        "currencyCode": {
+          "description": "A ISO-4217 currency code",
           "type": "string"
         },
         "name": {
