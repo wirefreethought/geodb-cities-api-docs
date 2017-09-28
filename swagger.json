@@ -57,9 +57,9 @@
             "type": "string"
           },
           {
-            "name": "countryCode",
+            "name": "countryCodes",
             "in": "query",
-            "description": "Only cities in this country",
+            "description": "Only cities in these countries",
             "required": false,
             "type": "string"
           },
