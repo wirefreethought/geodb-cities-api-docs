@@ -59,7 +59,7 @@
           {
             "name": "countryCodes",
             "in": "query",
-            "description": "Only cities in these countries",
+            "description": "Only cities in these countries (comma-delimited country codes)",
             "required": false,
             "type": "string"
           },
