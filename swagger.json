@@ -64,6 +64,13 @@
             "type": "string"
           },
           {
+            "name": "excludedCountryCodes",
+            "in": "query",
+            "description": "Only cities NOT in these countries (comma-delimited country codes)",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "minPopulation",
             "in": "query",
             "description": "Only cities having at least this population",
