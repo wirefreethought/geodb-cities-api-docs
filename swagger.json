@@ -195,7 +195,7 @@
         "tags": [
           "Geo"
         ],
-        "summary": "Get nearby cities",
+        "summary": "Get cities near the given city, filtering by optional criteria.",
         "description": "Get nearby cities",
         "operationId": "findNearbyCitiesUsingGET",
         "consumes": [
