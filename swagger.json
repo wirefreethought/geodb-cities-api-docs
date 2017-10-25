@@ -193,7 +193,7 @@
     "/v1/geo/cities/{cityId}/nearbyCities": {
       "get": {
         "tags": [
-          "geo-controller"
+          "Geo"
         ],
         "summary": "Get nearby cities",
         "description": "Get nearby cities",
