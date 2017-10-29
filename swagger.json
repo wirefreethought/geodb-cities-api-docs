@@ -30,9 +30,11 @@
       "in": "header"
     }
   },
-  "security": {
-    "UserSecurity": []
-  },
+  "security": [
+    {
+      "UserSecurity": []
+    }
+  ],
   "paths": {
     "/v1/geo/cities": {
       "get": {
