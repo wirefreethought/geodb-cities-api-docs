@@ -208,8 +208,8 @@
         "tags": [
           "Geo"
         ],
-        "summary": "Get current city date-time",
-        "description": "Get current city date-time",
+        "summary": "Get city date-time",
+        "description": "Get city date-time",
         "operationId": "getCityDateTimeUsingGET",
         "consumes": [
           "application/json"
@@ -344,8 +344,8 @@
         "tags": [
           "Geo"
         ],
-        "summary": "Get current city time",
-        "description": "Get current city time",
+        "summary": "Get city time",
+        "description": "Get city time",
         "operationId": "getCityTimeUsingGET",
         "consumes": [
           "application/json"
@@ -847,8 +847,8 @@
         "tags": [
           "Locale"
         ],
-        "summary": "Get current time-zone date-time",
-        "description": "Get current time-zone date-time",
+        "summary": "Get time-zone date-time",
+        "description": "Get time-zone date-time",
         "operationId": "getTimeZoneDateTimeUsingGET",
         "consumes": [
           "application/json"
@@ -889,8 +889,8 @@
         "tags": [
           "Locale"
         ],
-        "summary": "Get current time-zone time",
-        "description": "Get current time-zone time",
+        "summary": "Get time-zone time",
+        "description": "Get time-zone time",
         "operationId": "getTimeZoneTimeUsingGET",
         "consumes": [
           "application/json"
