@@ -206,7 +206,7 @@
     "/v1/geo/cities/{cityId}/dateTime": {
       "get": {
         "tags": [
-          "geo"
+          "Geo"
         ],
         "summary": "Get current city date-time",
         "description": "Get current city date-time",
@@ -342,7 +342,7 @@
     "/v1/geo/cities/{cityId}/time": {
       "get": {
         "tags": [
-          "geo"
+          "Geo"
         ],
         "summary": "Get current city time",
         "description": "Get current city time",
@@ -792,7 +792,7 @@
     "/v1/locale/timezones": {
       "get": {
         "tags": [
-          "locale"
+          "Locale"
         ],
         "summary": "Get available timezones",
         "description": "Get available timezones",
@@ -845,7 +845,7 @@
     "/v1/locale/timezones/{zoneId}/dateTime": {
       "get": {
         "tags": [
-          "locale"
+          "Locale"
         ],
         "summary": "Get current time-zone date-time",
         "description": "Get current time-zone date-time",
@@ -887,7 +887,7 @@
     "/v1/locale/timezones/{zoneId}/time": {
       "get": {
         "tags": [
-          "locale"
+          "Locale"
         ],
         "summary": "Get current time-zone time",
         "description": "Get current time-zone time",
