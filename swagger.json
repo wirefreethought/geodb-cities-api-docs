@@ -231,7 +231,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/CityResponse"
+              "$ref": "#/definitions/DateTimeResponse"
             }
           },
           "401": {
@@ -367,7 +367,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/CityResponse"
+              "$ref": "#/definitions/TimeResponse"
             }
           },
           "401": {
@@ -869,7 +869,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/TimeZoneDateTimeResponse"
+              "$ref": "#/definitions/DateTimeResponse"
             }
           },
           "401": {
@@ -911,7 +911,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/TimeZoneDateTimeResponse"
+              "$ref": "#/definitions/TimeResponse"
             }
           },
           "401": {
@@ -1157,6 +1157,21 @@
         }
       }
     },
+    "DateTimeResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/WftError"
+          }
+        }
+      }
+    },
     "GeoLocation": {
       "type": "object",
       "properties": {
@@ -1325,7 +1340,7 @@
         }
       }
     },
-    "TimeZoneDateTimeResponse": {
+    "TimeResponse": {
       "type": "object",
       "properties": {
         "data": {

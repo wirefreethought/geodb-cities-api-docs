@@ -90,6 +90,7 @@
           <a href="#definition-CountryResponse"> CountryResponse </a>
           <a href="#definition-CurrenciesResponse"> CurrenciesResponse </a>
           <a href="#definition-CurrencyDescriptor"> CurrencyDescriptor </a>
+          <a href="#definition-DateTimeResponse"> DateTimeResponse </a>
           <a href="#definition-GeoLocation"> GeoLocation </a>
           <a href="#definition-Link"> Link </a>
           <a href="#definition-LocaleDescriptor"> LocaleDescriptor </a>
@@ -99,7 +100,7 @@
           <a href="#definition-RegionResponse"> RegionResponse </a>
           <a href="#definition-RegionSummary"> RegionSummary </a>
           <a href="#definition-RegionsResponse"> RegionsResponse </a>
-          <a href="#definition-TimeZoneDateTimeResponse"> TimeZoneDateTimeResponse </a>
+          <a href="#definition-TimeResponse"> TimeResponse </a>
           <a href="#definition-TimeZoneDescriptor"> TimeZoneDescriptor </a>
           <a href="#definition-TimeZonesResponse"> TimeZonesResponse </a>
           <a href="#definition-WftError"> WftError </a>
@@ -742,7 +743,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/CityResponse">CityResponse</a>
+                          <a class="json-schema-ref" href="#/definitions/DateTimeResponse">DateTimeResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -786,21 +787,7 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: {
-    <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;deleted&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
-    <span class="hljs-attr">&quot;elevationMeters&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
-    <span class="hljs-attr">&quot;location&quot;</span>: {
-      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
-      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>
-    },
-    <span class="hljs-attr">&quot;population&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
-    <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-  },
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
       <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -1138,7 +1125,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/CityResponse">CityResponse</a>
+                          <a class="json-schema-ref" href="#/definitions/TimeResponse">TimeResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1182,21 +1169,7 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: {
-    <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;deleted&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
-    <span class="hljs-attr">&quot;elevationMeters&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
-    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
-    <span class="hljs-attr">&quot;location&quot;</span>: {
-      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
-      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>
-    },
-    <span class="hljs-attr">&quot;population&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
-    <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-    <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-  },
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
       <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -2635,7 +2608,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/TimeZoneDateTimeResponse">TimeZoneDateTimeResponse</a>
+                          <a class="json-schema-ref" href="#/definitions/DateTimeResponse">DateTimeResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2679,7 +2652,7 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
   <span class="hljs-attr">&quot;errors&quot;</span>: [
     {
       <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
@@ -2755,7 +2728,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/definitions/TimeZoneDateTimeResponse">TimeZoneDateTimeResponse</a>
+                          <a class="json-schema-ref" href="#/definitions/TimeResponse">TimeResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3543,6 +3516,55 @@
               </div>
             </div>
           </div>
+          <div id="definition-DateTimeResponse" class="definition panel" data-traverse-target="definition-DateTimeResponse">
+            <h2 class="panel-title">
+              <a name="/definitions/DateTimeResponse"></a>DateTimeResponse: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="data">
+                      <span class="json-property-name">data:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-format">(date-time)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="errors">
+                      <span class="json-property-name">errors:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/WftError">WftError</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ]
+}
+</code></pre>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
           <div id="definition-GeoLocation" class="definition panel" data-traverse-target="definition-GeoLocation">
             <h2 class="panel-title">
               <a name="/definitions/GeoLocation"></a>GeoLocation: object
@@ -4086,9 +4108,9 @@
               </div>
             </div>
           </div>
-          <div id="definition-TimeZoneDateTimeResponse" class="definition panel" data-traverse-target="definition-TimeZoneDateTimeResponse">
+          <div id="definition-TimeResponse" class="definition panel" data-traverse-target="definition-TimeResponse">
             <h2 class="panel-title">
-              <a name="/definitions/TimeZoneDateTimeResponse"></a>TimeZoneDateTimeResponse: object
+              <a name="/definitions/TimeResponse"></a>TimeResponse: object
               <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
