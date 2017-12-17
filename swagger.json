@@ -46,7 +46,7 @@
                     "Geo"
                 ],
                 "summary": "Find cities",
-                "description": "Get cities, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.) If countryCode is specified, the country info will be omitted in the response.",
+                "description": "Find cities, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.) If countryCode is specified, the country info will be omitted in the response.",
                 "operationId": "findCitiesUsingGET",
                 "consumes": [
                     "application/json"
