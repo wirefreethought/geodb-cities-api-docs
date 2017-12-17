@@ -853,8 +853,8 @@
                 "tags": [
                     "Locale"
                 ],
-                "summary": "Get available timezones",
-                "description": "Get available timezones",
+                "summary": "Get time-zones",
+                "description": "Get all known time-zones",
                 "operationId": "getTimezonesUsingGET",
                 "consumes": [
                     "application/json"
