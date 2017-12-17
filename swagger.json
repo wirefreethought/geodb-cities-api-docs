@@ -296,13 +296,13 @@
                 }
             }
         },
-"/v1/geo/cities/{cityId}/distance": {
+        "/v1/geo/cities/{cityId}/distance": {
             "get": {
                 "tags": [
                     "Geo"
                 ],
-                "summary": "Get distance to the given city.",
-                "description": "Get distance to city",
+                "summary": "Get city distance",
+                "description": "Get distance to the given city",
                 "operationId": "getCityDistanceUsingGET",
                 "consumes": [
                     "application/json"
