@@ -320,9 +320,9 @@
                         "format": "int32"
                     },
                     {
-                        "name": "toCityId",
+                        "name": "fromCityId",
                         "in": "query",
-                        "description": "Distance to this city",
+                        "description": "Distance from this city",
                         "required": true,
                         "type": "integer",
                         "format": "int32"
