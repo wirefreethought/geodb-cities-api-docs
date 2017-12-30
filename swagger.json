@@ -457,6 +457,13 @@
                 ],
                 "parameters": [
                     {
+                        "name": "namePrefix",
+                        "in": "query",
+                        "description": "Only countries whose names start with this prefix",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "currencyCode",
                         "in": "query",
                         "description": "Only countries supporting this currency",
@@ -563,6 +570,13 @@
                         "in": "path",
                         "description": "An ISO-3166 country code",
                         "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "namePrefix",
+                        "in": "query",
+                        "description": "Only regions whose names start with this prefix",
+                        "required": false,
                         "type": "string"
                     },
                     {
