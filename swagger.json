@@ -85,14 +85,14 @@
                         "format": "int32"
                     },
                     {
-                        "name": "nearLocation",
+                        "name": "location",
                         "in": "query",
                         "description": "Only cities near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD",
                         "required": false,
                         "type": "string"
                     },
                     {
-                        "name": "nearLocationRadius",
+                        "name": "locationRadius",
                         "in": "query",
                         "description": "The location radius within which to find cities",
                         "required": false,
@@ -100,9 +100,9 @@
                         "format": "int32"
                     },
                     {
-                        "name": "nearLocationRadiusUnit",
+                        "name": "distanceUnit",
                         "in": "query",
-                        "description": "The location radius unit of distance: MI | KM",
+                        "description": "The unit of distance: MI | KM",
                         "required": false,
                         "type": "string",
                         "default": "MI"
@@ -139,6 +139,13 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "required": false,
+                        "type": "string"
                     }
                 ],
                 "responses": {
@@ -167,7 +174,7 @@
                 ],
                 "summary": "Find cities near the given city, filtering by optional criteria.",
                 "description": "Get nearby cities",
-                "operationId": "findNearbyCitiesUsingGET",
+                "operationId": "findCitiesNearCityUsingGET",
                 "consumes": [
                     "application/json"
                 ],
@@ -192,7 +199,7 @@
                         "format": "int32"
                     },
                     {
-                        "name": "nearLocationRadius",
+                        "name": "locationRadius",
                         "in": "query",
                         "description": "The location radius within which to find cities",
                         "required": false,
@@ -200,9 +207,9 @@
                         "format": "int32"
                     },
                     {
-                        "name": "nearLocationRadiusUnit",
+                        "name": "distanceUnit",
                         "in": "query",
-                        "description": "The location radius unit of distance: MI | KM",
+                        "description": "The unit of distance: MI | KM",
                         "required": false,
                         "type": "string",
                         "default": "MI"
@@ -232,6 +239,13 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "required": false,
+                        "type": "string"
                     }
                 ],
                 "responses": {
@@ -728,6 +742,119 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = elevation | name | population",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/CitiesResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/v1/geo/locations/{locationId}/nearbyCities": {
+            "get": {
+                "tags": [
+                    "Geo"
+                ],
+                "summary": "Find cities near location",
+                "description": "Find cities near location",
+                "operationId": "findCitiesNearLocationUsingGET",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "locationId",
+                        "in": "path",
+                        "description": "locationId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "minPopulation",
+                        "in": "query",
+                        "description": "Only cities having at least this population",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "namePrefix",
+                        "in": "query",
+                        "description": "Only cities whose names start with this prefix",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "The location radius within which to find cities",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "distanceUnit",
+                        "in": "query",
+                        "description": "The unit of distance: MI | KM",
+                        "required": false,
+                        "type": "string",
+                        "default": "MI"
+                    },
+                    {
+                        "name": "includeDeleted",
+                        "in": "query",
+                        "description": "Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+                        "required": false,
+                        "type": "string",
+                        "default": "NONE"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The maximum number of results to retrieve",
+                        "required": false,
+                        "type": "integer",
+                        "default": 5,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The zero-ary offset index into the results",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "required": false,
+                        "type": "string"
                     }
                 ],
                 "responses": {
