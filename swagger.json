@@ -92,7 +92,7 @@
                         "type": "string"
                     },
                     {
-                        "name": "locationRadius",
+                        "name": "radius",
                         "in": "query",
                         "description": "The location radius within which to find cities",
                         "required": false,
