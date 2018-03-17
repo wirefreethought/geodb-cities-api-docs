@@ -172,7 +172,7 @@
                 "tags": [
                     "Geo"
                 ],
-                "summary": "Find cities near the given city",
+                "summary": "Find cities near city",
                 "description": "Find cities near the given origin city, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.) If countryCode is specified, the country info will be omitted in the response.",
                 "operationId": "findCitiesNearCityUsingGET",
                 "consumes": [
