@@ -1642,6 +1642,7 @@
             "enum": [
                 "ACCESS_DENIED",
                 "ENTITY_NOT_FOUND",
+                "INCOMPATIBLE",
                 "PARAM_INVALID",
                 "PARAMS_MUTUALLY_EXCLUSIVE"
             ]
