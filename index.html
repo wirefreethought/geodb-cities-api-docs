@@ -34,6 +34,9 @@
                 <a href="#operation--v1-geo-cities--cityId--nearbyCities-get"> Find cities near city </a>
               </li>
               <li>
+                <a href="#operation--v1-geo-locations--locationId--nearbyCities-get"> Find cities near location </a>
+              </li>
+              <li>
                 <a href="#operation--v1-geo-cities--cityId--get"> Get city details </a>
               </li>
               <li>
@@ -59,9 +62,6 @@
               </li>
               <li>
                 <a href="#operation--v1-geo-countries--countryCode--regions--regionCode--cities-get"> Find country region cities </a>
-              </li>
-              <li>
-                <a href="#operation--v1-geo-locations--locationId--nearbyCities-get"> Find cities near location </a>
               </li>
             </ul>
           </section>
@@ -720,6 +720,308 @@
                       <span class="json-property-format">(int32)</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-default-value" title="Default value">10</span>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">in</div>
+                    <div class="prop-value">query</div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">offset</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The zero-ary offset index into the results</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">type</div>
+                    <div class="prop-value">
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int32)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">0</span>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">in</div>
+                    <div class="prop-value">query</div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">includeDeleted</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">type</div>
+                    <div class="prop-value">
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">NONE</span>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">in</div>
+                    <div class="prop-value">query</div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/CitiesResponse">CitiesResponse</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>OK</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">401 Unauthorized</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Unauthorized</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">403 Forbidden</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Forbidden</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">404 Not Found</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Not Found</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <h5>Response Content-Types:
+                  <span>application/json</span>
+                </h5>
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;distance&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;metadata&quot;</span>: {
+    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-string">&quot;integer (int64)&quot;</span>,
+    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-string">&quot;integer (int64)&quot;</span>
+  }
+}
+</code></pre>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="operation--v1-geo-locations--locationId--nearbyCities-get" class="operation panel" data-traverse-target="operation--v1-geo-locations--locationId--nearbyCities-get">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Geo">Geo</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Find cities near location</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">GET</span>
+                  <span class="operation-path">/v1/geo/locations/{locationId}/nearbyCities</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Find cities near location</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">locationId</div>
+                      <span class="json-property-required"></span>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">type</div>
+                    <div class="prop-value">
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">in</div>
+                    <div class="prop-value">path</div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">minPopulation</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities having at least this population</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">type</div>
+                    <div class="prop-value">
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int32)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">in</div>
+                    <div class="prop-value">query</div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">namePrefix</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities whose names start with this prefix</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">type</div>
+                    <div class="prop-value">
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">in</div>
+                    <div class="prop-value">query</div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">radius</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The location radius within which to find cities</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">type</div>
+                    <div class="prop-value">
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int32)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">in</div>
+                    <div class="prop-value">query</div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">distanceUnit</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The unit of distance: MI | KM</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">type</div>
+                    <div class="prop-value">
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">MI</span>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">in</div>
+                    <div class="prop-value">query</div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">sort</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">type</div>
+                    <div class="prop-value">
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">in</div>
+                    <div class="prop-value">query</div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">limit</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The maximum number of results to retrieve</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-inner">
+                    <div class="prop-name param-label">type</div>
+                    <div class="prop-value">
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int32)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">5</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2191,308 +2493,6 @@
                       <span class="json-property-format">(int32)</span>
                       <span class="json-property-range" title="Value limits"></span>
                       <span class="json-property-default-value" title="Default value">10</span>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">in</div>
-                    <div class="prop-value">query</div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">offset</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The zero-ary offset index into the results</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">type</div>
-                    <div class="prop-value">
-                      <span class="json-property-type">integer</span>
-                      <span class="json-property-format">(int32)</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-default-value" title="Default value">0</span>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">in</div>
-                    <div class="prop-value">query</div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">includeDeleted</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">type</div>
-                    <div class="prop-value">
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-default-value" title="Default value">NONE</span>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">in</div>
-                    <div class="prop-value">query</div>
-                  </div>
-                </section>
-              </div>
-              <div class="doc-examples"></div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-responses">
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">200 OK</div>
-                      <div class="prop-ref">
-                        <span class="">
-                          <a class="json-schema-ref" href="#/definitions/CitiesResponse">CitiesResponse</a>
-                        </span>
-                      </div>
-                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
-                    </div>
-                    <div class="prop-value">
-                      <p>OK</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">401 Unauthorized</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Unauthorized</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">403 Forbidden</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Forbidden</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">404 Not Found</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Not Found</p>
-                    </div>
-                  </div>
-                </section>
-              </div>
-              <div class="doc-examples">
-                <h5>Response Content-Types:
-                  <span>application/json</span>
-                </h5>
-                <section>
-                  <h5>Response Example
-                    <span>(200 OK)</span>
-                  </h5>
-                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;distance&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
-      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
-      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
-      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
-      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ],
-  <span class="hljs-attr">&quot;errors&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ],
-  <span class="hljs-attr">&quot;links&quot;</span>: [
-    {
-      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
-      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
-    }
-  ],
-  <span class="hljs-attr">&quot;metadata&quot;</span>: {
-    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-string">&quot;integer (int64)&quot;</span>,
-    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-string">&quot;integer (int64)&quot;</span>
-  }
-}
-</code></pre>
-                  <!-- </div> -->
-                </section>
-              </div>
-            </div>
-          </div>
-          <div id="operation--v1-geo-locations--locationId--nearbyCities-get" class="operation panel" data-traverse-target="operation--v1-geo-locations--locationId--nearbyCities-get">
-            <!-- <section class="operation-tags row"> -->
-            <!-- <div class="doc-copy"> -->
-            <div class="operation-tags">
-              <a class="label" href="#tag-Geo">Geo</a>
-              <!---->
-            </div>
-            <!-- </div> -->
-            <!-- </section> -->
-            <h2 class="operation-title">
-              <span class="operation-summary">Find cities near location</span>
-            </h2>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-operation-path">
-                  <span class="operation-method">GET</span>
-                  <span class="operation-path">/v1/geo/locations/{locationId}/nearbyCities</span>
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-operation-description">
-                  <p>Find cities near location</p>
-                </section>
-              </div>
-            </div>
-            <div class="doc-row">
-              <div class="doc-copy">
-                <section class="swagger-request-params">
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">locationId</div>
-                      <span class="json-property-required"></span>
-                    </div>
-                    <div class="prop-value">
-                      <p>Only cities near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">type</div>
-                    <div class="prop-value">
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">in</div>
-                    <div class="prop-value">path</div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">minPopulation</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Only cities having at least this population</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">type</div>
-                    <div class="prop-value">
-                      <span class="json-property-type">integer</span>
-                      <span class="json-property-format">(int32)</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">in</div>
-                    <div class="prop-value">query</div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">namePrefix</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Only cities whose names start with this prefix</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">type</div>
-                    <div class="prop-value">
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">in</div>
-                    <div class="prop-value">query</div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">radius</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The location radius within which to find cities</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">type</div>
-                    <div class="prop-value">
-                      <span class="json-property-type">integer</span>
-                      <span class="json-property-format">(int32)</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">in</div>
-                    <div class="prop-value">query</div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">distanceUnit</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The unit of distance: MI | KM</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">type</div>
-                    <div class="prop-value">
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-default-value" title="Default value">MI</span>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">in</div>
-                    <div class="prop-value">query</div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">sort</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">type</div>
-                    <div class="prop-value">
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">in</div>
-                    <div class="prop-value">query</div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">limit</div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The maximum number of results to retrieve</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-inner">
-                    <div class="prop-name param-label">type</div>
-                    <div class="prop-value">
-                      <span class="json-property-type">integer</span>
-                      <span class="json-property-format">(int32)</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-default-value" title="Default value">5</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
