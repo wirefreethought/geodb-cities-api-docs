@@ -31,7 +31,7 @@
                 <a href="#operation--v1-geo-cities-get"> Find cities </a>
               </li>
               <li>
-                <a href="#operation--v1-geo-cities--cityId--nearbyCities-get"> Find cities near the given city, filtering by optional criteria. </a>
+                <a href="#operation--v1-geo-cities--cityId--nearbyCities-get"> Find cities near the given city </a>
               </li>
               <li>
                 <a href="#operation--v1-geo-cities--cityId--get"> Get city details </a>
@@ -404,10 +404,10 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">includeDeleted</div>
+                      <div class="prop-title">sort</div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -415,7 +415,6 @@
                     <div class="prop-value">
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-default-value" title="Default value">NONE</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -457,6 +456,7 @@
                       <span class="json-property-type">integer</span>
                       <span class="json-property-format">(int32)</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">0</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -465,10 +465,10 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">sort</div>
+                      <div class="prop-title">includeDeleted</div>
                     </div>
                     <div class="prop-value">
-                      <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population</p>
+                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -476,6 +476,7 @@
                     <div class="prop-value">
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">NONE</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -584,7 +585,7 @@
             <!-- </div> -->
             <!-- </section> -->
             <h2 class="operation-title">
-              <span class="operation-summary">Find cities near the given city, filtering by optional criteria.</span>
+              <span class="operation-summary">Find cities near the given city</span>
             </h2>
             <div class="doc-row">
               <div class="doc-copy">
@@ -597,7 +598,7 @@
             <div class="doc-row">
               <div class="doc-copy">
                 <section class="swagger-operation-description">
-                  <p>Get nearby cities</p>
+                  <p>Find cities near the given origin city, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.) If countryCode is specified, the country info will be omitted in the response.</p>
                 </section>
               </div>
             </div>
@@ -687,10 +688,10 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">includeDeleted</div>
+                      <div class="prop-title">sort</div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -698,7 +699,6 @@
                     <div class="prop-value">
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-default-value" title="Default value">NONE</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -740,6 +740,7 @@
                       <span class="json-property-type">integer</span>
                       <span class="json-property-format">(int32)</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">0</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -748,10 +749,10 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">sort</div>
+                      <div class="prop-title">includeDeleted</div>
                     </div>
                     <div class="prop-value">
-                      <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population</p>
+                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -759,6 +760,7 @@
                     <div class="prop-value">
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">NONE</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -1500,6 +1502,7 @@
                       <span class="json-property-type">integer</span>
                       <span class="json-property-format">(int32)</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">0</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -1821,6 +1824,7 @@
                       <span class="json-property-type">integer</span>
                       <span class="json-property-format">(int32)</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">0</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2155,10 +2159,10 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">includeDeleted</div>
+                      <div class="prop-title">sort</div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = elevation | name | population</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2166,7 +2170,6 @@
                     <div class="prop-value">
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-default-value" title="Default value">NONE</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2208,6 +2211,7 @@
                       <span class="json-property-type">integer</span>
                       <span class="json-property-format">(int32)</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">0</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2216,10 +2220,10 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">sort</div>
+                      <div class="prop-title">includeDeleted</div>
                     </div>
                     <div class="prop-value">
-                      <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = elevation | name | population</p>
+                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2227,6 +2231,7 @@
                     <div class="prop-value">
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">NONE</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2361,7 +2366,7 @@
                       <span class="json-property-required"></span>
                     </div>
                     <div class="prop-value">
-                      <p>locationId</p>
+                      <p>Only cities near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2456,10 +2461,10 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">includeDeleted</div>
+                      <div class="prop-title">sort</div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2467,7 +2472,6 @@
                     <div class="prop-value">
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
-                      <span class="json-property-default-value" title="Default value">NONE</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2509,6 +2513,7 @@
                       <span class="json-property-type">integer</span>
                       <span class="json-property-format">(int32)</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">0</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2517,10 +2522,10 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">sort</div>
+                      <div class="prop-title">includeDeleted</div>
                     </div>
                     <div class="prop-value">
-                      <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population</p>
+                      <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2528,6 +2533,7 @@
                     <div class="prop-value">
                       <span class="json-property-type">string</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">NONE</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2716,6 +2722,7 @@
                       <span class="json-property-type">integer</span>
                       <span class="json-property-format">(int32)</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">0</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -2874,6 +2881,7 @@
                       <span class="json-property-type">integer</span>
                       <span class="json-property-format">(int32)</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">0</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">
@@ -3029,6 +3037,7 @@
                       <span class="json-property-type">integer</span>
                       <span class="json-property-format">(int32)</span>
                       <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-default-value" title="Default value">0</span>
                     </div>
                   </div>
                   <div class="prop-row prop-inner">

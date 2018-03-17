@@ -115,12 +115,11 @@
                         "type": "string"
                     },
                     {
-                        "name": "includeDeleted",
+                        "name": "sort",
                         "in": "query",
-                        "description": "Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
                         "required": false,
-                        "type": "string",
-                        "default": "NONE"
+                        "type": "string"
                     },
                     {
                         "name": "limit",
@@ -141,11 +140,12 @@
                         "format": "int32"
                     },
                     {
-                        "name": "sort",
+                        "name": "includeDeleted",
                         "in": "query",
-                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "description": "Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
                         "required": false,
-                        "type": "string"
+                        "type": "string",
+                        "default": "NONE"
                     }
                 ],
                 "responses": {
@@ -172,8 +172,8 @@
                 "tags": [
                     "Geo"
                 ],
-                "summary": "Find cities near the given city, filtering by optional criteria.",
-                "description": "Get nearby cities",
+                "summary": "Find cities near the given city",
+                "description": "Find cities near the given origin city, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.) If countryCode is specified, the country info will be omitted in the response.",
                 "operationId": "findCitiesNearCityUsingGET",
                 "consumes": [
                     "application/json"
@@ -215,12 +215,11 @@
                         "default": "MI"
                     },
                     {
-                        "name": "includeDeleted",
+                        "name": "sort",
                         "in": "query",
-                        "description": "Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
                         "required": false,
-                        "type": "string",
-                        "default": "NONE"
+                        "type": "string"
                     },
                     {
                         "name": "limit",
@@ -241,11 +240,12 @@
                         "format": "int32"
                     },
                     {
-                        "name": "sort",
+                        "name": "includeDeleted",
                         "in": "query",
-                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "description": "Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
                         "required": false,
-                        "type": "string"
+                        "type": "string",
+                        "default": "NONE"
                     }
                 ],
                 "responses": {
@@ -718,12 +718,11 @@
                         "format": "int32"
                     },
                     {
-                        "name": "includeDeleted",
+                        "name": "sort",
                         "in": "query",
-                        "description": "Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = elevation | name | population",
                         "required": false,
-                        "type": "string",
-                        "default": "NONE"
+                        "type": "string"
                     },
                     {
                         "name": "limit",
@@ -744,11 +743,12 @@
                         "format": "int32"
                     },
                     {
-                        "name": "sort",
+                        "name": "includeDeleted",
                         "in": "query",
-                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = elevation | name | population",
+                        "description": "Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
                         "required": false,
-                        "type": "string"
+                        "type": "string",
+                        "default": "NONE"
                     }
                 ],
                 "responses": {
@@ -788,7 +788,7 @@
                     {
                         "name": "locationId",
                         "in": "path",
-                        "description": "locationId",
+                        "description": "Only cities near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD",
                         "required": true,
                         "type": "string"
                     },
@@ -824,12 +824,11 @@
                         "default": "MI"
                     },
                     {
-                        "name": "includeDeleted",
+                        "name": "sort",
                         "in": "query",
-                        "description": "Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
                         "required": false,
-                        "type": "string",
-                        "default": "NONE"
+                        "type": "string"
                     },
                     {
                         "name": "limit",
@@ -850,11 +849,12 @@
                         "format": "int32"
                     },
                     {
-                        "name": "sort",
+                        "name": "includeDeleted",
                         "in": "query",
-                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "description": "Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
                         "required": false,
-                        "type": "string"
+                        "type": "string",
+                        "default": "NONE"
                     }
                 ],
                 "responses": {
