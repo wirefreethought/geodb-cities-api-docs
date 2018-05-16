@@ -1063,7 +1063,7 @@
                 "tags": [
                     "Locale"
                 ],
-                "summary": "Get supported languages",
+                "summary": "Get languages",
                 "description": "Get all supported languages",
                 "operationId": "getLanguagesUsingGET",
                 "produces": [
