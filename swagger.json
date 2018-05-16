@@ -2,8 +2,8 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "title": "Geo DB API",
-        "description": "This developer-centric REST API focuses on getting global city and region data. Easily obtain country, region, and city data for use in your apps! <ul><li>Filter cities by name prefix, country, location, time-zone, and even minimum population.<\/li><li>Sort cities by name, country code, elevation, and population - or any combination of these.<\/li> <li>Get all country regions.<\/li> <li>Get all cities in a given region.<\/li> <li>Developer-friendly RESTful API adheres to industry best-practices, including HATEOAS-style links to facilitate paging results.<\/li> <li>Backed by cloud-based load-balanced infrastructure for resiliency and performance!<\/li> <li>Data is periodically refreshed from GeoNames.org.<\/li><\/ul><p>Notes:<ul><li>All endpoints implicitly support JSONP-style invocation via an optional <tt>callback<\/tt> param.<\/li><li>Since the database is periodically updated, this may <strong>very rarely<\/strong> result in certain cities being marked deleted (e.g., duplicates removed). By default, endpoints returning city data will exclude cities marked deleted. However, in the unlikely event that this occurs while your app is paging through a set of affected results - and you care about the paged results suddenly changing underneath - specify <tt>includeDeleted=SINCE_YESTERDAY<\/tt> (or <tt>SINCE_LAST_WEEK<\/tt> if you're really paranoid!).<\/li><\/ul><hr/><h3>Useful Resources<\/h3><ul><li>SDKs<ul><li><a href='https://www.npmjs.com/package/wft-geodb-angular-client'>Angular<\/a>, <a href='https://github.com/wirefreethought/geo-db-sample-angular-app'>Sample App<\/a><\/li><li><a href='https://github.com/wirefreethought/geo-db-java-client'>Java<\/a><\/li><li><a href='https://www.npmjs.com/package/wft-geodb-js-client'>JavaScript<\/a><\/li><\/ul><li><a href='swagger.json'>Swagger Docs<\/a><\/li><li><a href='http://creativecommons.org/licenses/by/3.0/'>Usage License<\/a><\/i><\/li><\/ul>",
+        "title": "GeoDB API",
+        "description": "The GeoDB API focuses on getting global city and region data. Easily obtain country, region, and city data for use in your apps! <ul><li>Filter cities by name prefix, country, location, time-zone, and even minimum population.<\/li><li>Sort cities by name, country code, elevation, and population - or any combination of these.<\/li> <li>Get all country regions.<\/li> <li>Get all cities in a given region.<\/li><li>Display results in multiple languages (currently, English, French, German, Russian, and Spanish).</li> <li>RESTful API adheres to industry best-practices, including HATEOAS-style links to facilitate paging results.<\/li> <li>Backed by cloud-based load-balanced infrastructure for resiliency and performance!<\/li> <li>Data is periodically refreshed from GeoNames and WikiData.<\/li><\/ul><p>Notes:<ul><li>All endpoints implicitly support JSONP-style invocation via an optional <tt>callback<\/tt> param.<\/li><li>Since the database is periodically updated, this may <strong>very rarely<\/strong> result in certain cities being marked deleted (e.g., duplicates removed). By default, endpoints returning city data will exclude cities marked deleted. However, in the unlikely event that this occurs while your app is paging through a set of affected results - and you care about the paged results suddenly changing underneath - specify <tt>includeDeleted=SINCE_YESTERDAY<\/tt> (or <tt>SINCE_LAST_WEEK<\/tt> if you're really paranoid!).<\/li><\/ul><hr/><h3>Useful Resources<\/h3><ul><li>SDKs<ul><li><a href='https://www.npmjs.com/package/wft-geodb-angular-client'>Angular<\/a>, <a href='https://github.com/wirefreethought/geo-db-sample-angular-app'>Sample App<\/a><\/li><li><a href='https://github.com/wirefreethought/geo-db-java-client'>Java<\/a><\/li><li><a href='https://www.npmjs.com/package/wft-geodb-js-client'>JavaScript<\/a><\/li><\/ul><li><a href='swagger.json'>Swagger Docs<\/a><\/li><li><a href='http://creativecommons.org/licenses/by/3.0/'>Usage License<\/a><\/i><\/li><\/ul>",
         "license": {
             "name": "Creative Commons Attribution 3.0",
             "url": "http://creativecommons.org/licenses/by/3.0/"
@@ -46,7 +46,7 @@
                     "Geo"
                 ],
                 "summary": "Find cities",
-                "description": "Find cities, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.) If countryCode is specified, the country info will be omitted in the response.",
+                "description": "Find cities, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.)",
                 "operationId": "findCitiesUsingGET",
                 "consumes": [
                     "application/json"
@@ -58,21 +58,21 @@
                     {
                         "name": "namePrefix",
                         "in": "query",
-                        "description": "Only cities whose names start with this prefix",
+                        "description": "Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
                         "required": false,
                         "type": "string"
                     },
                     {
-                        "name": "countryCodes",
+                        "name": "countryIds",
                         "in": "query",
-                        "description": "Only cities in these countries (comma-delimited country codes)",
+                        "description": "Only cities in these countries (comma-delimited country codes or WikiData ids)",
                         "required": false,
                         "type": "string"
                     },
                     {
-                        "name": "excludedCountryCodes",
+                        "name": "excludedCountryIds",
                         "in": "query",
-                        "description": "Only cities NOT in these countries (comma-delimited country codes)",
+                        "description": "Only cities NOT in these countries (comma-delimited country codes or WikiData ids)",
                         "required": false,
                         "type": "string"
                     },
@@ -115,9 +115,17 @@
                         "type": "string"
                     },
                     {
-                        "name": "sort",
+                        "name": "asciiMode",
                         "in": "query",
-                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "description": "Display results using ASCII characters",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "Display results in this language",
                         "required": false,
                         "type": "string"
                     },
@@ -138,6 +146,13 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "required": false,
+                        "type": "string"
                     },
                     {
                         "name": "includeDeleted",
@@ -185,10 +200,9 @@
                     {
                         "name": "cityId",
                         "in": "path",
-                        "description": "cityId",
+                        "description": "The city id (either native 'id' or 'wikiDataId')",
                         "required": true,
-                        "type": "integer",
-                        "format": "int32"
+                        "type": "string"
                     },
                     {
                         "name": "minPopulation",
@@ -215,9 +229,17 @@
                         "default": "MI"
                     },
                     {
-                        "name": "sort",
+                        "name": "asciiMode",
                         "in": "query",
-                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "description": "Display results using ASCII characters",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "Display results in this language",
                         "required": false,
                         "type": "string"
                     },
@@ -238,6 +260,13 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "required": false,
+                        "type": "string"
                     },
                     {
                         "name": "includeDeleted",
@@ -298,13 +327,6 @@
                         "format": "int32"
                     },
                     {
-                        "name": "namePrefix",
-                        "in": "query",
-                        "description": "Only cities whose names start with this prefix",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
                         "name": "radius",
                         "in": "query",
                         "description": "The location radius within which to find cities",
@@ -321,9 +343,17 @@
                         "default": "MI"
                     },
                     {
-                        "name": "sort",
+                        "name": "asciiMode",
                         "in": "query",
-                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "description": "Display results using ASCII characters",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "Display results in this language",
                         "required": false,
                         "type": "string"
                     },
@@ -344,6 +374,13 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population",
+                        "required": false,
+                        "type": "string"
                     },
                     {
                         "name": "includeDeleted",
@@ -391,10 +428,24 @@
                     {
                         "name": "cityId",
                         "in": "path",
-                        "description": "The city id",
+                        "description": "The city id (either native 'id' or 'wikiDataId')",
                         "required": true,
-                        "type": "integer",
-                        "format": "int32"
+                        "type": "string"
+                    },
+                    {
+                        "name": "asciiMode",
+                        "in": "query",
+                        "description": "Display results using ASCII characters",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "Display results in this language",
+                        "required": false,
+                        "type": "string"
                     }
                 ],
                 "responses": {
@@ -434,18 +485,16 @@
                     {
                         "name": "cityId",
                         "in": "path",
-                        "description": "cityId",
+                        "description": "The city id (either native 'id' or 'wikiDataId')",
                         "required": true,
-                        "type": "integer",
-                        "format": "int32"
+                        "type": "string"
                     },
                     {
                         "name": "fromCityId",
                         "in": "query",
                         "description": "Distance from this city",
                         "required": true,
-                        "type": "integer",
-                        "format": "int32"
+                        "type": "string"
                     },
                     {
                         "name": "distanceUnit",
@@ -493,10 +542,9 @@
                     {
                         "name": "cityId",
                         "in": "path",
-                        "description": "cityId",
+                        "description": "The city id (either native 'id' or 'wikiDataId')",
                         "required": true,
-                        "type": "integer",
-                        "format": "int32"
+                        "type": "string"
                     }
                 ],
                 "responses": {
@@ -536,10 +584,9 @@
                     {
                         "name": "cityId",
                         "in": "path",
-                        "description": "cityId",
+                        "description": "The city id (either native 'id' or 'wikiDataId')",
                         "required": true,
-                        "type": "integer",
-                        "format": "int32"
+                        "type": "string"
                     }
                 ],
                 "responses": {
@@ -579,7 +626,7 @@
                     {
                         "name": "namePrefix",
                         "in": "query",
-                        "description": "Only countries whose names start with this prefix",
+                        "description": "Only countries whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
                         "required": false,
                         "type": "string"
                     },
@@ -587,6 +634,21 @@
                         "name": "currencyCode",
                         "in": "query",
                         "description": "Only countries supporting this currency",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asciiMode",
+                        "in": "query",
+                        "description": "Display results using ASCII characters",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "Display results in this language",
                         "required": false,
                         "type": "string"
                     },
@@ -628,7 +690,7 @@
                 }
             }
         },
-        "/v1/geo/countries/{countryCode}": {
+        "/v1/geo/countries/{countryId}": {
             "get": {
                 "tags": [
                     "Geo"
@@ -644,10 +706,25 @@
                 ],
                 "parameters": [
                     {
-                        "name": "countryCode",
+                        "name": "countryId",
                         "in": "path",
-                        "description": "An ISO-3166 country code",
+                        "description": "An ISO-3166 country code or WikiData id",
                         "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asciiMode",
+                        "in": "query",
+                        "description": "Display results using ASCII characters",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "Display results in this language",
+                        "required": false,
                         "type": "string"
                     }
                 ],
@@ -670,7 +747,7 @@
                 }
             }
         },
-        "/v1/geo/countries/{countryCode}/regions": {
+        "/v1/geo/countries/{countryId}/regions": {
             "get": {
                 "tags": [
                     "Geo"
@@ -686,16 +763,31 @@
                 ],
                 "parameters": [
                     {
-                        "name": "countryCode",
+                        "name": "countryId",
                         "in": "path",
-                        "description": "An ISO-3166 country code",
+                        "description": "An ISO-3166 country code or WikiData id",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "namePrefix",
                         "in": "query",
-                        "description": "Only regions whose names start with this prefix",
+                        "description": "Only regions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asciiMode",
+                        "in": "query",
+                        "description": "Display results using ASCII characters",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "Display results in this language",
                         "required": false,
                         "type": "string"
                     },
@@ -737,7 +829,7 @@
                 }
             }
         },
-        "/v1/geo/countries/{countryCode}/regions/{regionCode}": {
+        "/v1/geo/countries/{countryId}/regions/{regionCode}": {
             "get": {
                 "tags": [
                     "Geo"
@@ -753,17 +845,32 @@
                 ],
                 "parameters": [
                     {
-                        "name": "countryCode",
+                        "name": "countryId",
                         "in": "path",
-                        "description": "An ISO-3166 country code",
+                        "description": "An ISO-3166 country code or WikiData id",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "regionCode",
                         "in": "path",
-                        "description": "An HASC, ISO-3166, or FIPS region code",
+                        "description": "An ISO-3166 or FIPS region code",
                         "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asciiMode",
+                        "in": "query",
+                        "description": "Display results using ASCII characters",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "Display results in this language",
+                        "required": false,
                         "type": "string"
                     }
                 ],
@@ -786,7 +893,7 @@
                 }
             }
         },
-        "/v1/geo/countries/{countryCode}/regions/{regionCode}/cities": {
+        "/v1/geo/countries/{countryId}/regions/{regionCode}/cities": {
             "get": {
                 "tags": [
                     "Geo"
@@ -802,16 +909,16 @@
                 ],
                 "parameters": [
                     {
-                        "name": "countryCode",
+                        "name": "countryId",
                         "in": "path",
-                        "description": "An ISO-3166 country code",
+                        "description": "An ISO-3166 country code or WikiData id",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "regionCode",
                         "in": "path",
-                        "description": "An HASC, ISO-3166, or FIPS region code",
+                        "description": "An ISO-3166 or FIPS region code",
                         "required": true,
                         "type": "string"
                     },
@@ -824,9 +931,17 @@
                         "format": "int32"
                     },
                     {
-                        "name": "sort",
+                        "name": "asciiMode",
                         "in": "query",
-                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = elevation | name | population",
+                        "description": "Display results using ASCII characters",
+                        "required": false,
+                        "type": "boolean",
+                        "default": false
+                    },
+                    {
+                        "name": "languageCode",
+                        "in": "query",
+                        "description": "Display results in this language",
                         "required": false,
                         "type": "string"
                     },
@@ -847,6 +962,13 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = elevation | name | population",
+                        "required": false,
+                        "type": "string"
                     },
                     {
                         "name": "includeDeleted",
@@ -892,7 +1014,7 @@
                 ],
                 "parameters": [
                     {
-                        "name": "countryCode",
+                        "name": "countryId",
                         "in": "query",
                         "description": "Only currencies supported by this country",
                         "required": false,
@@ -922,6 +1044,56 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/CurrenciesResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/v1/locale/languages": {
+            "get": {
+                "tags": [
+                    "Locale"
+                ],
+                "summary": "Get supported languages",
+                "description": "Get all supported languages",
+                "operationId": "getLanguagesUsingGET",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The maximum number of results to retrieve",
+                        "required": false,
+                        "type": "integer",
+                        "default": 5,
+                        "format": "int32"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The zero-ary offset index into the results",
+                        "required": false,
+                        "type": "integer",
+                        "default": 0,
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/LanguagesResponse"
                         }
                     },
                     "401": {
@@ -1060,7 +1232,7 @@
                     {
                         "name": "zoneId",
                         "in": "path",
-                        "description": "zoneId",
+                        "description": "The time-zone id",
                         "required": true,
                         "type": "string"
                     }
@@ -1102,7 +1274,7 @@
                     {
                         "name": "zoneId",
                         "in": "path",
-                        "description": "zoneId",
+                        "description": "The time-zone id",
                         "required": true,
                         "type": "string"
                     }
@@ -1161,39 +1333,60 @@
             "type": "object",
             "properties": {
                 "city": {
+                    "description": "The city name (varies by languageCode)",
                     "type": "string"
                 },
                 "country": {
+                    "description": "The country name (varies by languageCode)",
                     "type": "string"
                 },
                 "countryCode": {
+                    "description": "The ISO-3166 country code",
                     "type": "string"
                 },
                 "deleted": {
+                    "description": "If this city has been soft-deleted",
                     "type": "boolean"
                 },
                 "elevationMeters": {
+                    "description": "The city elevation (meters) above sea level",
                     "type": "integer",
                     "format": "int32"
                 },
                 "id": {
+                    "description": "The city GeoDB native id",
                     "type": "integer",
                     "format": "int32"
                 },
-                "location": {
-                    "$ref": "#/definitions/GeoLocation"
+                "latitude": {
+                    "description": "The city latittude (-90.0 to 90.0)",
+                    "type": "number",
+                    "format": "double"
+                },
+                "longitude": {
+                    "description": "The city longitude (-180.0 to 180.0)",
+                    "type": "number",
+                    "format": "double"
                 },
                 "population": {
+                    "description": "The city population",
                     "type": "integer",
                     "format": "int32"
                 },
                 "region": {
+                    "description": "The region name (varies by languageCode)",
                     "type": "string"
                 },
                 "regionCode": {
+                    "description": "The ISO or FIPS region code",
                     "type": "string"
                 },
                 "timezone": {
+                    "description": "The city timezone id",
+                    "type": "string"
+                },
+                "wikiDataId": {
+                    "description": "The city WikiData id",
                     "type": "string"
                 }
             }
@@ -1217,35 +1410,47 @@
             "type": "object",
             "properties": {
                 "city": {
+                    "description": "The city name (varies by languageCode)",
                     "type": "string"
                 },
                 "country": {
+                    "description": "The country name (varies by languageCode)",
                     "type": "string"
                 },
                 "countryCode": {
+                    "description": "The ISO-3166 country code",
                     "type": "string"
                 },
                 "distance": {
                     "type": "number",
                     "format": "double",
-                    "description": "Included if the result of a distance query"
+                    "description": "Included if this is the result of a distance query"
                 },
                 "id": {
+                    "description": "The city GeoDB native id",
                     "type": "integer",
                     "format": "int32"
                 },
                 "latitude": {
+                    "description": "The city latittude (-90.0 to 90.0)",
                     "type": "number",
                     "format": "double"
                 },
                 "longitude": {
+                    "description": "The city longitude (-180.0 to 180.0)",
                     "type": "number",
                     "format": "double"
                 },
                 "region": {
+                    "description": "The region name (varies by languageCode)",
                     "type": "string"
                 },
                 "regionCode": {
+                    "description": "The ISO or FIPS region code",
+                    "type": "string"
+                },
+                "wikiDataId": {
+                    "description": "The city WikiData id",
                     "type": "string"
                 }
             }
@@ -1283,13 +1488,22 @@
             "type": "object",
             "properties": {
                 "code": {
+                    "description": "The ISO-3166 country code",
                     "type": "string"
                 },
-                "currencyCode": {
-                    "description": "A ISO-4217 currency code",
-                    "type": "string"
+                "currencyCodes": {
+                    "description": "A list of supported ISO-4217 currency codes",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "name": {
+                    "description": "The country name (varies by languageCode)",
+                    "type": "string"
+                },
+                "wikiDataId": {
+                    "description": "The country WikiData id",
                     "type": "string"
                 }
             }
@@ -1298,18 +1512,32 @@
             "type": "object",
             "properties": {
                 "code": {
+                    "description": "The ISO-3166 country code",
                     "type": "string"
                 },
-                "currencyCode": {
-                    "description": "A ISO-4217 currency code",
+                "currencyCodes": {
+                    "description": "A list of supported ISO-4217 currency codes",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "flagImageUri": {
+                    "description": "The country flag image",
                     "type": "string"
                 },
                 "name": {
+                    "description": "The country name (varies by languageCode)",
                     "type": "string"
                 },
                 "numRegions": {
+                    "description": "The number of regions in this country",
                     "type": "integer",
                     "format": "int32"
+                },
+                "wikiDataId": {
+                    "description": "The country WikiData id",
+                    "type": "string"
                 }
             }
         },
@@ -1377,6 +1605,7 @@
             "type": "object",
             "properties": {
                 "data": {
+                    "description": "The date-time in ISO-6801 format: yyyyMMdd'T'HHmmssZ",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -1392,6 +1621,7 @@
             "type": "object",
             "properties": {
                 "data": {
+                    "description": "The distance in units as set by the distanceUnit param (defaults to miles)",
                     "type": "number",
                     "format": "double"
                 },
@@ -1403,18 +1633,231 @@
                 }
             }
         },
-        "GeoLocation": {
+        "LanguageDescriptor": {
             "type": "object",
             "properties": {
-                "latitude": {
-                    "type": "number",
-                    "format": "double"
+                "code": {
+                    "type": "string",
+                    "enum": [
+                        "undefined",
+                        "aa",
+                        "ab",
+                        "ae",
+                        "af",
+                        "ak",
+                        "am",
+                        "an",
+                        "ar",
+                        "as",
+                        "av",
+                        "ay",
+                        "az",
+                        "ba",
+                        "be",
+                        "bg",
+                        "bh",
+                        "bi",
+                        "bm",
+                        "bn",
+                        "bo",
+                        "br",
+                        "bs",
+                        "ca",
+                        "ce",
+                        "ch",
+                        "co",
+                        "cr",
+                        "cs",
+                        "cu",
+                        "cv",
+                        "cy",
+                        "da",
+                        "de",
+                        "dv",
+                        "dz",
+                        "ee",
+                        "el",
+                        "en",
+                        "eo",
+                        "es",
+                        "et",
+                        "eu",
+                        "fa",
+                        "ff",
+                        "fi",
+                        "fj",
+                        "fo",
+                        "fr",
+                        "fy",
+                        "ga",
+                        "gd",
+                        "gl",
+                        "gn",
+                        "gu",
+                        "gv",
+                        "ha",
+                        "he",
+                        "hi",
+                        "ho",
+                        "hr",
+                        "ht",
+                        "hu",
+                        "hy",
+                        "hz",
+                        "ia",
+                        "id",
+                        "ie",
+                        "ig",
+                        "ii",
+                        "ik",
+                        "io",
+                        "is",
+                        "it",
+                        "iu",
+                        "ja",
+                        "jv",
+                        "ka",
+                        "kg",
+                        "ki",
+                        "kj",
+                        "kk",
+                        "kl",
+                        "km",
+                        "kn",
+                        "ko",
+                        "kr",
+                        "ks",
+                        "ku",
+                        "kv",
+                        "kw",
+                        "ky",
+                        "la",
+                        "lb",
+                        "lg",
+                        "li",
+                        "ln",
+                        "lo",
+                        "lt",
+                        "lu",
+                        "lv",
+                        "mg",
+                        "mh",
+                        "mi",
+                        "mk",
+                        "ml",
+                        "mn",
+                        "mr",
+                        "ms",
+                        "mt",
+                        "my",
+                        "na",
+                        "nb",
+                        "nd",
+                        "ne",
+                        "ng",
+                        "nl",
+                        "nn",
+                        "no",
+                        "nr",
+                        "nv",
+                        "ny",
+                        "oc",
+                        "oj",
+                        "om",
+                        "or",
+                        "os",
+                        "pa",
+                        "pi",
+                        "pl",
+                        "ps",
+                        "pt",
+                        "qu",
+                        "rm",
+                        "rn",
+                        "ro",
+                        "ru",
+                        "rw",
+                        "sa",
+                        "sc",
+                        "sd",
+                        "se",
+                        "sg",
+                        "si",
+                        "sk",
+                        "sl",
+                        "sm",
+                        "sn",
+                        "so",
+                        "sq",
+                        "sr",
+                        "ss",
+                        "st",
+                        "su",
+                        "sv",
+                        "sw",
+                        "ta",
+                        "te",
+                        "tg",
+                        "th",
+                        "ti",
+                        "tk",
+                        "tl",
+                        "tn",
+                        "to",
+                        "tr",
+                        "ts",
+                        "tt",
+                        "tw",
+                        "ty",
+                        "ug",
+                        "uk",
+                        "ur",
+                        "uz",
+                        "ve",
+                        "vi",
+                        "vo",
+                        "wa",
+                        "wo",
+                        "xh",
+                        "yi",
+                        "yo",
+                        "za",
+                        "zh",
+                        "zu"
+                    ]
                 },
-                "longitude": {
-                    "type": "number",
-                    "format": "double"
+                "name": {
+                    "type": "string"
                 }
-            }
+            },
+            "title": "LanguageDescriptor"
+        },
+        "LanguagesResponse": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LanguageDescriptor"
+                    }
+                },
+                "errors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/WftError"
+                    }
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                },
+                "metadata": {
+                    "$ref": "#/definitions/Metadata"
+                }
+            },
+            "title": "LanguagesResponse"
         },
         "Link": {
             "type": "object",
@@ -1431,6 +1874,7 @@
             "type": "object",
             "properties": {
                 "code": {
+                    "description": "The locale code",
                     "type": "string"
                 }
             }
@@ -1468,10 +1912,12 @@
             "type": "object",
             "properties": {
                 "currentOffset": {
+                    "description": "The zero-ary offset into the results (0 is the first result)",
                     "type": "integer",
                     "format": "int64"
                 },
                 "totalCount": {
+                    "description": "The total number of results across pages",
                     "type": "integer",
                     "format": "int64"
                 }
@@ -1481,6 +1927,7 @@
             "type": "object",
             "properties": {
                 "capital": {
+                    "description": "The region's capital city (varies by languageCode)",
                     "type": "string"
                 },
                 "countryCode": {
@@ -1488,21 +1935,25 @@
                     "type": "string"
                 },
                 "fipsCode": {
-                    "type": "string"
-                },
-                "hascCode": {
+                    "description": "The FIPS 10-4 region code",
                     "type": "string"
                 },
                 "isoCode": {
+                    "description": "The ISO region code",
                     "type": "string"
                 },
                 "name": {
-                    "description": "The well-known internationally recognized name for this region",
+                    "description": "The region name (varies by languageCode)",
                     "type": "string"
                 },
                 "numCities": {
+                    "description": "The number of cities in this region",
                     "type": "integer",
                     "format": "int32"
+                },
+                "wikiDataId": {
+                    "description": "The region WikiData id",
+                    "type": "string"
                 }
             }
         },
@@ -1529,15 +1980,19 @@
                     "type": "string"
                 },
                 "fipsCode": {
-                    "type": "string"
-                },
-                "hascCode": {
+                    "description": "The FIPS 10-4 region code",
                     "type": "string"
                 },
                 "isoCode": {
+                    "description": "The ISO region code",
                     "type": "string"
                 },
                 "name": {
+                    "description": "The region name (varies by languageCode)",
+                    "type": "string"
+                },
+                "wikiDataId": {
+                    "description": "The region WikiData id",
                     "type": "string"
                 }
             }
@@ -1575,6 +2030,7 @@
             "type": "object",
             "properties": {
                 "data": {
+                    "description": "The time in ISO-8601 format: HHmmss.SSSZ",
                     "type": "string"
                 },
                 "errors": {
@@ -1589,12 +2045,15 @@
             "type": "object",
             "properties": {
                 "id": {
+                    "description": "The time-zone id",
                     "type": "string"
                 },
                 "name": {
+                    "description": "The time-zone name",
                     "type": "string"
                 },
                 "rawUtcOffsetHours": {
+                    "description": "The number of hours this time-zone is offset from UTC",
                     "type": "integer",
                     "format": "int32"
                 }
