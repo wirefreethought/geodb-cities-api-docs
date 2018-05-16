@@ -46,7 +46,7 @@
                     "Geo"
                 ],
                 "summary": "Find cities",
-                "description": "Find cities, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.)",
+                "description": "Find cities, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
                 "operationId": "findCitiesUsingGET",
                 "consumes": [
                     "application/json"
@@ -188,7 +188,7 @@
                     "Geo"
                 ],
                 "summary": "Find cities near city",
-                "description": "Find cities near the given origin city, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.)",
+                "description": "Find cities near the given origin city, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
                 "operationId": "findCitiesNearCityUsingGET",
                 "consumes": [
                     "application/json"
@@ -302,7 +302,7 @@
                     "Geo"
                 ],
                 "summary": "Find cities near location",
-                "description": "Find cities near the given location, filtering by optional criteria. If no criteria are set, you will get back all known cities with a population of at least 1000. (Currently over 115,000.)",
+                "description": "Find cities near the given location, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
                 "operationId": "findCitiesNearLocationUsingGET",
                 "consumes": [
                     "application/json"
