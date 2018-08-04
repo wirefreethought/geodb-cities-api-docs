@@ -142,8 +142,6 @@
                   </ul>
                   <p>Notes:
                     <ul>
-                      <li>All endpoints implicitly support JSONP-style invocation via an optional
-                        <tt>callback</tt> param.</li>
                       <li>Since the database is periodically updated, this may
                         <strong>very rarely</strong> result in certain cities being marked deleted (e.g., duplicates removed). By default, endpoints returning city data will exclude cities marked deleted. However, in the unlikely event that this occurs while your app is paging through a set of affected results - and you care about the paged results suddenly changing underneath - specify
                         <tt>includeDeleted=SINCE_YESTERDAY</tt> (or
@@ -263,12 +261,13 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">namePrefix</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">namePrefix:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
@@ -276,12 +275,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">countryIds</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">countryIds:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only cities in these countries (comma-delimited country codes or WikiData ids)</p>
@@ -289,12 +289,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">excludedCountryIds</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">excludedCountryIds:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only cities NOT in these countries (comma-delimited country codes or WikiData ids)</p>
@@ -302,13 +303,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">minPopulation</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">minPopulation:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only cities having at least this population</p>
@@ -316,12 +318,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">location</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">location:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only cities near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD</p>
@@ -329,13 +332,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">radius</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">radius:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The location radius within which to find cities</p>
@@ -343,13 +347,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">distanceUnit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">MI</span>
+                      <div class="prop-title">distanceUnit:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">MI</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The unit of distance: MI | KM</p>
@@ -357,12 +362,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">timeZoneIds</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">timeZoneIds:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only cities in these time-zones</p>
@@ -370,13 +376,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">asciiMode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">boolean</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">false</span>
+                      <div class="prop-title">asciiMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">false</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
@@ -384,12 +391,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">languageCode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">languageCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results in this language</p>
@@ -397,14 +405,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">limit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">10</span>
+                      <div class="prop-title">limit:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">10</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The maximum number of results to retrieve</p>
@@ -412,14 +421,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">offset</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">0</span>
+                      <div class="prop-title">offset:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">0</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
@@ -427,12 +437,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">sort</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">sort:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population</p>
@@ -440,13 +451,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">includeDeleted</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">NONE</span>
+                      <div class="prop-title">includeDeleted:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">NONE</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
@@ -577,13 +589,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">cityId</div>
+                      <div class="prop-title">cityId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>The city id (either native &#39;id&#39; or &#39;wikiDataId&#39;)</p>
@@ -591,13 +604,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">minPopulation</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">minPopulation:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only cities having at least this population</p>
@@ -605,13 +619,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">radius</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">radius:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The location radius within which to find cities</p>
@@ -619,13 +634,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">distanceUnit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">MI</span>
+                      <div class="prop-title">distanceUnit:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">MI</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The unit of distance: MI | KM</p>
@@ -633,13 +649,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">asciiMode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">boolean</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">false</span>
+                      <div class="prop-title">asciiMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">false</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
@@ -647,12 +664,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">languageCode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">languageCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results in this language</p>
@@ -660,14 +678,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">limit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">10</span>
+                      <div class="prop-title">limit:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">10</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The maximum number of results to retrieve</p>
@@ -675,14 +694,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">offset</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">0</span>
+                      <div class="prop-title">offset:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">0</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
@@ -690,12 +710,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">sort</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">sort:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population</p>
@@ -703,13 +724,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">includeDeleted</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">NONE</span>
+                      <div class="prop-title">includeDeleted:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">NONE</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
@@ -840,13 +862,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">locationId</div>
+                      <div class="prop-title">locationId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>Only cities near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD</p>
@@ -854,13 +877,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">minPopulation</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">minPopulation:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only cities having at least this population</p>
@@ -868,13 +892,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">radius</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">radius:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The location radius within which to find cities</p>
@@ -882,13 +907,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">distanceUnit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">MI</span>
+                      <div class="prop-title">distanceUnit:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">MI</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The unit of distance: MI | KM</p>
@@ -896,13 +922,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">asciiMode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">boolean</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">false</span>
+                      <div class="prop-title">asciiMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">false</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
@@ -910,12 +937,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">languageCode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">languageCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results in this language</p>
@@ -923,14 +951,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">limit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">5</span>
+                      <div class="prop-title">limit:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">5</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The maximum number of results to retrieve</p>
@@ -938,14 +967,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">offset</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">0</span>
+                      <div class="prop-title">offset:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">0</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
@@ -953,12 +983,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">sort</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">sort:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = countryCode | elevation | name | population</p>
@@ -966,13 +997,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">includeDeleted</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">NONE</span>
+                      <div class="prop-title">includeDeleted:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">NONE</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
@@ -1103,13 +1135,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">cityId</div>
+                      <div class="prop-title">cityId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>The city id (either native &#39;id&#39; or &#39;wikiDataId&#39;)</p>
@@ -1117,13 +1150,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">asciiMode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">boolean</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">false</span>
+                      <div class="prop-title">asciiMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">false</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
@@ -1131,12 +1165,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">languageCode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">languageCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results in this language</p>
@@ -1258,13 +1293,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">cityId</div>
+                      <div class="prop-title">cityId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>The city id (either native &#39;id&#39; or &#39;wikiDataId&#39;)</p>
@@ -1272,13 +1308,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">fromCityId</div>
+                      <div class="prop-title">fromCityId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>Distance from this city</p>
@@ -1286,13 +1323,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">distanceUnit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">MI</span>
+                      <div class="prop-title">distanceUnit:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">MI</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The unit of distance: MI | KM</p>
@@ -1400,13 +1438,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">cityId</div>
+                      <div class="prop-title">cityId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>The city id (either native &#39;id&#39; or &#39;wikiDataId&#39;)</p>
@@ -1514,13 +1553,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">cityId</div>
+                      <div class="prop-title">cityId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>The city id (either native &#39;id&#39; or &#39;wikiDataId&#39;)</p>
@@ -1628,12 +1668,13 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">namePrefix</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">namePrefix:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only countries whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
@@ -1641,12 +1682,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">currencyCode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">currencyCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only countries supporting this currency</p>
@@ -1654,13 +1696,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">asciiMode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">boolean</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">false</span>
+                      <div class="prop-title">asciiMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">false</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
@@ -1668,12 +1711,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">languageCode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">languageCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results in this language</p>
@@ -1681,14 +1725,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">limit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">10</span>
+                      <div class="prop-title">limit:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">10</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The maximum number of results to retrieve</p>
@@ -1696,14 +1741,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">offset</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">0</span>
+                      <div class="prop-title">offset:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">0</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
@@ -1830,13 +1876,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">countryId</div>
+                      <div class="prop-title">countryId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>An ISO-3166 country code or WikiData id</p>
@@ -1844,13 +1891,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">asciiMode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">boolean</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">false</span>
+                      <div class="prop-title">asciiMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">false</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
@@ -1858,12 +1906,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">languageCode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">languageCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results in this language</p>
@@ -1980,13 +2029,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">countryId</div>
+                      <div class="prop-title">countryId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>An ISO-3166 country code or WikiData id</p>
@@ -1994,12 +2044,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">namePrefix</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">namePrefix:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only regions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
@@ -2007,13 +2058,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">asciiMode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">boolean</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">false</span>
+                      <div class="prop-title">asciiMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">false</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
@@ -2021,12 +2073,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">languageCode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">languageCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results in this language</p>
@@ -2034,14 +2087,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">limit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">10</span>
+                      <div class="prop-title">limit:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">10</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The maximum number of results to retrieve</p>
@@ -2049,14 +2103,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">offset</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">0</span>
+                      <div class="prop-title">offset:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">0</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
@@ -2182,13 +2237,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">countryId</div>
+                      <div class="prop-title">countryId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>An ISO-3166 country code or WikiData id</p>
@@ -2196,13 +2252,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">regionCode</div>
+                      <div class="prop-title">regionCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>An ISO-3166 or FIPS region code</p>
@@ -2210,13 +2267,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">asciiMode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">boolean</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">false</span>
+                      <div class="prop-title">asciiMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">false</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
@@ -2224,12 +2282,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">languageCode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">languageCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results in this language</p>
@@ -2345,13 +2404,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">countryId</div>
+                      <div class="prop-title">countryId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>An ISO-3166 country code or WikiData id</p>
@@ -2359,13 +2419,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">regionCode</div>
+                      <div class="prop-title">regionCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>An ISO-3166 or FIPS region code</p>
@@ -2373,13 +2434,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">minPopulation</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">minPopulation:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only cities having at least this population</p>
@@ -2387,13 +2449,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">asciiMode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">boolean</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">false</span>
+                      <div class="prop-title">asciiMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">false</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
@@ -2401,12 +2464,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">languageCode</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">languageCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Display results in this language</p>
@@ -2414,14 +2478,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">limit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">10</span>
+                      <div class="prop-title">limit:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">10</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The maximum number of results to retrieve</p>
@@ -2429,14 +2494,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">offset</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">0</span>
+                      <div class="prop-title">offset:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">0</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
@@ -2444,12 +2510,13 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">sort</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">sort:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>How to sort the results. Format: ±SORT_FIELD,±SORT_FIELD where SORT_FIELD = elevation | name | population</p>
@@ -2457,13 +2524,14 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">includeDeleted</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">NONE</span>
+                      <div class="prop-title">includeDeleted:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">NONE</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
@@ -2600,12 +2668,13 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">countryId</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
+                      <div class="prop-title">countryId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>Only currencies supported by this country</p>
@@ -2613,14 +2682,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">limit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">10</span>
+                      <div class="prop-title">limit:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">10</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The maximum number of results to retrieve</p>
@@ -2628,14 +2698,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">offset</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">0</span>
+                      <div class="prop-title">offset:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">0</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
@@ -2760,14 +2831,15 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">limit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">5</span>
+                      <div class="prop-title">limit:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">5</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The maximum number of results to retrieve</p>
@@ -2775,14 +2847,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">offset</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">0</span>
+                      <div class="prop-title">offset:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">0</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
@@ -2905,14 +2978,15 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">limit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">10</span>
+                      <div class="prop-title">limit:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">10</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The maximum number of results to retrieve</p>
@@ -2920,14 +2994,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">offset</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">0</span>
+                      <div class="prop-title">offset:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">0</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
@@ -3049,14 +3124,15 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">limit</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">10</span>
+                      <div class="prop-title">limit:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">10</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The maximum number of results to retrieve</p>
@@ -3064,14 +3140,15 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">offset</div>
-                      <div class="prop-subtitle"> in query </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">integer</span>
-                        <span class="json-property-format">(int32)</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                        <span class="json-property-default-value" title="Default value">0</span>
+                      <div class="prop-title">offset:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">0</span>
+                        </span>
                       </div>
+                      <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
@@ -3195,13 +3272,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">zoneId</div>
+                      <div class="prop-title">zoneId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>The time-zone id</p>
@@ -3309,13 +3387,14 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">zoneId</div>
+                      <div class="prop-title">zoneId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
                       <span class="json-property-required"></span>
                       <div class="prop-subtitle"> in path </div>
-                      <div class="prop-subtitle">
-                        <span class="json-property-type">string</span>
-                        <span class="json-property-range" title="Value limits"></span>
-                      </div>
                     </div>
                     <div class="prop-value">
                       <p>The time-zone id</p>
@@ -3395,7 +3474,8 @@
           <div id="definition-CitiesResponse" class="definition panel" data-traverse-target="definition-CitiesResponse">
             <h2 class="panel-title">
               <a name="/definitions/CitiesResponse"></a>CitiesResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -3530,7 +3610,8 @@
           <div id="definition-CityDetails" class="definition panel" data-traverse-target="definition-CityDetails">
             <h2 class="panel-title">
               <a name="/definitions/CityDetails"></a>CityDetails: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -3679,7 +3760,8 @@
           <div id="definition-CityResponse" class="definition panel" data-traverse-target="definition-CityResponse">
             <h2 class="panel-title">
               <a name="/definitions/CityResponse"></a>CityResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -3759,7 +3841,8 @@
           <div id="definition-CitySummary" class="definition panel" data-traverse-target="definition-CitySummary">
             <h2 class="panel-title">
               <a name="/definitions/CitySummary"></a>CitySummary: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -3880,7 +3963,8 @@
           <div id="definition-CountriesResponse" class="definition panel" data-traverse-target="definition-CountriesResponse">
             <h2 class="panel-title">
               <a name="/definitions/CountriesResponse"></a>CountriesResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4011,7 +4095,8 @@
           <div id="definition-CountrySummary" class="definition panel" data-traverse-target="definition-CountrySummary">
             <h2 class="panel-title">
               <a name="/definitions/CountrySummary"></a>CountrySummary: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4083,7 +4168,8 @@
           <div id="definition-CountryDetails" class="definition panel" data-traverse-target="definition-CountryDetails">
             <h2 class="panel-title">
               <a name="/definitions/CountryDetails"></a>CountryDetails: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4174,7 +4260,8 @@
           <div id="definition-CountryResponse" class="definition panel" data-traverse-target="definition-CountryResponse">
             <h2 class="panel-title">
               <a name="/definitions/CountryResponse"></a>CountryResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4249,7 +4336,8 @@
           <div id="definition-CurrenciesResponse" class="definition panel" data-traverse-target="definition-CurrenciesResponse">
             <h2 class="panel-title">
               <a name="/definitions/CurrenciesResponse"></a>CurrenciesResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4378,7 +4466,8 @@
           <div id="definition-CurrencyDescriptor" class="definition panel" data-traverse-target="definition-CurrencyDescriptor">
             <h2 class="panel-title">
               <a name="/definitions/CurrencyDescriptor"></a>CurrencyDescriptor: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4432,7 +4521,8 @@
           <div id="definition-DateTimeResponse" class="definition panel" data-traverse-target="definition-DateTimeResponse">
             <h2 class="panel-title">
               <a name="/definitions/DateTimeResponse"></a>DateTimeResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4495,7 +4585,8 @@
           <div id="definition-DistanceResponse" class="definition panel" data-traverse-target="definition-DistanceResponse">
             <h2 class="panel-title">
               <a name="/definitions/DistanceResponse"></a>DistanceResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4558,7 +4649,8 @@
           <div id="definition-LanguageDescriptor" class="definition panel" data-traverse-target="definition-LanguageDescriptor">
             <h2 class="panel-title">
               <a name="/definitions/LanguageDescriptor"></a>LanguageDescriptor: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4784,7 +4876,8 @@
           <div id="definition-LanguagesResponse" class="definition panel" data-traverse-target="definition-LanguagesResponse">
             <h2 class="panel-title">
               <a name="/definitions/LanguagesResponse"></a>LanguagesResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4902,7 +4995,8 @@
           <div id="definition-Link" class="definition panel" data-traverse-target="definition-Link">
             <h2 class="panel-title">
               <a name="/definitions/Link"></a>Link: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4941,7 +5035,8 @@
           <div id="definition-LocaleDescriptor" class="definition panel" data-traverse-target="definition-LocaleDescriptor">
             <h2 class="panel-title">
               <a name="/definitions/LocaleDescriptor"></a>LocaleDescriptor: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4977,7 +5072,8 @@
           <div id="definition-LocalesResponse" class="definition panel" data-traverse-target="definition-LocalesResponse">
             <h2 class="panel-title">
               <a name="/definitions/LocalesResponse"></a>LocalesResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5103,7 +5199,8 @@
           <div id="definition-Metadata" class="definition panel" data-traverse-target="definition-Metadata">
             <h2 class="panel-title">
               <a name="/definitions/Metadata"></a>Metadata: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5150,7 +5247,8 @@
           <div id="definition-RegionDetails" class="definition panel" data-traverse-target="definition-RegionDetails">
             <h2 class="panel-title">
               <a name="/definitions/RegionDetails"></a>RegionDetails: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5241,7 +5339,8 @@
           <div id="definition-RegionResponse" class="definition panel" data-traverse-target="definition-RegionResponse">
             <h2 class="panel-title">
               <a name="/definitions/RegionResponse"></a>RegionResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5315,7 +5414,8 @@
           <div id="definition-RegionSummary" class="definition panel" data-traverse-target="definition-RegionSummary">
             <h2 class="panel-title">
               <a name="/definitions/RegionSummary"></a>RegionSummary: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5387,7 +5487,8 @@
           <div id="definition-RegionsResponse" class="definition panel" data-traverse-target="definition-RegionsResponse">
             <h2 class="panel-title">
               <a name="/definitions/RegionsResponse"></a>RegionsResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5517,7 +5618,8 @@
           <div id="definition-TimeResponse" class="definition panel" data-traverse-target="definition-TimeResponse">
             <h2 class="panel-title">
               <a name="/definitions/TimeResponse"></a>TimeResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5579,7 +5681,8 @@
           <div id="definition-TimeZoneDescriptor" class="definition panel" data-traverse-target="definition-TimeZoneDescriptor">
             <h2 class="panel-title">
               <a name="/definitions/TimeZoneDescriptor"></a>TimeZoneDescriptor: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5634,7 +5737,8 @@
           <div id="definition-TimeZonesResponse" class="definition panel" data-traverse-target="definition-TimeZonesResponse">
             <h2 class="panel-title">
               <a name="/definitions/TimeZonesResponse"></a>TimeZonesResponse: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5753,7 +5857,8 @@
           <div id="definition-WftError" class="definition panel" data-traverse-target="definition-WftError">
             <h2 class="panel-title">
               <a name="/definitions/WftError"></a>WftError: object
-              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5796,7 +5901,8 @@
           <div id="definition-WftErrorCode" class="definition panel" data-traverse-target="definition-WftErrorCode">
             <h2 class="panel-title">
               <a name="/definitions/WftErrorCode"></a>WftErrorCode: string
-              <!-- <span class="json-property-type"><span class="json-property-type">string</span>  <span class="json-property-enum" title="Possible values">
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">string</span>  <span class="json-property-enum" title="Possible values">
                       <span class="json-property-enum-item">ACCESS_DENIED</span>,
                       <span class="json-property-enum-item">ENTITY_NOT_FOUND</span>,
                       <span class="json-property-enum-item">INCOMPATIBLE</span>,
