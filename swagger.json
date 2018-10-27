@@ -161,6 +161,14 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     }
                 ],
                 "responses": {
@@ -275,6 +283,14 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     }
                 ],
                 "responses": {
@@ -389,6 +405,14 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     }
                 ],
                 "responses": {
@@ -669,6 +693,14 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     }
                 ],
                 "responses": {
@@ -808,6 +840,14 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     }
                 ],
                 "responses": {
@@ -977,6 +1017,14 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     }
                 ],
                 "responses": {
@@ -1037,6 +1085,14 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     }
                 ],
                 "responses": {
@@ -1087,6 +1143,14 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     }
                 ],
                 "responses": {
@@ -1140,6 +1204,14 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     }
                 ],
                 "responses": {
@@ -1193,6 +1265,14 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     }
                 ],
                 "responses": {
