@@ -92,6 +92,7 @@
           <a href="#definition-CityDetails"> CityDetails </a>
           <a href="#definition-CityResponse"> CityResponse </a>
           <a href="#definition-CitySummary"> CitySummary </a>
+          <a href="#definition-CityType"> CityType </a>
           <a href="#definition-CountriesResponse"> CountriesResponse </a>
           <a href="#definition-CountrySummary"> CountrySummary </a>
           <a href="#definition-CountryDetails"> CountryDetails </a>
@@ -546,6 +547,7 @@
       <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
       <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
@@ -834,6 +836,7 @@
       <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
       <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
@@ -1122,6 +1125,7 @@
       <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
       <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
@@ -1291,6 +1295,7 @@
     <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;timezone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
   },
   <span class="hljs-attr">&quot;errors&quot;</span>: [
@@ -2694,6 +2699,7 @@
       <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
       <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
@@ -3624,8 +3630,7 @@
           <div id="definition-CitiesResponse" class="definition panel" data-traverse-target="definition-CitiesResponse">
             <h2 class="panel-title">
               <a name="/definitions/CitiesResponse"></a>CitiesResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -3731,6 +3736,7 @@
       <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
       <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
       <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
     }
   ],
@@ -3760,8 +3766,7 @@
           <div id="definition-CityDetails" class="definition panel" data-traverse-target="definition-CityDetails">
             <h2 class="panel-title">
               <a name="/definitions/CityDetails"></a>CityDetails: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -3872,6 +3877,15 @@
                     <dd>
                       <p>The city timezone id</p>
                     </dd>
+                    <dt data-property-name="type">
+                      <span class="json-property-name">type:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/CityType">CityType</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
                     <dt data-property-name="wikiDataId" class="has-description">
                       <span class="json-property-name">wikiDataId:</span>
                       <span class="json-property-type">string</span>
@@ -3899,6 +3913,7 @@
   <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;timezone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre>
@@ -3910,8 +3925,7 @@
           <div id="definition-CityResponse" class="definition panel" data-traverse-target="definition-CityResponse">
             <h2 class="panel-title">
               <a name="/definitions/CityResponse"></a>CityResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -3973,6 +3987,7 @@
     <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;timezone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
     <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
   },
   <span class="hljs-attr">&quot;errors&quot;</span>: [
@@ -3991,8 +4006,7 @@
           <div id="definition-CitySummary" class="definition panel" data-traverse-target="definition-CitySummary">
             <h2 class="panel-title">
               <a name="/definitions/CitySummary"></a>CitySummary: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4078,6 +4092,15 @@
                     <dd>
                       <p>The ISO or FIPS region code</p>
                     </dd>
+                    <dt data-property-name="type">
+                      <span class="json-property-name">type:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/CityType">CityType</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
                     <dt data-property-name="wikiDataId" class="has-description">
                       <span class="json-property-name">wikiDataId:</span>
                       <span class="json-property-type">string</span>
@@ -4102,6 +4125,7 @@
   <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
   <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
   <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre>
@@ -4110,11 +4134,33 @@
               </div>
             </div>
           </div>
+          <div id="definition-CityType" class="definition panel" data-traverse-target="definition-CityType">
+            <h2 class="panel-title">
+              <a name="/definitions/CityType"></a>CityType: string
+              <!-- <span class="json-property-type"><span class="json-property-type">string</span>  <span class="json-property-enum" title="Possible values">
+                      <span class="json-property-enum-item">ADM2</span>,
+                      <span class="json-property-enum-item">CITY</span>
+                </span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <span class="json-property-type">string</span>
+                <span class="json-property-enum" title="Possible values">
+                  <span class="json-property-enum-item">ADM2</span>,
+                  <span class="json-property-enum-item">CITY</span>
+                </span>
+                <span class="json-property-range" title="Value limits"></span>
+              </div>
+            </div>
+          </div>
           <div id="definition-CountriesResponse" class="definition panel" data-traverse-target="definition-CountriesResponse">
             <h2 class="panel-title">
               <a name="/definitions/CountriesResponse"></a>CountriesResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4245,8 +4291,7 @@
           <div id="definition-CountrySummary" class="definition panel" data-traverse-target="definition-CountrySummary">
             <h2 class="panel-title">
               <a name="/definitions/CountrySummary"></a>CountrySummary: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4318,8 +4363,7 @@
           <div id="definition-CountryDetails" class="definition panel" data-traverse-target="definition-CountryDetails">
             <h2 class="panel-title">
               <a name="/definitions/CountryDetails"></a>CountryDetails: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4410,8 +4454,7 @@
           <div id="definition-CountryResponse" class="definition panel" data-traverse-target="definition-CountryResponse">
             <h2 class="panel-title">
               <a name="/definitions/CountryResponse"></a>CountryResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4486,8 +4529,7 @@
           <div id="definition-CurrenciesResponse" class="definition panel" data-traverse-target="definition-CurrenciesResponse">
             <h2 class="panel-title">
               <a name="/definitions/CurrenciesResponse"></a>CurrenciesResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4616,8 +4658,7 @@
           <div id="definition-CurrencyDescriptor" class="definition panel" data-traverse-target="definition-CurrencyDescriptor">
             <h2 class="panel-title">
               <a name="/definitions/CurrencyDescriptor"></a>CurrencyDescriptor: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4671,8 +4712,7 @@
           <div id="definition-DateTimeResponse" class="definition panel" data-traverse-target="definition-DateTimeResponse">
             <h2 class="panel-title">
               <a name="/definitions/DateTimeResponse"></a>DateTimeResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4735,8 +4775,7 @@
           <div id="definition-DistanceResponse" class="definition panel" data-traverse-target="definition-DistanceResponse">
             <h2 class="panel-title">
               <a name="/definitions/DistanceResponse"></a>DistanceResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -4799,8 +4838,7 @@
           <div id="definition-LanguageDescriptor" class="definition panel" data-traverse-target="definition-LanguageDescriptor">
             <h2 class="panel-title">
               <a name="/definitions/LanguageDescriptor"></a>LanguageDescriptor: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5026,8 +5064,7 @@
           <div id="definition-LanguagesResponse" class="definition panel" data-traverse-target="definition-LanguagesResponse">
             <h2 class="panel-title">
               <a name="/definitions/LanguagesResponse"></a>LanguagesResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5145,8 +5182,7 @@
           <div id="definition-Link" class="definition panel" data-traverse-target="definition-Link">
             <h2 class="panel-title">
               <a name="/definitions/Link"></a>Link: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5185,8 +5221,7 @@
           <div id="definition-LocaleDescriptor" class="definition panel" data-traverse-target="definition-LocaleDescriptor">
             <h2 class="panel-title">
               <a name="/definitions/LocaleDescriptor"></a>LocaleDescriptor: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5222,8 +5257,7 @@
           <div id="definition-LocalesResponse" class="definition panel" data-traverse-target="definition-LocalesResponse">
             <h2 class="panel-title">
               <a name="/definitions/LocalesResponse"></a>LocalesResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5349,8 +5383,7 @@
           <div id="definition-Metadata" class="definition panel" data-traverse-target="definition-Metadata">
             <h2 class="panel-title">
               <a name="/definitions/Metadata"></a>Metadata: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5397,8 +5430,7 @@
           <div id="definition-RegionDetails" class="definition panel" data-traverse-target="definition-RegionDetails">
             <h2 class="panel-title">
               <a name="/definitions/RegionDetails"></a>RegionDetails: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5489,8 +5521,7 @@
           <div id="definition-RegionResponse" class="definition panel" data-traverse-target="definition-RegionResponse">
             <h2 class="panel-title">
               <a name="/definitions/RegionResponse"></a>RegionResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5564,8 +5595,7 @@
           <div id="definition-RegionSummary" class="definition panel" data-traverse-target="definition-RegionSummary">
             <h2 class="panel-title">
               <a name="/definitions/RegionSummary"></a>RegionSummary: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5637,8 +5667,7 @@
           <div id="definition-RegionsResponse" class="definition panel" data-traverse-target="definition-RegionsResponse">
             <h2 class="panel-title">
               <a name="/definitions/RegionsResponse"></a>RegionsResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5768,8 +5797,7 @@
           <div id="definition-TimeResponse" class="definition panel" data-traverse-target="definition-TimeResponse">
             <h2 class="panel-title">
               <a name="/definitions/TimeResponse"></a>TimeResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5831,8 +5859,7 @@
           <div id="definition-TimeZoneDescriptor" class="definition panel" data-traverse-target="definition-TimeZoneDescriptor">
             <h2 class="panel-title">
               <a name="/definitions/TimeZoneDescriptor"></a>TimeZoneDescriptor: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -5887,8 +5914,7 @@
           <div id="definition-TimeZonesResponse" class="definition panel" data-traverse-target="definition-TimeZonesResponse">
             <h2 class="panel-title">
               <a name="/definitions/TimeZonesResponse"></a>TimeZonesResponse: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -6007,8 +6033,7 @@
           <div id="definition-WftError" class="definition panel" data-traverse-target="definition-WftError">
             <h2 class="panel-title">
               <a name="/definitions/WftError"></a>WftError: object
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">object</span>
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
               <span class="json-property-range" title="Value limits"></span>
               
               
@@ -6051,8 +6076,7 @@
           <div id="definition-WftErrorCode" class="definition panel" data-traverse-target="definition-WftErrorCode">
             <h2 class="panel-title">
               <a name="/definitions/WftErrorCode"></a>WftErrorCode: string
-              <!-- <span class="json-property-type">
-              <span class="json-property-type">string</span>  <span class="json-property-enum" title="Possible values">
+              <!-- <span class="json-property-type"><span class="json-property-type">string</span>  <span class="json-property-enum" title="Possible values">
                       <span class="json-property-enum-item">ACCESS_DENIED</span>,
                       <span class="json-property-enum-item">ENTITY_NOT_FOUND</span>,
                       <span class="json-property-enum-item">INCOMPATIBLE</span>,
