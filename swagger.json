@@ -1465,6 +1465,9 @@
                     "description": "The city timezone id",
                     "type": "string"
                 },
+                "type": {
+                    "$ref": "#/definitions/CityType"
+                },
                 "wikiDataId": {
                     "description": "The city WikiData id",
                     "type": "string"
@@ -1529,11 +1532,21 @@
                     "description": "The ISO or FIPS region code",
                     "type": "string"
                 },
+                "type": {
+                    "$ref": "#/definitions/CityType"
+                },
                 "wikiDataId": {
                     "description": "The city WikiData id",
                     "type": "string"
                 }
             }
+        },
+        "CityType": {
+            "type": "string",
+            "enum": [
+                "ADM2",
+                "CITY"
+            ]
         },
         "CountriesResponse": {
             "type": "object",
