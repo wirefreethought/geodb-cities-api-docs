@@ -115,6 +115,13 @@
                         "type": "string"
                     },
                     {
+                        "name": "types",
+                        "in": "query",
+                        "description": "Only cities for these types: CITY | ADM2",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "asciiMode",
                         "in": "query",
                         "description": "Display results using ASCII characters",
@@ -219,6 +226,13 @@
                         "required": false,
                         "type": "integer",
                         "format": "int32"
+                    },
+                    {
+                        "name": "types",
+                        "in": "query",
+                        "description": "Only cities for these types: CITY | ADM2",
+                        "required": false,
+                        "type": "string"
                     },
                     {
                         "name": "radius",
@@ -341,6 +355,13 @@
                         "required": false,
                         "type": "integer",
                         "format": "int32"
+                    },
+                    {
+                        "name": "types",
+                        "in": "query",
+                        "description": "Only cities for these types: CITY | ADM2",
+                        "required": false,
+                        "type": "string"
                     },
                     {
                         "name": "radius",
@@ -969,6 +990,13 @@
                         "required": false,
                         "type": "integer",
                         "format": "int32"
+                    },
+                    {
+                        "name": "types",
+                        "in": "query",
+                        "description": "Only cities for these types: CITY | ADM2",
+                        "required": false,
+                        "type": "string"
                     },
                     {
                         "name": "asciiMode",
