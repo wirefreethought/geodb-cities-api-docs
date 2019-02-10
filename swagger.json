@@ -110,14 +110,14 @@
                     {
                         "name": "timeZoneIds",
                         "in": "query",
-                        "description": "Only cities in these time-zones",
+                        "description": "Only cities in these time-zones (comma-delimited)",
                         "required": false,
                         "type": "string"
                     },
                     {
                         "name": "types",
                         "in": "query",
-                        "description": "Only cities for these types: CITY | ADM2",
+                        "description": "Only cities for these types (comma-delimited): CITY | ADM2",
                         "required": false,
                         "type": "string"
                     },
@@ -230,7 +230,7 @@
                     {
                         "name": "types",
                         "in": "query",
-                        "description": "Only cities for these types: CITY | ADM2",
+                        "description": "Only cities for these types (comma-delimited): CITY | ADM2",
                         "required": false,
                         "type": "string"
                     },
@@ -359,7 +359,7 @@
                     {
                         "name": "types",
                         "in": "query",
-                        "description": "Only cities for these types: CITY | ADM2",
+                        "description": "Only cities for these types (comma-delimited): CITY | ADM2",
                         "required": false,
                         "type": "string"
                     },
@@ -994,7 +994,7 @@
                     {
                         "name": "types",
                         "in": "query",
-                        "description": "Only cities for these types: CITY | ADM2",
+                        "description": "Only cities for these types (comma-delimited): CITY | ADM2",
                         "required": false,
                         "type": "string"
                     },
