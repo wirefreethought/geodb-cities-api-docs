@@ -324,7 +324,7 @@
                 "tags": [
                     "Geo"
                 ],
-                "summary": "Find cities near administrative division",
+                "summary": "Find cities near division",
                 "description": "Find cities near the given administrative division, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
                 "operationId": "findCitiesNearAdminDivisionUsingGET",
                 "consumes": [
@@ -739,7 +739,7 @@
                 "tags": [
                     "Geo"
                 ],
-                "summary": "Find administrative divisions near location",
+                "summary": "Find divisions near location",
                 "description": "Find administrative divisions near the given location, filtering by optional criteria. If no criteria are set, you will get back all known divisions.",
                 "operationId": "findDivisionsNearLocationUsingGET",
                 "consumes": [
