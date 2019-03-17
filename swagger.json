@@ -2821,7 +2821,8 @@
                 "ENTITY_NOT_FOUND",
                 "INCOMPATIBLE",
                 "PARAM_INVALID",
-                "PARAMS_MUTUALLY_EXCLUSIVE"
+                "PARAMS_MUTUALLY_EXCLUSIVE",
+                "REQUEST_UNPROCESSABLE"
             ]
         }
     }
