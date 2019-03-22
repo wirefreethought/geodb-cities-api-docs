@@ -196,7 +196,7 @@
                     "Geo"
                 ],
                 "summary": "Find divisions near division",
-                "description": "Find divisions near the given origin division, filtering by optional criteria. If no criteria are set, you will get back all known divisions.",
+                "description": "Find administrative divisions near the given origin division, filtering by optional criteria. If no criteria are set, you will get back all known divisions.",
                 "operationId": "findDivisionsNearAdminDivisionUsingGET",
                 "consumes": [
                     "application/json"
@@ -1547,7 +1547,7 @@
                     "Geo"
                 ],
                 "summary": "Find country region administrative divisions",
-                "description": "Get the divisions in a specific country region. The country and region info is omitted in the response.",
+                "description": "Get the administrative divisions in a specific country region. The country and region info is omitted in the response.",
                 "operationId": "findRegionDivisionsUsingGET",
                 "consumes": [
                     "application/json"
