@@ -213,6 +213,20 @@
                         "type": "string"
                     },
                     {
+                        "name": "countryIds",
+                        "in": "query",
+                        "description": "Only divisions in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "excludedCountryIds",
+                        "in": "query",
+                        "description": "Only divisions NOT in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "minPopulation",
                         "in": "query",
                         "description": "Only divisions having at least this population",
@@ -339,6 +353,20 @@
                         "in": "path",
                         "description": "The division id (either native 'id' or 'wikiDataId')",
                         "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "countryIds",
+                        "in": "query",
+                        "description": "Only divisions in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "excludedCountryIds",
+                        "in": "query",
+                        "description": "Only divisions NOT in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
                         "type": "string"
                     },
                     {
@@ -628,6 +656,20 @@
                         "type": "string"
                     },
                     {
+                        "name": "countryIds",
+                        "in": "query",
+                        "description": "Only divisions in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "excludedCountryIds",
+                        "in": "query",
+                        "description": "Only divisions NOT in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "minPopulation",
                         "in": "query",
                         "description": "Only cities having at least this population",
@@ -757,6 +799,20 @@
                         "type": "string"
                     },
                     {
+                        "name": "countryIds",
+                        "in": "query",
+                        "description": "Only divisions in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "excludedCountryIds",
+                        "in": "query",
+                        "description": "Only divisions NOT in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "minPopulation",
                         "in": "query",
                         "description": "Only divisions having at least this population",
@@ -876,6 +932,20 @@
                         "in": "path",
                         "description": "Only cities near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD",
                         "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "countryIds",
+                        "in": "query",
+                        "description": "Only divisions in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "excludedCountryIds",
+                        "in": "query",
+                        "description": "Only divisions NOT in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
                         "type": "string"
                     },
                     {
