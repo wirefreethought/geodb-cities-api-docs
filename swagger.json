@@ -56,11 +56,27 @@
                 ],
                 "parameters": [
                     {
-                        "name": "namePrefix",
+                        "name": "location",
                         "in": "query",
-                        "description": "Only divisions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
+                        "description": "Only divisions near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD",
                         "required": false,
                         "type": "string"
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "The location radius within which to find divisions",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "distanceUnit",
+                        "in": "query",
+                        "description": "The unit of distance: MI | KM",
+                        "required": false,
+                        "type": "string",
+                        "default": "MI"
                     },
                     {
                         "name": "countryIds",
@@ -85,27 +101,11 @@
                         "format": "int32"
                     },
                     {
-                        "name": "location",
+                        "name": "namePrefix",
                         "in": "query",
-                        "description": "Only divisions near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD",
+                        "description": "Only divisions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
                         "required": false,
                         "type": "string"
-                    },
-                    {
-                        "name": "radius",
-                        "in": "query",
-                        "description": "The location radius within which to find divisions",
-                        "required": false,
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    {
-                        "name": "distanceUnit",
-                        "in": "query",
-                        "description": "The unit of distance: MI | KM",
-                        "required": false,
-                        "type": "string",
-                        "default": "MI"
                     },
                     {
                         "name": "timeZoneIds",
@@ -121,6 +121,14 @@
                         "required": false,
                         "type": "boolean",
                         "default": false
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     },
                     {
                         "name": "languageCode",
@@ -161,14 +169,6 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -213,6 +213,22 @@
                         "type": "string"
                     },
                     {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "The location radius within which to find divisions",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "distanceUnit",
+                        "in": "query",
+                        "description": "The unit of distance: MI | KM",
+                        "required": false,
+                        "type": "string",
+                        "default": "MI"
+                    },
+                    {
                         "name": "countryIds",
                         "in": "query",
                         "description": "Only divisions in these countries (comma-delimited country codes or WikiData ids)",
@@ -235,27 +251,18 @@
                         "format": "int32"
                     },
                     {
-                        "name": "types",
+                        "name": "namePrefix",
                         "in": "query",
-                        "description": "Only divisions for these types (comma-delimited): CITY | ADM2",
+                        "description": "Only divisions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
                         "required": false,
                         "type": "string"
                     },
                     {
-                        "name": "radius",
+                        "name": "timeZoneIds",
                         "in": "query",
-                        "description": "The location radius within which to find divisions",
+                        "description": "Only divisions in these time-zones (comma-delimited)",
                         "required": false,
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    {
-                        "name": "distanceUnit",
-                        "in": "query",
-                        "description": "The unit of distance: MI | KM",
-                        "required": false,
-                        "type": "string",
-                        "default": "MI"
+                        "type": "string"
                     },
                     {
                         "name": "asciiMode",
@@ -264,6 +271,14 @@
                         "required": false,
                         "type": "boolean",
                         "default": false
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     },
                     {
                         "name": "languageCode",
@@ -304,14 +319,6 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -356,6 +363,22 @@
                         "type": "string"
                     },
                     {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "The location radius within which to find cities",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "distanceUnit",
+                        "in": "query",
+                        "description": "The unit of distance: MI | KM",
+                        "required": false,
+                        "type": "string",
+                        "default": "MI"
+                    },
+                    {
                         "name": "countryIds",
                         "in": "query",
                         "description": "Only divisions in these countries (comma-delimited country codes or WikiData ids)",
@@ -378,27 +401,25 @@
                         "format": "int32"
                     },
                     {
+                        "name": "namePrefix",
+                        "in": "query",
+                        "description": "Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "timeZoneIds",
+                        "in": "query",
+                        "description": "Only cities in these time-zones (comma-delimited)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "types",
                         "in": "query",
                         "description": "Only cities for these types (comma-delimited): CITY | ADM2",
                         "required": false,
                         "type": "string"
-                    },
-                    {
-                        "name": "radius",
-                        "in": "query",
-                        "description": "The location radius within which to find cities",
-                        "required": false,
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    {
-                        "name": "distanceUnit",
-                        "in": "query",
-                        "description": "The unit of distance: MI | KM",
-                        "required": false,
-                        "type": "string",
-                        "default": "MI"
                     },
                     {
                         "name": "asciiMode",
@@ -407,6 +428,14 @@
                         "required": false,
                         "type": "boolean",
                         "default": false
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     },
                     {
                         "name": "languageCode",
@@ -447,14 +476,6 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -492,35 +513,6 @@
                 ],
                 "parameters": [
                     {
-                        "name": "namePrefix",
-                        "in": "query",
-                        "description": "Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "countryIds",
-                        "in": "query",
-                        "description": "Only cities in these countries (comma-delimited country codes or WikiData ids)",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "excludedCountryIds",
-                        "in": "query",
-                        "description": "Only cities NOT in these countries (comma-delimited country codes or WikiData ids)",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "minPopulation",
-                        "in": "query",
-                        "description": "Only cities having at least this population",
-                        "required": false,
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    {
                         "name": "location",
                         "in": "query",
                         "description": "Only cities near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD",
@@ -544,6 +536,35 @@
                         "default": "MI"
                     },
                     {
+                        "name": "countryIds",
+                        "in": "query",
+                        "description": "Only cities in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "excludedCountryIds",
+                        "in": "query",
+                        "description": "Only cities NOT in these countries (comma-delimited country codes or WikiData ids)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "namePrefix",
+                        "in": "query",
+                        "description": "Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "minPopulation",
+                        "in": "query",
+                        "description": "Only cities having at least this population",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
                         "name": "timeZoneIds",
                         "in": "query",
                         "description": "Only cities in these time-zones (comma-delimited)",
@@ -564,6 +585,14 @@
                         "required": false,
                         "type": "boolean",
                         "default": false
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     },
                     {
                         "name": "languageCode",
@@ -604,14 +633,6 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -649,6 +670,22 @@
                 ],
                 "parameters": [
                     {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "The location radius within which to find cities",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "distanceUnit",
+                        "in": "query",
+                        "description": "The unit of distance: MI | KM",
+                        "required": false,
+                        "type": "string",
+                        "default": "MI"
+                    },
+                    {
                         "name": "cityId",
                         "in": "path",
                         "description": "The city id (either native 'id' or 'wikiDataId')",
@@ -678,27 +715,25 @@
                         "format": "int32"
                     },
                     {
+                        "name": "namePrefix",
+                        "in": "query",
+                        "description": "Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "timeZoneIds",
+                        "in": "query",
+                        "description": "Only cities in these time-zones (comma-delimited)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "types",
                         "in": "query",
                         "description": "Only cities for these types (comma-delimited): CITY | ADM2",
                         "required": false,
                         "type": "string"
-                    },
-                    {
-                        "name": "radius",
-                        "in": "query",
-                        "description": "The location radius within which to find cities",
-                        "required": false,
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    {
-                        "name": "distanceUnit",
-                        "in": "query",
-                        "description": "The unit of distance: MI | KM",
-                        "required": false,
-                        "type": "string",
-                        "default": "MI"
                     },
                     {
                         "name": "asciiMode",
@@ -707,6 +742,14 @@
                         "required": false,
                         "type": "boolean",
                         "default": false
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     },
                     {
                         "name": "languageCode",
@@ -747,14 +790,6 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -799,6 +834,22 @@
                         "type": "string"
                     },
                     {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "The location radius within which to find divisions",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "distanceUnit",
+                        "in": "query",
+                        "description": "The unit of distance: MI | KM",
+                        "required": false,
+                        "type": "string",
+                        "default": "MI"
+                    },
+                    {
                         "name": "countryIds",
                         "in": "query",
                         "description": "Only divisions in these countries (comma-delimited country codes or WikiData ids)",
@@ -821,20 +872,18 @@
                         "format": "int32"
                     },
                     {
-                        "name": "radius",
+                        "name": "namePrefix",
                         "in": "query",
-                        "description": "The location radius within which to find divisions",
+                        "description": "Only divisions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
                         "required": false,
-                        "type": "integer",
-                        "format": "int32"
+                        "type": "string"
                     },
                     {
-                        "name": "distanceUnit",
+                        "name": "timeZoneIds",
                         "in": "query",
-                        "description": "The unit of distance: MI | KM",
+                        "description": "Only divisions in these time-zones (comma-delimited)",
                         "required": false,
-                        "type": "string",
-                        "default": "MI"
+                        "type": "string"
                     },
                     {
                         "name": "asciiMode",
@@ -843,6 +892,14 @@
                         "required": false,
                         "type": "boolean",
                         "default": false
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     },
                     {
                         "name": "languageCode",
@@ -883,14 +940,6 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -935,6 +984,22 @@
                         "type": "string"
                     },
                     {
+                        "name": "radius",
+                        "in": "query",
+                        "description": "The location radius within which to find cities",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "distanceUnit",
+                        "in": "query",
+                        "description": "The unit of distance: MI | KM",
+                        "required": false,
+                        "type": "string",
+                        "default": "MI"
+                    },
+                    {
                         "name": "countryIds",
                         "in": "query",
                         "description": "Only divisions in these countries (comma-delimited country codes or WikiData ids)",
@@ -957,27 +1022,25 @@
                         "format": "int32"
                     },
                     {
+                        "name": "namePrefix",
+                        "in": "query",
+                        "description": "Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "timeZoneIds",
+                        "in": "query",
+                        "description": "Only cities in these time-zones (comma-delimited)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "types",
                         "in": "query",
                         "description": "Only cities for these types (comma-delimited): CITY | ADM2",
                         "required": false,
                         "type": "string"
-                    },
-                    {
-                        "name": "radius",
-                        "in": "query",
-                        "description": "The location radius within which to find cities",
-                        "required": false,
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    {
-                        "name": "distanceUnit",
-                        "in": "query",
-                        "description": "The unit of distance: MI | KM",
-                        "required": false,
-                        "type": "string",
-                        "default": "MI"
                     },
                     {
                         "name": "asciiMode",
@@ -986,6 +1049,14 @@
                         "required": false,
                         "type": "boolean",
                         "default": false
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     },
                     {
                         "name": "languageCode",
@@ -1026,14 +1097,6 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -1326,16 +1389,16 @@
                 ],
                 "parameters": [
                     {
-                        "name": "namePrefix",
+                        "name": "currencyCode",
                         "in": "query",
-                        "description": "Only countries whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
+                        "description": "Only countries supporting this currency",
                         "required": false,
                         "type": "string"
                     },
                     {
-                        "name": "currencyCode",
+                        "name": "namePrefix",
                         "in": "query",
-                        "description": "Only countries supporting this currency",
+                        "description": "Only countries whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
                         "required": false,
                         "type": "string"
                     },
@@ -1346,6 +1409,14 @@
                         "required": false,
                         "type": "boolean",
                         "default": false
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     },
                     {
                         "name": "languageCode",
@@ -1371,14 +1442,6 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -1495,6 +1558,14 @@
                         "default": false
                     },
                     {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
                         "name": "languageCode",
                         "in": "query",
                         "description": "Display results in this language",
@@ -1518,14 +1589,6 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -1649,12 +1712,34 @@
                         "format": "int32"
                     },
                     {
+                        "name": "namePrefix",
+                        "in": "query",
+                        "description": "Only divisions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "timeZoneIds",
+                        "in": "query",
+                        "description": "Only divisions in these time-zones (comma-delimited)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "asciiMode",
                         "in": "query",
                         "description": "Display results using ASCII characters",
                         "required": false,
                         "type": "boolean",
                         "default": false
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     },
                     {
                         "name": "languageCode",
@@ -1695,14 +1780,6 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -1762,6 +1839,20 @@
                         "format": "int32"
                     },
                     {
+                        "name": "namePrefix",
+                        "in": "query",
+                        "description": "Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "timeZoneIds",
+                        "in": "query",
+                        "description": "Only cities in these time-zones (comma-delimited)",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "types",
                         "in": "query",
                         "description": "Only cities for these types (comma-delimited): CITY | ADM2",
@@ -1775,6 +1866,14 @@
                         "required": false,
                         "type": "boolean",
                         "default": false
+                    },
+                    {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
                     },
                     {
                         "name": "languageCode",
@@ -1815,14 +1914,6 @@
                         "required": false,
                         "type": "string",
                         "default": "NONE"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -1867,6 +1958,14 @@
                         "type": "string"
                     },
                     {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
                         "name": "limit",
                         "in": "query",
                         "description": "The maximum number of results to retrieve",
@@ -1883,14 +1982,6 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -1925,6 +2016,14 @@
                 ],
                 "parameters": [
                     {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
                         "name": "limit",
                         "in": "query",
                         "description": "The maximum number of results to retrieve",
@@ -1941,14 +2040,6 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -1986,6 +2077,14 @@
                 ],
                 "parameters": [
                     {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
                         "name": "limit",
                         "in": "query",
                         "description": "The maximum number of results to retrieve",
@@ -2002,14 +2101,6 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {
@@ -2047,6 +2138,14 @@
                 ],
                 "parameters": [
                     {
+                        "name": "hateoasMode",
+                        "in": "query",
+                        "description": "Include HATEOAS-style links in results",
+                        "required": false,
+                        "type": "boolean",
+                        "default": true
+                    },
+                    {
                         "name": "limit",
                         "in": "query",
                         "description": "The maximum number of results to retrieve",
@@ -2063,14 +2162,6 @@
                         "type": "integer",
                         "default": 0,
                         "format": "int32"
-                    },
-                    {
-                        "name": "hateoasMode",
-                        "in": "query",
-                        "description": "Include HATEOAS-style links in results",
-                        "required": false,
-                        "type": "boolean",
-                        "default": true
                     }
                 ],
                 "responses": {

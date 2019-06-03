@@ -280,7 +280,7 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">namePrefix:
+                      <div class="prop-title">location:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -289,7 +289,37 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only divisions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
+                      <p>Only divisions near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">radius:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The location radius within which to find divisions</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">distanceUnit:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">MI</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The unit of distance: MI | KM</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -337,7 +367,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">location:
+                      <div class="prop-title">namePrefix:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -346,37 +376,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only divisions near this location. Latitude/longitude in ISO-6709 format: ±DD.DDDD±DDD.DDDD</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">radius:
-                        <span class="prop-type">
-                          <span class="json-property-type">integer</span>
-                          <span class="json-property-format">(int32)</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The location radius within which to find divisions</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">distanceUnit:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">MI</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The unit of distance: MI | KM</p>
+                      <p>Only divisions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -406,6 +406,21 @@
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -481,21 +496,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -640,6 +640,36 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">radius:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The location radius within which to find divisions</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">distanceUnit:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">MI</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The unit of distance: MI | KM</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">countryIds:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -683,7 +713,7 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">types:
+                      <div class="prop-title">namePrefix:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
@@ -692,37 +722,21 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only divisions for these types (comma-delimited): CITY | ADM2</p>
+                      <p>Only divisions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">radius:
-                        <span class="prop-type">
-                          <span class="json-property-type">integer</span>
-                          <span class="json-property-format">(int32)</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The location radius within which to find divisions</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">distanceUnit:
+                      <div class="prop-title">timeZoneIds:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">MI</span>
                         </span>
                       </div>
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>The unit of distance: MI | KM</p>
+                      <p>Only divisions in these time-zones (comma-delimited)</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -738,6 +752,21 @@
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -813,21 +842,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -972,6 +986,36 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">radius:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The location radius within which to find cities</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">distanceUnit:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">MI</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The unit of distance: MI | KM</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">countryIds:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -1015,6 +1059,34 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">namePrefix:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">timeZoneIds:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities in these time-zones (comma-delimited)</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">types:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -1025,36 +1097,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Only cities for these types (comma-delimited): CITY | ADM2</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">radius:
-                        <span class="prop-type">
-                          <span class="json-property-type">integer</span>
-                          <span class="json-property-format">(int32)</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The location radius within which to find cities</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">distanceUnit:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">MI</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The unit of distance: MI | KM</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -1070,6 +1112,21 @@
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -1145,21 +1202,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -1289,63 +1331,6 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">namePrefix:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">countryIds:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Only cities in these countries (comma-delimited country codes or WikiData ids)</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">excludedCountryIds:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Only cities NOT in these countries (comma-delimited country codes or WikiData ids)</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">minPopulation:
-                        <span class="prop-type">
-                          <span class="json-property-type">integer</span>
-                          <span class="json-property-format">(int32)</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Only cities having at least this population</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
                       <div class="prop-title">location:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -1390,6 +1375,63 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">countryIds:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities in these countries (comma-delimited country codes or WikiData ids)</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">excludedCountryIds:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities NOT in these countries (comma-delimited country codes or WikiData ids)</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">namePrefix:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">minPopulation:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities having at least this population</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">timeZoneIds:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -1429,6 +1471,21 @@
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -1504,21 +1561,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -1648,6 +1690,36 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">radius:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The location radius within which to find cities</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">distanceUnit:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">MI</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The unit of distance: MI | KM</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">cityId:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -1706,6 +1778,34 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">namePrefix:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">timeZoneIds:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities in these time-zones (comma-delimited)</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">types:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -1716,36 +1816,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Only cities for these types (comma-delimited): CITY | ADM2</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">radius:
-                        <span class="prop-type">
-                          <span class="json-property-type">integer</span>
-                          <span class="json-property-format">(int32)</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The location radius within which to find cities</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">distanceUnit:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">MI</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The unit of distance: MI | KM</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -1761,6 +1831,21 @@
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -1836,21 +1921,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -1995,6 +2065,36 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">radius:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The location radius within which to find divisions</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">distanceUnit:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">MI</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The unit of distance: MI | KM</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">countryIds:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -2038,32 +2138,30 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">radius:
+                      <div class="prop-title">namePrefix:
                         <span class="prop-type">
-                          <span class="json-property-type">integer</span>
-                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
                         </span>
                       </div>
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>The location radius within which to find divisions</p>
+                      <p>Only divisions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">distanceUnit:
+                      <div class="prop-title">timeZoneIds:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">MI</span>
                         </span>
                       </div>
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>The unit of distance: MI | KM</p>
+                      <p>Only divisions in these time-zones (comma-delimited)</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2079,6 +2177,21 @@
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2154,21 +2267,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -2313,6 +2411,36 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">radius:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The location radius within which to find cities</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">distanceUnit:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">MI</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>The unit of distance: MI | KM</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">countryIds:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -2356,6 +2484,34 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">namePrefix:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">timeZoneIds:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities in these time-zones (comma-delimited)</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">types:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -2366,36 +2522,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Only cities for these types (comma-delimited): CITY | ADM2</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">radius:
-                        <span class="prop-type">
-                          <span class="json-property-type">integer</span>
-                          <span class="json-property-format">(int32)</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The location radius within which to find cities</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">distanceUnit:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">MI</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>The unit of distance: MI | KM</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2411,6 +2537,21 @@
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2486,21 +2627,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -3325,20 +3451,6 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
-                      <div class="prop-title">namePrefix:
-                        <span class="prop-type">
-                          <span class="json-property-type">string</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Only countries whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
                       <div class="prop-title">currencyCode:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -3349,6 +3461,20 @@
                     </div>
                     <div class="prop-value">
                       <p>Only countries supporting this currency</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">namePrefix:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only countries whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -3364,6 +3490,21 @@
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -3410,21 +3551,6 @@
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -3745,6 +3871,21 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">languageCode:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -3787,21 +3928,6 @@
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -4136,6 +4262,34 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">namePrefix:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only divisions whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">timeZoneIds:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only divisions in these time-zones (comma-delimited)</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">asciiMode:
                         <span class="prop-type">
                           <span class="json-property-type">boolean</span>
@@ -4147,6 +4301,21 @@
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -4222,21 +4391,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -4411,6 +4565,34 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">namePrefix:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">timeZoneIds:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Only cities in these time-zones (comma-delimited)</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">types:
                         <span class="prop-type">
                           <span class="json-property-type">string</span>
@@ -4436,6 +4618,21 @@
                     </div>
                     <div class="prop-value">
                       <p>Display results using ASCII characters</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -4511,21 +4708,6 @@
                     </div>
                     <div class="prop-value">
                       <p>Whether to include any cities marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -4675,6 +4857,21 @@
                   </div>
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">limit:
                         <span class="prop-type">
                           <span class="json-property-type">integer</span>
@@ -4703,21 +4900,6 @@
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -4839,6 +5021,21 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">limit:
                         <span class="prop-type">
                           <span class="json-property-type">integer</span>
@@ -4867,21 +5064,6 @@
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -5001,6 +5183,21 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">limit:
                         <span class="prop-type">
                           <span class="json-property-type">integer</span>
@@ -5029,21 +5226,6 @@
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
@@ -5162,6 +5344,21 @@
                 <section class="swagger-request-params">
                   <div class="prop-row prop-group">
                     <div class="prop-name">
+                      <div class="prop-title">hateoasMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">true</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Include HATEOAS-style links in results</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
                       <div class="prop-title">limit:
                         <span class="prop-type">
                           <span class="json-property-type">integer</span>
@@ -5190,21 +5387,6 @@
                     </div>
                     <div class="prop-value">
                       <p>The zero-ary offset index into the results</p>
-                    </div>
-                  </div>
-                  <div class="prop-row prop-group">
-                    <div class="prop-name">
-                      <div class="prop-title">hateoasMode:
-                        <span class="prop-type">
-                          <span class="json-property-type">boolean</span>
-                          <span class="json-property-range" title="Value limits"></span>
-                          <span class="json-property-default-value" title="Default value">true</span>
-                        </span>
-                      </div>
-                      <div class="prop-subtitle"> in query </div>
-                    </div>
-                    <div class="prop-value">
-                      <p>Include HATEOAS-style links in results</p>
                     </div>
                   </div>
                 </section>
