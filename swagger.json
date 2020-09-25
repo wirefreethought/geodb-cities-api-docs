@@ -9,7 +9,7 @@
             "url": "http://creativecommons.org/licenses/by/3.0/"
         }
     },
-    "host": "wft-geo-db.p.mashape.com",
+    "host": "wft-geo-db.p.rapidapi.com",
     "schemes": [
         "https"
     ],
@@ -30,7 +30,7 @@
     "securityDefinitions": {
         "UserSecurity": {
             "type": "apiKey",
-            "name": "X-Mashape-Key",
+            "name": "x-rapidapi-key",
             "in": "header"
         }
     },
