@@ -525,7 +525,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/PopulatedPlaces">#/responses/PopulatedPlaces</a>
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlacesResponse">PopulatedPlacesResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -539,7 +539,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -553,7 +553,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -567,7 +567,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -587,6 +587,96 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2987553</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24371&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;L&apos;Aldosa de Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57777778</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.61944444</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3086756</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24486&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Cortinada&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Ordino&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">5</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57667</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.51773</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3056764</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q2536296&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Margineda&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Andorra la Vella&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.4859</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.49045</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">978</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q3820973&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">4</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.544354</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.515427</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">759</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q1050185&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Les Escaldes&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Escaldes-Engordany&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;08&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.5</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.53333333</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;first&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;prev&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=10&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;last&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=273685&amp;limit=5&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;metadata&quot;</span>: {
+    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-number">273690</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -594,6 +684,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -601,6 +703,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -608,6 +722,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -891,7 +1017,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/PopulatedPlaces">#/responses/PopulatedPlaces</a>
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlacesResponse">PopulatedPlacesResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -905,7 +1031,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -919,7 +1045,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -933,7 +1059,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -947,7 +1073,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -967,6 +1093,96 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2987553</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24371&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;L&apos;Aldosa de Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57777778</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.61944444</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3086756</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24486&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Cortinada&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Ordino&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">5</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57667</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.51773</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3056764</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q2536296&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Margineda&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Andorra la Vella&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.4859</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.49045</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">978</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q3820973&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">4</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.544354</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.515427</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">759</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q1050185&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Les Escaldes&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Escaldes-Engordany&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;08&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.5</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.53333333</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;first&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;prev&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=10&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;last&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=273685&amp;limit=5&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;metadata&quot;</span>: {
+    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-number">273690</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -974,6 +1190,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -981,6 +1209,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -988,6 +1228,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -995,6 +1247,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -1292,7 +1556,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/PopulatedPlaces">#/responses/PopulatedPlaces</a>
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlacesResponse">PopulatedPlacesResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1306,7 +1570,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1320,7 +1584,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1334,7 +1598,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1348,7 +1612,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1368,6 +1632,96 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2987553</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24371&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;L&apos;Aldosa de Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57777778</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.61944444</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3086756</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24486&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Cortinada&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Ordino&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">5</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57667</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.51773</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3056764</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q2536296&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Margineda&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Andorra la Vella&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.4859</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.49045</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">978</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q3820973&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">4</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.544354</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.515427</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">759</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q1050185&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Les Escaldes&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Escaldes-Engordany&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;08&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.5</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.53333333</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;first&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;prev&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=10&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;last&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=273685&amp;limit=5&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;metadata&quot;</span>: {
+    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-number">273690</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -1375,6 +1729,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -1382,6 +1748,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -1389,6 +1767,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -1396,6 +1786,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -1692,7 +2094,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/PopulatedPlaces">#/responses/PopulatedPlaces</a>
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlacesResponse">PopulatedPlacesResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1706,7 +2108,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1720,7 +2122,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1734,7 +2136,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -1754,6 +2156,96 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2987553</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24371&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;L&apos;Aldosa de Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57777778</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.61944444</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3086756</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24486&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Cortinada&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Ordino&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">5</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57667</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.51773</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3056764</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q2536296&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Margineda&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Andorra la Vella&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.4859</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.49045</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">978</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q3820973&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">4</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.544354</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.515427</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">759</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q1050185&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Les Escaldes&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Escaldes-Engordany&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;08&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.5</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.53333333</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;first&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;prev&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=10&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;last&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=273685&amp;limit=5&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;metadata&quot;</span>: {
+    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-number">273690</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -1761,6 +2253,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -1768,6 +2272,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -1775,6 +2291,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -2072,7 +2600,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/PopulatedPlaces">#/responses/PopulatedPlaces</a>
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlacesResponse">PopulatedPlacesResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2086,7 +2614,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2100,7 +2628,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2114,7 +2642,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2128,7 +2656,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2148,6 +2676,96 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2987553</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24371&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;L&apos;Aldosa de Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57777778</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.61944444</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3086756</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24486&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Cortinada&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Ordino&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">5</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57667</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.51773</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3056764</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q2536296&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Margineda&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Andorra la Vella&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.4859</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.49045</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">978</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q3820973&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">4</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.544354</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.515427</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">759</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q1050185&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Les Escaldes&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Escaldes-Engordany&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;08&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.5</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.53333333</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;first&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;prev&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=10&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;last&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=273685&amp;limit=5&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;metadata&quot;</span>: {
+    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-number">273690</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -2155,6 +2773,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -2162,6 +2792,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -2169,6 +2811,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -2176,6 +2830,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -2459,7 +3125,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/PopulatedPlaces">#/responses/PopulatedPlaces</a>
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlacesResponse">PopulatedPlacesResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2473,7 +3139,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2487,7 +3153,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2501,7 +3167,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2521,6 +3187,96 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2987553</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24371&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;L&apos;Aldosa de Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57777778</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.61944444</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3086756</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24486&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Cortinada&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Ordino&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">5</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57667</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.51773</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3056764</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q2536296&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Margineda&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Andorra la Vella&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.4859</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.49045</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">978</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q3820973&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">4</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.544354</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.515427</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">759</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q1050185&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Les Escaldes&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Escaldes-Engordany&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;08&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.5</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.53333333</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;first&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;prev&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=10&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;last&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=273685&amp;limit=5&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;metadata&quot;</span>: {
+    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-number">273690</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -2528,6 +3284,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -2535,6 +3303,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -2542,6 +3322,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -2839,7 +3631,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/PopulatedPlaces">#/responses/PopulatedPlaces</a>
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlacesResponse">PopulatedPlacesResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2853,7 +3645,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2867,7 +3659,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2881,7 +3673,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -2901,6 +3693,96 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2987553</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24371&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;L&apos;Aldosa de Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57777778</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.61944444</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3086756</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24486&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Cortinada&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Ordino&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">5</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57667</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.51773</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3056764</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q2536296&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Margineda&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Andorra la Vella&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.4859</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.49045</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">978</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q3820973&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">4</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.544354</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.515427</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">759</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q1050185&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Les Escaldes&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Escaldes-Engordany&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;08&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.5</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.53333333</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;first&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;prev&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=10&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;last&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=273685&amp;limit=5&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;metadata&quot;</span>: {
+    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-number">273690</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -2908,6 +3790,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -2915,6 +3809,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -2922,6 +3828,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -3013,7 +3931,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/PopulatedPlace">#/responses/PopulatedPlace</a>
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlaceResponse">PopulatedPlaceResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3027,7 +3945,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3041,7 +3959,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3055,7 +3973,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3069,7 +3987,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3089,6 +4007,28 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: {
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">123214</span>,
+    <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q60&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;New York City&quot;</span>,
+    <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;United States of America&quot;</span>,
+    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;US&quot;</span>,
+    <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;New York&quot;</span>,
+    <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;NY&quot;</span>,
+    <span class="hljs-attr">&quot;elevationMeters&quot;</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">40.67</span>,
+    <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">-73.94</span>,
+    <span class="hljs-attr">&quot;population&quot;</span>: <span class="hljs-number">8398748</span>,
+    <span class="hljs-attr">&quot;timezone&quot;</span>: <span class="hljs-string">&quot;America__New_York&quot;</span>,
+    <span class="hljs-attr">&quot;deleted&quot;</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3096,6 +4036,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3103,6 +4055,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3110,6 +4074,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3117,6 +4093,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -3208,7 +4196,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/PopulatedPlace">#/responses/PopulatedPlace</a>
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlaceResponse">PopulatedPlaceResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3222,7 +4210,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3236,7 +4224,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3250,7 +4238,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3264,7 +4252,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3284,6 +4272,28 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: {
+    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">123214</span>,
+    <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q60&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;New York City&quot;</span>,
+    <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;United States of America&quot;</span>,
+    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;US&quot;</span>,
+    <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;New York&quot;</span>,
+    <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;NY&quot;</span>,
+    <span class="hljs-attr">&quot;elevationMeters&quot;</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">40.67</span>,
+    <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">-73.94</span>,
+    <span class="hljs-attr">&quot;population&quot;</span>: <span class="hljs-number">8398748</span>,
+    <span class="hljs-attr">&quot;timezone&quot;</span>: <span class="hljs-string">&quot;America__New_York&quot;</span>,
+    <span class="hljs-attr">&quot;deleted&quot;</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3291,6 +4301,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3298,6 +4320,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3305,6 +4339,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3312,6 +4358,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -3404,7 +4462,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Distance">#/responses/Distance</a>
+                          <a class="json-schema-ref" href="#/definitions/DistanceResponse">DistanceResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3418,7 +4476,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3432,7 +4490,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3446,7 +4504,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3460,7 +4518,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3480,6 +4538,13 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-number">6707.9</span>
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3487,6 +4552,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3494,6 +4571,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3501,6 +4590,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3508,6 +4609,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -3570,7 +4683,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/DateTime">#/responses/DateTime</a>
+                          <a class="json-schema-ref" href="#/definitions/DateTimeResponse">DateTimeResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3584,7 +4697,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3598,7 +4711,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3612,7 +4725,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3626,7 +4739,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3646,6 +4759,13 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;2020-10-04T20:46:53.504Z&quot;</span>
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3653,6 +4773,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3660,6 +4792,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3667,6 +4811,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3674,6 +4830,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -3736,7 +4904,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Time">#/responses/Time</a>
+                          <a class="json-schema-ref" href="#/definitions/TimeResponse">TimeResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3750,7 +4918,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3764,7 +4932,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3778,7 +4946,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3792,7 +4960,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -3812,6 +4980,13 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;19:21:38.796217&quot;</span>
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3819,6 +4994,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3826,6 +5013,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3833,6 +5032,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -3840,6 +5051,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -4005,7 +5228,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4019,7 +5242,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4033,7 +5256,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4060,6 +5283,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -4067,6 +5302,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -4074,6 +5321,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -4179,7 +5438,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4193,7 +5452,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4207,7 +5466,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4221,7 +5480,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4248,6 +5507,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -4255,6 +5526,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -4262,6 +5545,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -4269,6 +5564,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -4435,7 +5742,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4449,7 +5756,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4463,7 +5770,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4477,7 +5784,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4504,6 +5811,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -4511,6 +5830,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -4518,6 +5849,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -4525,6 +5868,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -4645,7 +6000,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4659,7 +6014,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4673,7 +6028,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4687,7 +6042,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4714,6 +6069,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -4721,6 +6088,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -4728,6 +6107,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -4735,6 +6126,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -4975,7 +6378,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/PopulatedPlaces">#/responses/PopulatedPlaces</a>
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlacesResponse">PopulatedPlacesResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -4989,7 +6392,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5003,7 +6406,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5017,7 +6420,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5031,7 +6434,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5051,6 +6454,96 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2987553</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24371&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;L&apos;Aldosa de Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57777778</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.61944444</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3086756</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24486&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Cortinada&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Ordino&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">5</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57667</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.51773</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3056764</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q2536296&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Margineda&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Andorra la Vella&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.4859</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.49045</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">978</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q3820973&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">4</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.544354</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.515427</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">759</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q1050185&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Les Escaldes&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Escaldes-Engordany&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;08&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.5</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.53333333</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;first&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;prev&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=10&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;last&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=273685&amp;limit=5&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;metadata&quot;</span>: {
+    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-number">273690</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5058,6 +6551,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5065,6 +6570,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5072,6 +6589,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5079,6 +6608,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -5333,7 +6874,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/PopulatedPlaces">#/responses/PopulatedPlaces</a>
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlacesResponse">PopulatedPlacesResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5347,7 +6888,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5361,7 +6902,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5375,7 +6916,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5389,7 +6930,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5409,6 +6950,96 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">2987553</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24371&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;L&apos;Aldosa de Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Canillo&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57777778</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.61944444</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3086756</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q24486&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Cortinada&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Ordino&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">5</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.57667</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.51773</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">3056764</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q2536296&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Margineda&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Andorra la Vella&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">7</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.4859</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.49045</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">978</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q3820973&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;La Massana&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-number">4</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.544354</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.515427</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">759</span>,
+      <span class="hljs-attr">&quot;wikiDataId&quot;</span>: <span class="hljs-string">&quot;Q1050185&quot;</span>,
+      <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;CITY&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Les Escaldes&quot;</span>,
+      <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;Andorra&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;AD&quot;</span>,
+      <span class="hljs-attr">&quot;region&quot;</span>: <span class="hljs-string">&quot;Escaldes-Engordany&quot;</span>,
+      <span class="hljs-attr">&quot;regionCode&quot;</span>: <span class="hljs-string">&quot;08&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-number">42.5</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-number">1.53333333</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;first&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;prev&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=10&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;last&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/globe/v1/geo/cities?offset=273685&amp;limit=5&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;metadata&quot;</span>: {
+    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-number">273690</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5416,6 +7047,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5423,6 +7066,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5430,6 +7085,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5437,6 +7104,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -5566,7 +7245,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5580,7 +7259,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5594,7 +7273,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5621,6 +7300,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5628,6 +7319,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5635,6 +7338,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -5743,7 +7458,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5757,7 +7472,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5771,7 +7486,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5798,6 +7513,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5805,6 +7532,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5812,6 +7551,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -5920,7 +7671,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5934,7 +7685,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5948,7 +7699,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -5975,6 +7726,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5982,6 +7745,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -5989,6 +7764,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -6083,7 +7870,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/TimeZones">#/responses/TimeZones</a>
+                          <a class="json-schema-ref" href="#/definitions/TimeResponseZones">TimeResponseZones</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6097,7 +7884,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6111,7 +7898,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6125,7 +7912,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6152,6 +7939,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -6159,6 +7958,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -6166,6 +7977,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -6228,7 +8051,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/DateTime">#/responses/DateTime</a>
+                          <a class="json-schema-ref" href="#/definitions/DateTimeResponse">DateTimeResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6242,7 +8065,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6256,7 +8079,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6270,7 +8093,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6284,7 +8107,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6304,6 +8127,13 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;2020-10-04T20:46:53.504Z&quot;</span>
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -6311,6 +8141,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -6318,6 +8160,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -6325,6 +8179,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -6332,6 +8198,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>
@@ -6394,7 +8272,7 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Time">#/responses/Time</a>
+                          <a class="json-schema-ref" href="#/definitions/TimeResponse">TimeResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6408,7 +8286,7 @@
                       <div class="prop-title">400 Bad Request</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/BadRequest">#/responses/BadRequest</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6422,7 +8300,7 @@
                       <div class="prop-title">401 Unauthorized</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Unauthorized">#/responses/Unauthorized</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6436,7 +8314,7 @@
                       <div class="prop-title">403 Forbidden</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Forbidden">#/responses/Forbidden</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6450,7 +8328,7 @@
                       <div class="prop-title">404 Not Found</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/NotFound">#/responses/NotFound</a>
+                          <a class="json-schema-ref" href="#/definitions/ErrorResponse">ErrorResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
@@ -6470,6 +8348,13 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;19:21:38.796217&quot;</span>
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -6477,6 +8362,18 @@
                     <span>(400 Bad Request)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -6484,6 +8381,18 @@
                     <span>(401 Unauthorized)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -6491,6 +8400,18 @@
                     <span>(403 Forbidden)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -6498,6 +8419,18 @@
                     <span>(404 Not Found)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;errors&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;code&quot;</span>: <span class="hljs-string">&quot;ENTITY_NOT_FOUND&quot;</span>,
+      <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;City not found for id: foobar&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
               </div>

@@ -108,25 +108,25 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/PopulatedPlaces"
+              "$ref": "#/definitions/PopulatedPlacesResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -200,31 +200,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/PopulatedPlaces"
+              "$ref": "#/definitions/PopulatedPlacesResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -301,31 +301,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/PopulatedPlaces"
+              "$ref": "#/definitions/PopulatedPlacesResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -402,25 +402,25 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/PopulatedPlaces"
+              "$ref": "#/definitions/PopulatedPlacesResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -497,31 +497,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/PopulatedPlaces"
+              "$ref": "#/definitions/PopulatedPlacesResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -595,25 +595,25 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/PopulatedPlaces"
+              "$ref": "#/definitions/PopulatedPlacesResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -690,25 +690,25 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/PopulatedPlaces"
+              "$ref": "#/definitions/PopulatedPlacesResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -743,31 +743,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/PopulatedPlace"
+              "$ref": "#/definitions/PopulatedPlaceResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -802,31 +802,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/PopulatedPlace"
+              "$ref": "#/definitions/PopulatedPlaceResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -861,31 +861,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/Distance"
+              "$ref": "#/definitions/DistanceResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -914,31 +914,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/DateTime"
+              "$ref": "#/definitions/DateTimeResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -967,31 +967,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/Time"
+              "$ref": "#/definitions/TimeResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1044,19 +1044,19 @@
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1097,25 +1097,25 @@
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1168,25 +1168,25 @@
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1230,25 +1230,25 @@
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1313,31 +1313,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/PopulatedPlaces"
+              "$ref": "#/definitions/PopulatedPlacesResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1405,31 +1405,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/PopulatedPlaces"
+              "$ref": "#/definitions/PopulatedPlacesResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1473,19 +1473,19 @@
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1526,19 +1526,19 @@
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1579,19 +1579,19 @@
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1626,25 +1626,25 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/TimeZones"
+              "$ref": "#/definitions/TimeResponseZones"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1673,31 +1673,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/DateTime"
+              "$ref": "#/definitions/DateTimeResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1726,31 +1726,31 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/responses/Time"
+              "$ref": "#/definitions/TimeResponse"
             }
           },
           "400": {
             "description": "Bad request",
             "schema": {
-              "$ref": "#/responses/BadRequest"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "401": {
             "description": "Unauthorized",
             "schema": {
-              "$ref": "#/responses/Unauthorized"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "403": {
             "description": "Forbidden",
             "schema": {
-              "$ref": "#/responses/Forbidden"
+              "$ref": "#/definitions/ErrorResponse"
             }
           },
           "404": {
             "description": "Not Found",
             "schema": {
-              "$ref": "#/responses/NotFound"
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         }
@@ -1964,115 +1964,6 @@
       "required": false,
       "type": "string",
       "default": "NONE"
-    }
-  },
-  "responses": {
-    "Countries": {
-      "description": "A list of countries",
-      "schema": {
-        "$ref": "#/definitions/CountriesResponse"
-      }
-    },
-    "Country": {
-      "description": "Country details",
-      "schema": {
-        "$ref": "#/definitions/CountryResponse"
-      }
-    },
-    "Currencies": {
-      "description": "A list of currencies",
-      "schema": {
-        "$ref": "#/definitions/CurrenciesResponse"
-      }
-    },
-    "DateTime": {
-      "description": "An ISO-6801 date-time",
-      "schema": {
-        "$ref": "#/definitions/DateTimeResponse"
-      }
-    },
-    "Distance": {
-      "description": "A decimal distance (in miles or kilometers)",
-      "schema": {
-        "$ref": "#/definitions/DistanceResponse"
-      }
-    },
-    "Languages": {
-      "description": "A list of languages supported by the system",
-      "schema": {
-        "$ref": "#/definitions/LanguagesResponse"
-      }
-    },
-    "Locales": {
-      "description": "A list of locales",
-      "schema": {
-        "$ref": "#/definitions/LocalesResponse"
-      }
-    },
-    "PopulatedPlace": {
-      "description": "Populated-place details",
-      "schema": {
-        "$ref": "#/definitions/PopulatedPlaceResponse"
-      }
-    },
-    "PopulatedPlaces": {
-      "description": "A list of populated places",
-      "schema": {
-        "$ref": "#/definitions/PopulatedPlacesResponse"
-      }
-    },
-    "Region": {
-      "description": "Country region details",
-      "schema": {
-        "$ref": "#/definitions/RegionResponse"
-      }
-    },
-    "Regions": {
-      "description": "A list of country regions",
-      "schema": {
-        "$ref": "#/definitions/RegionsResponse"
-      }
-    },
-    "Time": {
-      "description": "An ISO-8601 time response",
-      "schema": {
-        "$ref": "#/definitions/TimeResponse"
-      }
-    },
-    "TimeZones": {
-      "description": "A list of time-zones",
-      "schema": {
-        "$ref": "#/definitions/TimeZonesResponse"
-      }
-    },
-    "BadRequest": {
-      "description": "400 - Bad Request",
-      "schema": {
-        "$ref": "#/definitions/ErrorResponse"
-      }
-    },
-    "Forbidden": {
-      "description": "403 - Forbidden",
-      "schema": {
-        "$ref": "#/definitions/ErrorResponse"
-      }
-    },
-    "NotFound": {
-      "description": "404 - Not Found",
-      "schema": {
-        "$ref": "#/definitions/ErrorResponse"
-      }
-    },
-    "Unauthorized": {
-      "description": "401 - Unauthorized",
-      "headers": {
-        "Request-Id": {
-          "type": "string"
-        }
-      },
-      "schema": {
-        "$ref": "#/definitions/ErrorResponse"
-      }
     }
   },
   "definitions": {
