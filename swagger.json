@@ -106,28 +106,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/PopulatedPlacesResponse"
-            }
+            "$ref": "#/responses/PopulatedPlaces"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           }
         }
       }
@@ -198,34 +186,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/PopulatedPlacesResponse"
-            }
+            "$ref": "#/responses/PopulatedPlaces"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -299,34 +272,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/PopulatedPlacesResponse"
-            }
+            "$ref": "#/responses/PopulatedPlaces"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -400,28 +358,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/PopulatedPlacesResponse"
-            }
+            "$ref": "#/responses/PopulatedPlaces"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           }
         }
       }
@@ -495,34 +441,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/PopulatedPlacesResponse"
-            }
+            "$ref": "#/responses/PopulatedPlaces"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -593,28 +524,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/PopulatedPlacesResponse"
-            }
+            "$ref": "#/responses/PopulatedPlaces"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           }
         }
       }
@@ -688,28 +607,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/PopulatedPlacesResponse"
-            }
+            "$ref": "#/responses/PopulatedPlaces"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           }
         }
       }
@@ -741,34 +648,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/PopulatedPlaceResponse"
-            }
+            "$ref": "#/responses/PopulatedPlace"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -800,34 +692,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/PopulatedPlaceResponse"
-            }
+            "$ref": "#/responses/PopulatedPlace"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -859,34 +736,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/DistanceResponse"
-            }
+            "$ref": "#/responses/Distance"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -912,34 +774,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/DateTimeResponse"
-            }
+            "$ref": "#/responses/DateTime"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -967,32 +814,20 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/TimeResponse"
+              "$ref": "#/responses/Time"
             }
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -1036,28 +871,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/responses/Countries"
-            }
+            "$ref": "#/responses/Countries"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           }
         }
       }
@@ -1089,34 +912,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/responses/Country"
-            }
+            "$ref": "#/responses/Country"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -1160,34 +968,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/responses/Regions"
-            }
+            "$ref": "#/responses/Regions"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -1222,34 +1015,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/responses/Region"
-            }
+            "$ref": "#/responses/Region"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -1311,34 +1089,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/PopulatedPlacesResponse"
-            }
+            "$ref": "#/responses/PopulatedPlaces"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -1403,34 +1166,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/PopulatedPlacesResponse"
-            }
+            "$ref": "#/responses/PopulatedPlaces"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -1465,28 +1213,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/responses/Currencies"
-            }
+            "$ref": "#/responses/Currencies"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           }
         }
       }
@@ -1518,28 +1254,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/responses/Languages"
-            }
+            "$ref": "#/responses/Languages"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           }
         }
       }
@@ -1571,28 +1295,16 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/responses/Locales"
-            }
+            "$ref": "#/responses/Locales"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           }
         }
       }
@@ -1626,26 +1338,17 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/TimeResponseZones"
+              "$ref": "#/responses/TimeZones"
             }
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           }
         }
       }
@@ -1671,34 +1374,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/DateTimeResponse"
-            }
+            "$ref": "#/responses/DateTime"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -1724,34 +1412,19 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/TimeResponse"
-            }
+            "$ref": "#/responses/Time"
           },
           "400": {
-            "description": "Bad request",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/BadRequest"
           },
           "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Unauthorized"
           },
           "403": {
-            "description": "Forbidden",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/Forbidden"
           },
           "404": {
-            "description": "Not Found",
-            "schema": {
-              "$ref": "#/definitions/ErrorResponse"
-            }
+            "$ref": "#/responses/NotFound"
           }
         }
       }
@@ -1966,6 +1639,107 @@
       "default": "NONE"
     }
   },
+  "responses": {
+    "Countries": {
+      "description": "A list of countries",
+      "schema": {
+        "$ref": "#/definitions/CountriesResponse"
+      }
+    },
+    "Country": {
+      "description": "Country detail",
+      "schema": {
+        "$ref": "#/definitions/CountryResponse"
+      }
+    },
+    "Currencies": {
+      "description": "A list of currencies",
+      "schema": {
+        "$ref": "#/definitions/CurrenciesResponse"
+      }
+    },
+    "DateTime": {
+      "description": "An ISO-6801 date-time",
+      "schema": {
+        "$ref": "#/definitions/DateTimeResponse"
+      }
+    },
+    "Distance": {
+      "description": "A decimal distance (in miles or kilometers)",
+      "schema": {
+        "$ref": "#/definitions/DistanceResponse"
+      }
+    },
+    "Languages": {
+      "description": "A list of languages supported by the system",
+      "schema": {
+        "$ref": "#/definitions/LanguagesResponse"
+      }
+    },
+    "Locales": {
+      "description": "A list of locales",
+      "schema": {
+        "$ref": "#/definitions/LocalesResponse"
+      }
+    },
+    "PopulatedPlace": {
+      "description": "Populated-place details",
+      "schema": {
+        "$ref": "#/definitions/PopulatedPlaceResponse"
+      }
+    },
+    "PopulatedPlaces": {
+      "description": "A list of populated places",
+      "schema": {
+        "$ref": "#/definitions/PopulatedPlacesResponse"
+      }
+    },
+    "Region": {
+      "description": "Country region details",
+      "schema": {
+        "$ref": "#/definitions/RegionResponse"
+      }
+    },
+    "Regions": {
+      "description": "A list of country regions",
+      "schema": {
+        "$ref": "#/definitions/RegionsResponse"
+      }
+    },
+    "Time": {
+      "description": "An ISO-8601 time response",
+      "schema": {
+        "$ref": "#/definitions/TimeResponse"
+      }
+    },
+    "TimeZones": {
+      "description": "A list of time-zones",
+      "schema": {
+        "$ref": "#/definitions/TimeZonesResponse"
+      }
+    },
+    "BadRequest": {
+      "description": "400 - Bad Request",
+      "schema": {
+        "$ref": "#/definitions/BadRequestResponse"
+      }
+    },
+    "Forbidden": {
+      "description": "403 - Forbidden",
+      "schema": {
+        "$ref": "#/definitions/ForbiddenResponse"
+      }
+    },
+    "NotFound": {
+      "description": "404 - Not Found",
+      "schema": {
+        "$ref": "#/definitions/NotFoundResponse"
+      }
+    },
+    "Unauthorized": {
+      "description": "401 - Unauthorized"
+    }
+  },
   "definitions": {
     "CountrySummary": {
       "type": "object",
@@ -2046,7 +1820,7 @@
         "wikiDataId": "Q30"
       }
     },
-    "CurrencyDescriptor": {
+    "Currency": {
       "type": "object",
       "title": "Currency",
       "description": "Currency info",
@@ -2099,7 +1873,7 @@
       },
       "example": {
         "code": "ENTITY_NOT_FOUND",
-        "message": "City not found for id: foobar"
+        "message": "Param [someParam] has invalid value: invalidValue"
       }
     },
     "ErrorCode": {
@@ -2334,10 +2108,10 @@
       },
       "example": {
         "rel": "next",
-        "href": "/data/globe/v1/geo/cities?offset=10&limit=10"
+        "href": "/data/world/v1/geo/cities?offset=10&limit=10"
       }
     },
-    "LocaleDescriptor": {
+    "Locale": {
       "type": "object",
       "title": "Locale",
       "description": "A locale representing a language/region combination",
@@ -2635,37 +2409,92 @@
         "rawUtcOffsetHours": 0
       }
     },
-    "CountriesResponse": {
+    "BaseResponse": {
       "type": "object",
-      "title": "Countries Response",
-      "description": "A list of countries",
+      "title": "Base Response",
+      "description": "Common properties for all responses",
       "properties": {
-        "data": {
-          "type": "array",
-          "title": "CountrySummaries",
-          "items": {
-            "$ref": "#/definitions/CountrySummary"
-          }
-        },
         "errors": {
           "title": "Errors",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Error"
           }
-        },
-        "links": {
-          "title": "Links",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Link"
-          }
-        },
-        "metadata": {
-          "title": "Metadata",
-          "$ref": "#/definitions/Metadata"
         }
       },
+      "example": {
+        "errors": []
+      }
+    },
+    "BaseCollectionResponse": {
+      "type": "object",
+      "title": "Base Collection Response",
+      "description": "Common properties for all collection  responses",
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseResponse"
+        },
+        {
+          "properties": {
+            "links": {
+              "title": "Links",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Link"
+              }
+            },
+            "metadata": {
+              "title": "Metadata",
+              "$ref": "#/definitions/Metadata"
+            }
+          }
+        }
+      ],
+      "example": {
+        "links": [
+          {
+            "rel": "first",
+            "href": "/data/world/v1/some/resource?offset=0&limit=5"
+          },
+          {
+            "rel": "prev",
+            "href": "/data/world/v1/some/resource?offset=0&limit=5"
+          },
+          {
+            "rel": "next",
+            "href": "/data/world/v1/some/resource?offset=10&limit=5"
+          },
+          {
+            "rel": "last",
+            "href": "/data/world/v1/some/resource?offset=95&limit=5"
+          }
+        ],
+        "metadata": {
+          "currentOffset": 5,
+          "totalCount": 100
+        }
+      }
+    },
+    "CountriesResponse": {
+      "type": "object",
+      "title": "Countries Response",
+      "description": "A list of countries",
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseCollectionResponse"
+        },
+        {
+          "properties": {
+            "data": {
+              "type": "array",
+              "title": "CountrySummaries",
+              "items": {
+                "$ref": "#/definitions/CountrySummary"
+              }
+            }
+          }
+        }
+      ],
       "example": {
         "data": [
           {
@@ -2712,19 +2541,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/globe/v1/geo/countries?offset=0&limit=5"
+            "href": "/data/world/v1/geo/countries?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/globe/v1/geo/countries?offset=0&limit=5"
+            "href": "/data/world/v1/geo/countries?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/globe/v1/geo/countries?offset=10&limit=5"
+            "href": "/data/world/v1/geo/countries?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/globe/v1/geo/countries?offset=195&limit=5"
+            "href": "/data/world/v1/geo/countries?offset=195&limit=5"
           }
         ],
         "metadata": {
@@ -2737,17 +2566,18 @@
       "type": "object",
       "title": "Country Response",
       "description": "Country details response",
-      "properties": {
-        "data": {
-          "$ref": "#/definitions/CountryDetails"
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/CountryDetails"
+            }
           }
         }
-      },
+      ],
       "example": {
         "data": {
           "code": "US",
@@ -2765,29 +2595,21 @@
       "type": "object",
       "title": "Currencies Response",
       "description": "A list of currencies",
-      "properties": {
-        "data": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/CurrencyDescriptor"
-          }
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseCollectionResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Currency"
+              }
+            }
           }
-        },
-        "links": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Link"
-          }
-        },
-        "metadata": {
-          "$ref": "#/definitions/Metadata"
         }
-      },
+      ],
       "example": {
         "data": [
           {
@@ -2824,19 +2646,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/globe/v1/locale/currencies?offset=0&limit=5"
+            "href": "/data/world/v1/locale/currencies?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/globe/v1/locale/currencies?offset=5&limit=5"
+            "href": "/data/world/v1/locale/currencies?offset=5&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/globe/v1/locale/currencies?offset=15&limit=5"
+            "href": "/data/world/v1/locale/currencies?offset=15&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/globe/v1/locale/currencies?offset=200&limit=5"
+            "href": "/data/world/v1/locale/currencies?offset=200&limit=5"
           }
         ],
         "metadata": {
@@ -2849,19 +2671,20 @@
       "type": "object",
       "title": "Date-Time Response",
       "description": "An ISO-6801 date-time response",
-      "properties": {
-        "data": {
-          "description": "The date-time in ISO-6801 format: yyyyMMdd'T'HHmmssZ",
-          "type": "string",
-          "format": "date-time"
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "description": "The date-time in ISO-6801 format: yyyyMMdd'T'HHmmssZ",
+              "type": "string",
+              "format": "date-time"
+            }
           }
         }
-      },
+      ],
       "example": {
         "data": "2020-10-04T20:46:53.504Z"
       }
@@ -2870,71 +2693,43 @@
       "type": "object",
       "title": "Distance Response",
       "description": "A decimal distance (in miles or kilometers)",
-      "properties": {
-        "data": {
-          "description": "The distance in units as set by the distanceUnit param (defaults to miles)",
-          "type": "number",
-          "format": "double"
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "description": "The distance in units as set by the distanceUnit param (defaults to miles)",
+              "type": "number",
+              "format": "double"
+            }
           }
         }
-      },
+      ],
       "example": {
         "data": 6707.9
-      }
-    },
-    "ErrorResponse": {
-      "type": "object",
-      "title": "Error Response",
-      "description": "One or more errors that occurred processing the request",
-      "properties": {
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
-          }
-        }
-      },
-      "example": {
-        "errors": [
-          {
-            "code": "ENTITY_NOT_FOUND",
-            "message": "City not found for id: foobar"
-          }
-        ]
       }
     },
     "LanguagesResponse": {
       "type": "object",
       "title": "Languages Response",
       "description": "A list of languages supported by the system",
-      "properties": {
-        "data": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/LanguageDescriptor"
-          }
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseCollectionResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/LanguageDescriptor"
+              }
+            }
           }
-        },
-        "links": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Link"
-          }
-        },
-        "metadata": {
-          "$ref": "#/definitions/Metadata"
         }
-      },
+      ],
       "example": {
         "data": [
           {
@@ -2953,19 +2748,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/globe/v1/locale/languages?offset=0&limit=3"
+            "href": "/data/world/v1/locale/languages?offset=0&limit=3"
           },
           {
             "rel": "prev",
-            "href": "/data/globe/v1/locale/languages?offset=0&limit=3"
+            "href": "/data/world/v1/locale/languages?offset=0&limit=3"
           },
           {
             "rel": "next",
-            "href": "/data/globe/v1/locale/languages?offset=6&limit=3"
+            "href": "/data/world/v1/locale/languages?offset=6&limit=3"
           },
           {
             "rel": "last",
-            "href": "/data/globe/v1/locale/languages?offset=6&limit=3"
+            "href": "/data/world/v1/locale/languages?offset=6&limit=3"
           }
         ],
         "metadata": {
@@ -2978,29 +2773,21 @@
       "type": "object",
       "title": "Locales Response",
       "description": "A list of locales",
-      "properties": {
-        "data": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/LocaleDescriptor"
-          }
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseCollectionResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Locale"
+              }
+            }
           }
-        },
-        "links": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Link"
-          }
-        },
-        "metadata": {
-          "$ref": "#/definitions/Metadata"
         }
-      },
+      ],
       "example": {
         "data": [
           {
@@ -3022,19 +2809,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/globe/v1/locale/locales?offset=0&limit=5"
+            "href": "/data/world/v1/locale/locales?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/globe/v1/locale/locales?offset=45&limit=5"
+            "href": "/data/world/v1/locale/locales?offset=45&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/globe/v1/locale/locales?offset=55&limit=5"
+            "href": "/data/world/v1/locale/locales?offset=55&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/globe/v1/locale/locales?offset=770&limit=5"
+            "href": "/data/world/v1/locale/locales?offset=770&limit=5"
           }
         ],
         "metadata": {
@@ -3047,29 +2834,21 @@
       "type": "object",
       "title": "Populated-Places Response",
       "description": "A list of populated places",
-      "properties": {
-        "data": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PopulatedPlaceSummary"
-          }
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseCollectionResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PopulatedPlaceSummary"
+              }
+            }
           }
-        },
-        "links": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Link"
-          }
-        },
-        "metadata": {
-          "$ref": "#/definitions/Metadata"
         }
-      },
+      ],
       "example": {
         "data": [
           {
@@ -3136,19 +2915,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/globe/v1/geo/cities?offset=0&limit=5"
+            "href": "/data/world/v1/geo/cities?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/globe/v1/geo/cities?offset=0&limit=5"
+            "href": "/data/world/v1/geo/cities?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/globe/v1/geo/cities?offset=10&limit=5"
+            "href": "/data/world/v1/geo/cities?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/globe/v1/geo/cities?offset=273685&limit=5"
+            "href": "/data/world/v1/geo/cities?offset=273685&limit=5"
           }
         ],
         "metadata": {
@@ -3161,17 +2940,18 @@
       "type": "object",
       "title": "Populated-Place Response",
       "description": "Populated-place details response",
-      "properties": {
-        "data": {
-          "$ref": "#/definitions/PopulatedPlaceDetails"
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/PopulatedPlaceDetails"
+            }
           }
         }
-      },
+      ],
       "example": {
         "data": {
           "id": 123214,
@@ -3195,17 +2975,18 @@
       "type": "object",
       "title": "Country Region Response",
       "description": "Country region details response",
-      "properties": {
-        "data": {
-          "$ref": "#/definitions/RegionDetails"
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "$ref": "#/definitions/RegionDetails"
+            }
           }
         }
-      },
+      ],
       "example": {
         "data": {
           "capital": "Sacramento",
@@ -3222,30 +3003,22 @@
       "type": "object",
       "title": "Country Regions Response",
       "description": "A list of country regions",
-      "properties": {
-        "data": {
-          "description": "A list of RegionSummaries",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/RegionSummary"
-          }
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseCollectionResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "description": "A list of RegionSummaries",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RegionSummary"
+              }
+            }
           }
-        },
-        "links": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Link"
-          }
-        },
-        "metadata": {
-          "$ref": "#/definitions/Metadata"
         }
-      },
+      ],
       "example": {
         "data": [
           {
@@ -3287,19 +3060,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/globe/v1/geo/countries/US/regions?offset=0&limit=5"
+            "href": "/data/world/v1/geo/countries/US/regions?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/globe/v1/geo/countries/US/regions?offset=0&limit=5"
+            "href": "/data/world/v1/geo/countries/US/regions?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/globe/v1/geo/countries/US/regions?offset=10&limit=5"
+            "href": "/data/world/v1/geo/countries/US/regions?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/globe/v1/geo/countries/US/regions?offset=55&limit=5"
+            "href": "/data/world/v1/geo/countries/US/regions?offset=55&limit=5"
           }
         ],
         "metadata": {
@@ -3312,18 +3085,19 @@
       "type": "object",
       "title": "Time Response",
       "description": "An ISO-8601 time response",
-      "properties": {
-        "data": {
-          "description": "The time in ISO-8601 format: HHmmss.SSSZ",
-          "type": "string"
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "description": "The time in ISO-8601 format: HHmmss.SSSZ",
+              "type": "string"
+            }
           }
         }
-      },
+      ],
       "example": {
         "data": "19:21:38.796217"
       }
@@ -3332,29 +3106,21 @@
       "type": "object",
       "title": "Time-Zones Response",
       "description": "A list of time-zones",
-      "properties": {
-        "data": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TimeZoneDescriptor"
-          }
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseCollectionResponse"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Error"
+        {
+          "properties": {
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TimeZoneDescriptor"
+              }
+            }
           }
-        },
-        "links": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Link"
-          }
-        },
-        "metadata": {
-          "$ref": "#/definitions/Metadata"
         }
-      },
+      ],
       "example": {
         "data": [
           {
@@ -3386,25 +3152,79 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/globe/v1/locale/timezones?offset=0&limit=5"
+            "href": "/data/world/v1/locale/timezones?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/globe/v1/locale/timezones?offset=0&limit=5"
+            "href": "/data/world/v1/locale/timezones?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/globe/v1/locale/timezones?offset=10&limit=5"
+            "href": "/data/world/v1/locale/timezones?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/globe/v1/locale/timezones?offset=595&limit=5"
+            "href": "/data/world/v1/locale/timezones?offset=595&limit=5"
           }
         ],
         "metadata": {
           "currentOffset": 5,
           "totalCount": 600
         }
+      }
+    },
+    "BadRequestResponse": {
+      "type": "object",
+      "title": "Bad Request Response",
+      "description": "Bad Request Response",
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseResponse"
+        }
+      ],
+      "example": {
+        "errors": [
+          {
+            "code": "PARAM_INVALID",
+            "message": "Param [someParam] has invalid value: invalidValue"
+          }
+        ]
+      }
+    },
+    "ForbiddenResponse": {
+      "type": "object",
+      "title": "Forbidden Response",
+      "description": "Forbidden Response",
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseResponse"
+        }
+      ],
+      "example": {
+        "errors": [
+          {
+            "code": "ACCESS_DENIED",
+            "message": "The reason why access was denied"
+          }
+        ]
+      }
+    },
+    "NotFoundResponse": {
+      "type": "object",
+      "title": "Not Found Response",
+      "description": "Not Found Response",
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseResponse"
+        }
+      ],
+      "example": {
+        "errors": [
+          {
+            "code": "ENTITY_NOT_FOUND",
+            "message": "Entity not found for id: someEntityId"
+          }
+        ]
       }
     }
   }
