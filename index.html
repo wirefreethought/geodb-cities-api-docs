@@ -4510,7 +4510,7 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;2020-10-04T20:46:53.504Z&quot;</span>
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;2020-10-05T01:16:53.504604+04:30&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -4633,13 +4633,13 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/Time">#/responses/Time</a>
+                          <a class="json-schema-ref" href="#/definitions/TimeResponse">TimeResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>OK</p>
+                      <p>An ISO-8601 time response</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -4703,6 +4703,13 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;19:21:38.796217&quot;</span>
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -7655,13 +7662,13 @@
                       <div class="prop-title">200 OK</div>
                       <div class="prop-ref">
                         <span class="">
-                          <a class="json-schema-ref" href="#/responses/TimeZones">#/responses/TimeZones</a>
+                          <a class="json-schema-ref" href="#/definitions/TimeZonesResponse">TimeZonesResponse</a>
                         </span>
                       </div>
                       <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
                     </div>
                     <div class="prop-value">
-                      <p>OK</p>
+                      <p>A list of time-zones</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -7711,6 +7718,61 @@
                     <span>(200 OK)</span>
                   </h5>
                   <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;data&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;America__Marigot&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Atlantic Standard Time&quot;</span>,
+      <span class="hljs-attr">&quot;rawUtcOffsetHours&quot;</span>: <span class="hljs-number">-4</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;Asia__Aqtau&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;West Kazakhstan Time&quot;</span>,
+      <span class="hljs-attr">&quot;rawUtcOffsetHours&quot;</span>: <span class="hljs-number">5</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;Pacific__Kwajalein&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Marshall Islands Time&quot;</span>,
+      <span class="hljs-attr">&quot;rawUtcOffsetHours&quot;</span>: <span class="hljs-number">12</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;America__El_Salvador&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Central Standard Time&quot;</span>,
+      <span class="hljs-attr">&quot;rawUtcOffsetHours&quot;</span>: <span class="hljs-number">-6</span>
+    },
+    {
+      <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-string">&quot;Asia__Pontianak&quot;</span>,
+      <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Western Indonesia Time&quot;</span>,
+      <span class="hljs-attr">&quot;rawUtcOffsetHours&quot;</span>: <span class="hljs-number">7</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;links&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;first&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/world/v1/locale/timezones?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;prev&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/world/v1/locale/timezones?offset=0&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;next&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/world/v1/locale/timezones?offset=10&amp;limit=5&quot;</span>
+    },
+    {
+      <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;last&quot;</span>,
+      <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;/data/world/v1/locale/timezones?offset=595&amp;limit=5&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;metadata&quot;</span>: {
+    <span class="hljs-attr">&quot;currentOffset&quot;</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-number">600</span>
+  }
+}
+</code></pre> </body>
+                  </html>
                   <!-- </div> -->
                 </section>
                 <section>
@@ -7884,7 +7946,7 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;2020-10-04T20:46:53.504Z&quot;</span>
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;2020-10-05T01:16:53.504604+04:30&quot;</span>
 }
 </code></pre> </body>
                   </html>
@@ -9943,7 +10005,7 @@
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json">{
-  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;2020-10-04T20:46:53.504Z&quot;</span>
+  <span class="hljs-attr">&quot;data&quot;</span>: <span class="hljs-string">&quot;2020-10-05T01:16:53.504604+04:30&quot;</span>
 }
 </code></pre> </body>
                   </html>

@@ -812,10 +812,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/responses/Time"
-            }
+            "$ref": "#/responses/Time"
           },
           "400": {
             "$ref": "#/responses/BadRequest"
@@ -1336,10 +1333,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/responses/TimeZones"
-            }
+            "$ref": "#/responses/TimeZones"
           },
           "400": {
             "$ref": "#/responses/BadRequest"
@@ -2686,7 +2680,7 @@
         }
       ],
       "example": {
-        "data": "2020-10-04T20:46:53.504Z"
+        "data": "2020-10-05T01:16:53.504604+04:30"
       }
     },
     "DistanceResponse": {
