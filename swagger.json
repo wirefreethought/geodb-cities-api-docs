@@ -2102,7 +2102,7 @@
       },
       "example": {
         "rel": "next",
-        "href": "/data/world/v1/geo/cities?offset=10&limit=10"
+        "href": "/v1/geo/cities?offset=10&limit=10"
       }
     },
     "Locale": {
@@ -2448,19 +2448,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/world/v1/some/resource?offset=0&limit=5"
+            "href": "/v1/some/resource?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/world/v1/some/resource?offset=0&limit=5"
+            "href": "/v1/some/resource?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/world/v1/some/resource?offset=10&limit=5"
+            "href": "/v1/some/resource?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/world/v1/some/resource?offset=95&limit=5"
+            "href": "/v1/some/resource?offset=95&limit=5"
           }
         ],
         "metadata": {
@@ -2535,19 +2535,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/world/v1/geo/countries?offset=0&limit=5"
+            "href": "/v1/geo/countries?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/world/v1/geo/countries?offset=0&limit=5"
+            "href": "/v1/geo/countries?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/world/v1/geo/countries?offset=10&limit=5"
+            "href": "/v1/geo/countries?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/world/v1/geo/countries?offset=195&limit=5"
+            "href": "/v1/geo/countries?offset=195&limit=5"
           }
         ],
         "metadata": {
@@ -2610,49 +2610,54 @@
             "code": "AWG",
             "countryCodes": [
               "AW"
-            ]
+            ],
+            "symbol": "AWG"
           },
           {
             "code": "AZN",
             "countryCodes": [
               "AZ"
-            ]
+            ],
+            "symbol": "AZN"
           },
           {
             "code": "BAM",
             "countryCodes": [
               "BA"
-            ]
+            ],
+            "symbol": "BAM"
           },
           {
             "code": "BBD",
             "countryCodes": [
               "BB"
-            ]
+            ],
+            "symbol": "BBD"
           },
           {
             "code": "BDT",
             "countryCodes": [
               "BD"
-            ]
+            ],
+            "symbol": "BDT"
           }
         ],
         "links": [
           {
             "rel": "first",
-            "href": "/data/world/v1/locale/currencies?offset=0&limit=5"
+            "href": "/v1/locale/currencies?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/world/v1/locale/currencies?offset=5&limit=5"
+            "href": "/v1/locale/currencies?offset=5&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/world/v1/locale/currencies?offset=15&limit=5"
+            "href": "/v1/locale/currencies?offset=15&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/world/v1/locale/currencies?offset=200&limit=5"
+            "href": "/v1/locale/currencies?offset=200&limit=5"
           }
         ],
         "metadata": {
@@ -2742,19 +2747,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/world/v1/locale/languages?offset=0&limit=3"
+            "href": "/v1/locale/languages?offset=0&limit=3"
           },
           {
             "rel": "prev",
-            "href": "/data/world/v1/locale/languages?offset=0&limit=3"
+            "href": "/v1/locale/languages?offset=0&limit=3"
           },
           {
             "rel": "next",
-            "href": "/data/world/v1/locale/languages?offset=6&limit=3"
+            "href": "/v1/locale/languages?offset=6&limit=3"
           },
           {
             "rel": "last",
-            "href": "/data/world/v1/locale/languages?offset=6&limit=3"
+            "href": "/v1/locale/languages?offset=6&limit=3"
           }
         ],
         "metadata": {
@@ -2783,45 +2788,46 @@
         }
       ],
       "example": {
-        "data": [
-          {
-            "code": "eu"
-          },
-          {
-            "code": "ar_MR"
-          },
-          {
-            "code": "es_DO"
-          },
-          {
-            "code": "ru"
-          },
-          {
-            "code": "az"
-          }
-        ],
-        "links": [
-          {
-            "rel": "first",
-            "href": "/data/world/v1/locale/locales?offset=0&limit=5"
-          },
-          {
-            "rel": "prev",
-            "href": "/data/world/v1/locale/locales?offset=45&limit=5"
-          },
-          {
-            "rel": "next",
-            "href": "/data/world/v1/locale/locales?offset=55&limit=5"
-          },
-          {
-            "rel": "last",
-            "href": "/data/world/v1/locale/locales?offset=770&limit=5"
-          }
-        ],
-        "metadata": {
-          "currentOffset": 50,
-          "totalCount": 772
-        }
+  		  "data": [
+  		    {
+  		      "code": "nds",
+  		      "name": "Low German"
+  		    },
+  		    {
+  		      "code": "ti_ET",
+  		      "name": "Tigrinya (Ethiopia)"
+  		    },
+  		    {
+  		      "code": "ta_SG",
+  		      "name": "Tamil (Singapore)"
+  		    },
+  		    {
+  		      "code": "lv",
+  		      "name": "Latvian"
+  		    },
+  		    {
+  		      "code": "en_NU",
+  		      "name": "English (Niue)"
+  		    }
+  		  ],
+  		  "links": [
+  		    {
+  		      "rel": "first",
+  		      "href": "/v1/locale/locales?offset=0&limit=5"
+  		    },
+  		    {
+  		      "rel": "next",
+  		      "href": "/v1/locale/locales?offset=5&limit=5"
+  		    },
+  		    {
+  		      "rel": "last",
+  		      "href": "/v1/locale/locales?offset=770&limit=5"
+  		    }
+  		  ],
+  		  "metadata": {
+  		    "currentOffset": 0,
+  		    "totalCount": 772
+  		  }
       }
     },
     "PopulatedPlacesResponse": {
@@ -2909,19 +2915,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/world/v1/geo/cities?offset=0&limit=5"
+            "href": "/v1/geo/cities?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/world/v1/geo/cities?offset=0&limit=5"
+            "href": "/v1/geo/cities?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/world/v1/geo/cities?offset=10&limit=5"
+            "href": "/v1/geo/cities?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/world/v1/geo/cities?offset=273685&limit=5"
+            "href": "/v1/geo/cities?offset=273685&limit=5"
           }
         ],
         "metadata": {
@@ -3054,19 +3060,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/world/v1/geo/countries/US/regions?offset=0&limit=5"
+            "href": "/v1/geo/countries/US/regions?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/world/v1/geo/countries/US/regions?offset=0&limit=5"
+            "href": "/v1/geo/countries/US/regions?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/world/v1/geo/countries/US/regions?offset=10&limit=5"
+            "href": "/v1/geo/countries/US/regions?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/world/v1/geo/countries/US/regions?offset=55&limit=5"
+            "href": "/v1/geo/countries/US/regions?offset=55&limit=5"
           }
         ],
         "metadata": {
@@ -3146,19 +3152,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/data/world/v1/locale/timezones?offset=0&limit=5"
+            "href": "/v1/locale/timezones?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/data/world/v1/locale/timezones?offset=0&limit=5"
+            "href": "/v1/locale/timezones?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/data/world/v1/locale/timezones?offset=10&limit=5"
+            "href": "/v1/locale/timezones?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/data/world/v1/locale/timezones?offset=595&limit=5"
+            "href": "/v1/locale/timezones?offset=595&limit=5"
           }
         ],
         "metadata": {
