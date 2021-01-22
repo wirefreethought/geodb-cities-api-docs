@@ -1867,7 +1867,7 @@
       },
       "example": {
         "code": "ENTITY_NOT_FOUND",
-        "message": "Param [someParam] has invalid value: invalidValue"
+        "message": "Param 'someParam[invalidValue]' has invalid value"
       }
     },
     "ErrorCode": {
@@ -3186,7 +3186,7 @@
         "errors": [
           {
             "code": "PARAM_INVALID",
-            "message": "Param [someParam] has invalid value: invalidValue"
+            "message": "Param 'someParam[invalidValue]' has invalid value"
           }
         ]
       }
@@ -3222,7 +3222,7 @@
         "errors": [
           {
             "code": "ENTITY_NOT_FOUND",
-            "message": "Entity not found for id: someEntityId"
+            "message": "Entity for id 'someId' not found"
           }
         ]
       }
