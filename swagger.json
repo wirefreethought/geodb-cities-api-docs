@@ -46,7 +46,7 @@
           "Geo"
         ],
         "summary": "Find administrative divisions",
-        "description": "Find administrative divisions, filtering by optional criteria. If no criteria are set, you will get back all\nknown divisions.\n",
+        "description": "Find administrative divisions, filtering by optional criteria. If no criteria are set, you will get back all known divisions.",
         "operationId": "findAdminDivisionsUsingGET",
         "consumes": [
           "application/json"
@@ -126,7 +126,7 @@
           "Geo"
         ],
         "summary": "Find divisions near division",
-        "description": "Find administrative divisions near the given origin division, filtering by optional criteria. If no criteria\nare set, you will get back all known divisions.\n",
+        "description": "Find administrative divisions near the given origin division, filtering by optional criteria. If no criteria are set, you will get back all known divisions.",
         "operationId": "findDivisionsNearAdminDivisionUsingGET",
         "consumes": [
           "application/json"
@@ -209,7 +209,7 @@
           "Geo"
         ],
         "summary": "Find cities near division",
-        "description": "Find cities near the given administrative division, filtering by optional criteria. If no criteria are set, you\nwill get back all known cities.\n",
+        "description": "Find cities near the given administrative division, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
         "operationId": "findCitiesNearAdminDivisionUsingGET",
         "consumes": [
           "application/json"
@@ -295,7 +295,7 @@
           "Geo"
         ],
         "summary": "Find cities",
-        "description": "Find cities, filtering by optional criteria. If no criteria are set, you will get back all known cities.\n",
+        "description": "Find cities, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
         "operationId": "findCitiesUsingGET",
         "consumes": [
           "application/json"
@@ -378,7 +378,7 @@
           "Geo"
         ],
         "summary": "Find cities near city",
-        "description": "Find cities near the given origin city, filtering by optional criteria. If no criteria are set, you will get\nback all known cities.\n",
+        "description": "Find cities near the given origin city, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
         "operationId": "findCitiesNearCityUsingGET",
         "consumes": [
           "application/json"
@@ -464,7 +464,7 @@
           "Geo"
         ],
         "summary": "Find divisions near location",
-        "description": "Find administrative divisions near the given location, filtering by optional criteria. If no criteria are set,\nyou will get back all known divisions.\n",
+        "description": "Find administrative divisions near the given location, filtering by optional criteria. If no criteria are set, you will get back all known divisions.",
         "operationId": "findDivisionsNearLocationUsingGET",
         "consumes": [
           "application/json"
@@ -544,7 +544,7 @@
           "Geo"
         ],
         "summary": "Find cities near location",
-        "description": "Find cities near the given location, filtering by optional criteria. If no criteria are set, you will get back\nall known cities.\n",
+        "description": "Find cities near the given location, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
         "operationId": "findCitiesNearLocationUsingGET",
         "consumes": [
           "application/json"
@@ -627,7 +627,7 @@
           "Geo"
         ],
         "summary": "Get administrative division details",
-        "description": "Get the details for a specific administrative division, including location coordinates, population, and\nelevation above sea-level (if available).\n",
+        "description": "Get the details for a specific administrative division, including location coordinates, population, and elevation above sea-level (if available).",
         "operationId": "getAdminDivisionUsingGET",
         "consumes": [
           "application/json"
@@ -671,7 +671,7 @@
           "Geo"
         ],
         "summary": "Get city details",
-        "description": "Get the details for a specific city, including location coordinates, population, and elevation above sea-level\n(if available).\n",
+        "description": "Get the details for a specific city, including location coordinates, population, and elevation above sea-level (if available).",
         "operationId": "getCityUsingGET",
         "consumes": [
           "application/json"
@@ -835,7 +835,7 @@
           "Geo"
         ],
         "summary": "Find countries",
-        "description": "Find countries, filtering by optional criteria. If no criteria are set, you will get back all known countries.\n",
+        "description": "Find countries, filtering by optional criteria. If no criteria are set, you will get back all known countries.",
         "operationId": "getCountriesUsingGET",
         "consumes": [
           "application/json"
@@ -932,7 +932,7 @@
           "Geo"
         ],
         "summary": "Find country regions",
-        "description": "Get all regions in a specific country. These could be states, provinces, districts, or otherwise major\npolitical divisions.\n",
+        "description": "Get all regions in a specific country. These could be states, provinces, districts, or otherwise major political divisions.",
         "operationId": "getRegionsUsingGET",
         "consumes": [
           "application/json"
@@ -1035,7 +1035,7 @@
           "Geo"
         ],
         "summary": "Find country region administrative divisions",
-        "description": "Get the administrative divisions in a specific country region. The country and region info is omitted in the\nresponse.\n",
+        "description": "Get the administrative divisions in a specific country region. The country and region info is omitted in the response.",
         "operationId": "findRegionDivisionsUsingGET",
         "consumes": [
           "application/json"
@@ -1109,7 +1109,7 @@
           "Geo"
         ],
         "summary": "Find country region cities",
-        "description": "Get the cities in a specific country region. The country and region info is omitted in the response.\n",
+        "description": "Get the cities in a specific country region. The country and region info is omitted in the response.",
         "operationId": "findRegionCitiesUsingGET",
         "consumes": [
           "application/json"
@@ -1463,7 +1463,7 @@
     "query.entity.namePrefix": {
       "name": "namePrefix",
       "in": "query",
-      "description": "Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name\nas it appears in that language.\n",
+      "description": "Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.",
       "required": false,
       "type": "string"
     },
@@ -1544,14 +1544,14 @@
     "query.place.sort": {
       "name": "sort",
       "in": "query",
-      "description": "How to sort place results. \n'Format: ±SORT_FIELD,±SORT_FIELD' \nwhere SORT_FIELD = countryCode | elevation | name | population\n",
+      "description": "How to sort place results. 'Format: ±SORT_FIELD,±SORT_FIELD' where SORT_FIELD = countryCode | elevation | name | population",
       "required": false,
       "type": "string"
     },
     "query.place.sort.withinRegion": {
       "name": "sort",
       "in": "query",
-      "description": "How to sort place results. \n'Format: ±SORT_FIELD,±SORT_FIELD' \nwhere SORT_FIELD = elevation | name | population\n",
+      "description": "How to sort place results. 'Format: ±SORT_FIELD,±SORT_FIELD' where SORT_FIELD = elevation | name | population",
       "required": false,
       "type": "string"
     },
@@ -1620,14 +1620,14 @@
     "query.sort": {
       "name": "sort",
       "in": "query",
-      "description": "How to sort place results. \n'Format: ±SORT_FIELD,±SORT_FIELD' \nwhere SORT_FIELD = countryCode | elevation | name | population\n",
+      "description": "How to sort place results. 'Format: ±SORT_FIELD,±SORT_FIELD' where SORT_FIELD = countryCode | elevation | name | population",
       "required": false,
       "type": "string"
     },
     "query.includeDeleted": {
       "name": "includeDeleted",
       "in": "query",
-      "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+      "description": "Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
       "required": false,
       "type": "string",
       "default": "NONE"
@@ -1873,7 +1873,7 @@
     "ErrorCode": {
       "type": "string",
       "title": "ErrorCode",
-      "description": "One of a set of enumerated error codes representing the types of errors that can occur processing a\nrequest\n",
+      "description": "One of a set of enumerated error codes representing the types of errors that can occur processing a request",
       "enum": [
         "ACCESS_DENIED",
         "ENTITY_NOT_FOUND",
@@ -2292,7 +2292,7 @@
     },
     "PopulatedPlaceType": {
       "type": "string",
-      "description": "One of a set of enumerated populated-place types known by the service (currently only level-2 admin divisions and\ncities)\n",
+      "description": "One of a set of enumerated populated-place types known by the service (currently only level-2 admin divisions and cities)",
       "enum": [
         "ADM2",
         "CITY"
