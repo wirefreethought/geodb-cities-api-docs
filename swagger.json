@@ -1752,7 +1752,7 @@
           }
         },
         "name": {
-          "description": "The country name (varies by languageCode)",
+          "description": "The country name",
           "type": "string"
         },
         "wikiDataId": {
@@ -1774,6 +1774,10 @@
       "title": "Country Details",
       "description": "Full country details",
       "properties": {
+	    "capital": {
+          "description": "The country's capital city",
+          "type": "string"
+        },
         "code": {
           "description": "The ISO-3166 country code",
           "type": "string"
@@ -1790,7 +1794,7 @@
           "type": "string"
         },
         "name": {
-          "description": "The country name (varies by languageCode)",
+          "description": "The country name",
           "type": "string"
         },
         "numRegions": {
@@ -2146,7 +2150,7 @@
       "description": "Full populated-place details",
       "properties": {
         "country": {
-          "description": "The country name (varies by languageCode)",
+          "description": "The country name",
           "type": "string"
         },
         "countryCode": {
@@ -2187,7 +2191,7 @@
           "format": "int32"
         },
         "region": {
-          "description": "The region name (varies by languageCode)",
+          "description": "The region name",
           "type": "string"
         },
         "regionCode": {
@@ -2229,7 +2233,7 @@
       "description": "Minimal populated-place info",
       "properties": {
         "country": {
-          "description": "The country name (varies by languageCode)",
+          "description": "The country name",
           "type": "string"
         },
         "countryCode": {
@@ -2257,11 +2261,11 @@
           "format": "double"
         },
         "name": {
-          "description": "The place name (varies by languageCode)",
+          "description": "The place name",
           "type": "string"
         },
         "region": {
-          "description": "The region name (varies by languageCode)",
+          "description": "The region name",
           "type": "string"
         },
         "regionCode": {
@@ -2305,7 +2309,7 @@
       "description": "Full country region details",
       "properties": {
         "capital": {
-          "description": "The region's capital city (varies by languageCode)",
+          "description": "The region's capital city",
           "type": "string"
         },
         "countryCode": {
@@ -2321,7 +2325,7 @@
           "type": "string"
         },
         "name": {
-          "description": "The region name (varies by languageCode)",
+          "description": "The region name",
           "type": "string"
         },
         "numCities": {
@@ -2362,7 +2366,7 @@
           "type": "string"
         },
         "name": {
-          "description": "The region name (varies by languageCode)",
+          "description": "The region name",
           "type": "string"
         },
         "wikiDataId": {
