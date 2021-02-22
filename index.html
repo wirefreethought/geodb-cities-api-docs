@@ -60,6 +60,9 @@
                 <a href="#operation--geo-cities--cityId--dateTime-get"> Get city date-time </a>
               </li>
               <li>
+                <a href="#operation--geo-cities--cityId--locatedIn-get"> Get this city&#x27;s containing populated place (e.g., its county or other administrative division) </a>
+              </li>
+              <li>
                 <a href="#operation--geo-cities--cityId--time-get"> Get city time </a>
               </li>
               <li>
@@ -153,23 +156,28 @@
           <div id="introduction" data-traverse-target="introduction">
             <div class="doc-row">
               <div class="doc-copy">
-                <p>The GeoDB API focuses on getting global city and region data.
+                <p>The GeoDB API focuses on getting global city and region data. Easily obtain country, region, and city data for use in your apps! </p>
+                <ul>
+                  <li>Filter cities by name prefix, country, location, time-zone, and even minimum population.</li>
+                  <li>Sort cities by name, country code, elevation, and population - or any combination of these.</li>
+                  <li>Get all country regions.</li>
+                  <li>Get all cities in a given region.</li>
+                  <li> Display results in multiple languages.</li>
+                  <li>RESTful API adheres to industry best-practices, including HATEOAS-style links to facilitate paging results. </li>
+                  <li>Backed by cloud-based load-balanced infrastructure for resiliency and performance!</li>
+                  <li>Data is periodically refreshed from GeoNames and WikiData.</li>
+                </ul>
+                <p>Notes:
                   <ul>
-                    <li>Filter cities by name prefix, country, location, time-zone, and even minimum population</li>
-                    <li>Sort cities by name, country code, elevation, and population - or any combination of these</li>
-                    <li>Get nearby cities</li>
-                    <li>Get distances between cities</li>
-                    <li>Get all country regions</li>
-                    <li>Get all cities in a given region</li>
-                    <li>Display results in multiple languages</li>
-                    <li>Backed by cloud-based load-balanced infrastructure for resiliency and performance</li>
-                    <li>Data is periodically refreshed from GeoNames and WikiData</li>
-                  </ul>
+                    <li> Since the database is periodically updated, this may
+                      <strong>very rarely</strong> result in certain cities being marked deleted (e.g., duplicates removed). By default, endpoints returning city data will exclude cities marked deleted. However, in the unlikely event that this occurs while your app is paging through a set of affected results - and you care about the paged results suddenly changing underneath - specify
+                      <tt>includeDeleted=SINCE_YESTERDAY</tt> (or
+                      <tt>SINCE_LAST_WEEK</tt> if you're really paranoid!). </li>
                   </ul>
                   <hr/>
                   <h3>Useful Resources</h3>
                   <ul>
-                    <li>SDKs
+                    <li> SDKs
                       <ul>
                         <li>
                           <a href='https://www.npmjs.com/package/wft-geodb-angular-client'>Angular</a>,
@@ -190,7 +198,6 @@
                       </li>
                     </li>
                   </ul>
-                </p>
               </div>
               <div class="doc-examples">
                 <section>
@@ -391,7 +398,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.</p>
+                      <p>Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -510,7 +517,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                 </section>
@@ -649,19 +656,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=273685&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=273685&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -684,7 +691,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -858,7 +865,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.</p>
+                      <p>Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -977,7 +984,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                 </section>
@@ -1130,19 +1137,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=273685&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=273685&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -1165,7 +1172,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -1203,7 +1210,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -1358,7 +1365,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.</p>
+                      <p>Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -1491,7 +1498,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                 </section>
@@ -1644,19 +1651,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=273685&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=273685&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -1679,7 +1686,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -1717,7 +1724,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -1871,7 +1878,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.</p>
+                      <p>Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2004,7 +2011,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                 </section>
@@ -2143,19 +2150,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=273685&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=273685&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -2178,7 +2185,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -2352,7 +2359,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.</p>
+                      <p>Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2485,7 +2492,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                 </section>
@@ -2638,19 +2645,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=273685&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=273685&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -2673,7 +2680,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -2711,7 +2718,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -2866,7 +2873,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.</p>
+                      <p>Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -2985,7 +2992,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                 </section>
@@ -3124,19 +3131,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=273685&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=273685&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -3159,7 +3166,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -3333,7 +3340,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.</p>
+                      <p>Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -3466,7 +3473,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                 </section>
@@ -3605,19 +3612,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=273685&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=273685&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -3640,7 +3647,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -3861,7 +3868,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -3899,7 +3906,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -4101,7 +4108,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -4139,7 +4146,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -4327,7 +4334,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -4365,7 +4372,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -4523,7 +4530,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -4561,7 +4568,247 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="operation--geo-cities--cityId--locatedIn-get" class="operation panel" data-traverse-target="operation--geo-cities--cityId--locatedIn-get">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Geo">Geo</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Get this city's containing populated place (e.g., its county or other administrative division)</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">GET</span>
+                  <span class="operation-path">/geo/cities/{cityId}/locatedIn</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Get the details for the containing populated place, including location coordinates, population, and elevation above sea-level (if available).</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">cityId:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <span class="json-property-required"></span>
+                      <div class="prop-subtitle"> in path </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>A city id (either native &#39;id&#39; or &#39;wikiDataId&#39;)</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">asciiMode:
+                        <span class="prop-type">
+                          <span class="json-property-type">boolean</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                          <span class="json-property-default-value" title="Default value">false</span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Display results using ASCII characters</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">languageCode:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Display results in this language</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/PopulatedPlaceResponse">PopulatedPlaceResponse</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>Populated-place details</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">400 Bad Request</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/BadRequestResponse">BadRequestResponse</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>400 - Bad Request</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">401 Unauthorized</div>
+                    </div>
+                    <div class="prop-value">
+                      <p>401 - Unauthorized</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">403 Forbidden</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/ForbiddenResponse">ForbiddenResponse</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>403 - Forbidden</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">404 Not Found</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/NotFoundResponse">NotFoundResponse</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>404 - Not Found</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <h5>Response Content-Types:
+                  <span>application/json</span>
+                </h5>
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"id"</span>: <span class="hljs-number">123214</span>,
+    <span class="hljs-attr">"wikiDataId"</span>: <span class="hljs-string">"Q60"</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"CITY"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"New York City"</span>,
+    <span class="hljs-attr">"country"</span>: <span class="hljs-string">"United States of America"</span>,
+    <span class="hljs-attr">"countryCode"</span>: <span class="hljs-string">"US"</span>,
+    <span class="hljs-attr">"region"</span>: <span class="hljs-string">"New York"</span>,
+    <span class="hljs-attr">"regionCode"</span>: <span class="hljs-string">"NY"</span>,
+    <span class="hljs-attr">"elevationMeters"</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-attr">"latitude"</span>: <span class="hljs-number">40.67</span>,
+    <span class="hljs-attr">"longitude"</span>: <span class="hljs-number">-73.94</span>,
+    <span class="hljs-attr">"population"</span>: <span class="hljs-number">8398748</span>,
+    <span class="hljs-attr">"timezone"</span>: <span class="hljs-string">"America__New_York"</span>,
+    <span class="hljs-attr">"deleted"</span>: <span class="hljs-literal">false</span>
+  }
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+                <section>
+                  <h5>Response Example
+                    <span>(400 Bad Request)</span>
+                  </h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"errors"</span>: [
+    {
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+                <section>
+                  <h5>Response Example
+                    <span>(403 Forbidden)</span>
+                  </h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"errors"</span>: [
+    {
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ACCESS_DENIED"</span>,
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"The reason why access was denied"</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+                <section>
+                  <h5>Response Example
+                    <span>(404 Not Found)</span>
+                  </h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">"errors"</span>: [
+    {
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -4719,7 +4966,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -4757,7 +5004,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -4823,7 +5070,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.</p>
+                      <p>Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -5018,19 +5265,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries?offset=195&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries?offset=195&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -5053,7 +5300,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -5268,7 +5515,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -5306,7 +5553,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -5373,7 +5620,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.</p>
+                      <p>Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -5577,19 +5824,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries/US/regions?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries/US/regions?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries/US/regions?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries/US/regions?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries/US/regions?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries/US/regions?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries/US/regions?offset=55&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries/US/regions?offset=55&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -5612,7 +5859,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -5650,7 +5897,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -5860,7 +6107,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -5898,7 +6145,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -6010,7 +6257,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.</p>
+                      <p>Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -6129,7 +6376,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                 </section>
@@ -6282,19 +6529,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=273685&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=273685&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -6317,7 +6564,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -6355,7 +6602,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -6467,7 +6714,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.</p>
+                      <p>Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name as it appears in that language.</p>
                     </div>
                   </div>
                   <div class="prop-row prop-group">
@@ -6600,7 +6847,7 @@
                       <div class="prop-subtitle"> in query </div>
                     </div>
                     <div class="prop-value">
-                      <p>Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
+                      <p>Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE</p>
                     </div>
                   </div>
                 </section>
@@ -6753,19 +7000,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=273685&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=273685&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -6788,7 +7035,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -6826,7 +7073,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -7011,54 +7258,49 @@
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"AWG"</span>,
       <span class="hljs-attr">"countryCodes"</span>: [
         <span class="hljs-string">"AW"</span>
-      ],
-      <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"AWG"</span>
+      ]
     },
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"AZN"</span>,
       <span class="hljs-attr">"countryCodes"</span>: [
         <span class="hljs-string">"AZ"</span>
-      ],
-      <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"AZN"</span>
+      ]
     },
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"BAM"</span>,
       <span class="hljs-attr">"countryCodes"</span>: [
         <span class="hljs-string">"BA"</span>
-      ],
-      <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"BAM"</span>
+      ]
     },
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"BBD"</span>,
       <span class="hljs-attr">"countryCodes"</span>: [
         <span class="hljs-string">"BB"</span>
-      ],
-      <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"BBD"</span>
+      ]
     },
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"BDT"</span>,
       <span class="hljs-attr">"countryCodes"</span>: [
         <span class="hljs-string">"BD"</span>
-      ],
-      <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"BDT"</span>
+      ]
     }
   ],
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/currencies?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/currencies?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/currencies?offset=5&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/currencies?offset=5&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/currencies?offset=15&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/currencies?offset=15&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/currencies?offset=200&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/currencies?offset=200&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -7081,7 +7323,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -7276,19 +7518,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/languages?offset=0&amp;limit=3"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/languages?offset=0&amp;limit=3"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/languages?offset=0&amp;limit=3"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/languages?offset=0&amp;limit=3"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/languages?offset=6&amp;limit=3"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/languages?offset=6&amp;limit=3"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/languages?offset=6&amp;limit=3"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/languages?offset=6&amp;limit=3"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -7311,7 +7553,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -7491,42 +7733,41 @@
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"data"</span>: [
     {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"nds"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Low German"</span>
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"eu"</span>
     },
     {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ti_ET"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Tigrinya (Ethiopia)"</span>
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ar_MR"</span>
     },
     {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ta_SG"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Tamil (Singapore)"</span>
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"es_DO"</span>
     },
     {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"lv"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Latvian"</span>
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ru"</span>
     },
     {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"en_NU"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"English (Niue)"</span>
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"az"</span>
     }
   ],
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/locales?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/locales?offset=0&amp;limit=5"</span>
+    },
+    {
+      <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/locales?offset=45&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/locales?offset=5&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/locales?offset=55&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/locales?offset=770&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/locales?offset=770&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
-    <span class="hljs-attr">"currentOffset"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"currentOffset"</span>: <span class="hljs-number">50</span>,
     <span class="hljs-attr">"totalCount"</span>: <span class="hljs-number">772</span>
   }
 }
@@ -7545,7 +7786,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -7753,19 +7994,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/timezones?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/timezones?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/timezones?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/timezones?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/timezones?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/timezones?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/timezones?offset=595&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/timezones?offset=595&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -7788,7 +8029,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -7965,7 +8206,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -8003,7 +8244,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -8161,7 +8402,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -8199,7 +8440,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }
@@ -8256,7 +8497,7 @@
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
-                      <p>The country name</p>
+                      <p>The country name (varies by languageCode)</p>
                     </dd>
                     <dt data-property-name="wikiDataId" class="has-description">
                       <span class="json-property-name">wikiDataId:</span>
@@ -8306,14 +8547,6 @@
                 </section>
                 <section class="json-schema-properties">
                   <dl>
-                    <dt data-property-name="capital" class="has-description">
-                      <span class="json-property-name">capital:</span>
-                      <span class="json-property-type">string</span>
-                      <span class="json-property-range" title="Value limits"></span>
-                    </dt>
-                    <dd>
-                      <p>The country&#39;s capital city</p>
-                    </dd>
                     <dt data-property-name="code" class="has-description">
                       <span class="json-property-name">code:</span>
                       <span class="json-property-type">string</span>
@@ -8351,7 +8584,7 @@
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
-                      <p>The country name</p>
+                      <p>The country name (varies by languageCode)</p>
                     </dd>
                     <dt data-property-name="numRegions" class="has-description">
                       <span class="json-property-name">numRegions:</span>
@@ -8513,7 +8746,7 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
 }
 </code></pre> </body>
                   </html>
@@ -8826,7 +9059,7 @@
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-  <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=10&amp;limit=10"</span>
+  <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=10&amp;limit=10"</span>
 }
 </code></pre> </body>
                   </html>
@@ -8954,7 +9187,7 @@
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
-                      <p>The country name</p>
+                      <p>The country name (varies by languageCode)</p>
                     </dd>
                     <dt data-property-name="countryCode" class="has-description">
                       <span class="json-property-name">countryCode:</span>
@@ -9031,7 +9264,7 @@
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
-                      <p>The region name</p>
+                      <p>The region name (varies by languageCode)</p>
                     </dd>
                     <dt data-property-name="regionCode" class="has-description">
                       <span class="json-property-name">regionCode:</span>
@@ -9123,7 +9356,7 @@
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
-                      <p>The country name</p>
+                      <p>The country name (varies by languageCode)</p>
                     </dd>
                     <dt data-property-name="countryCode" class="has-description">
                       <span class="json-property-name">countryCode:</span>
@@ -9175,7 +9408,7 @@
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
-                      <p>The place name</p>
+                      <p>The place name (varies by languageCode)</p>
                     </dd>
                     <dt data-property-name="region" class="has-description">
                       <span class="json-property-name">region:</span>
@@ -9183,7 +9416,7 @@
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
-                      <p>The region name</p>
+                      <p>The region name (varies by languageCode)</p>
                     </dd>
                     <dt data-property-name="regionCode" class="has-description">
                       <span class="json-property-name">regionCode:</span>
@@ -9289,7 +9522,7 @@
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
-                      <p>The region&#39;s capital city</p>
+                      <p>The region&#39;s capital city (varies by languageCode)</p>
                     </dd>
                     <dt data-property-name="countryCode" class="has-description">
                       <span class="json-property-name">countryCode:</span>
@@ -9321,7 +9554,7 @@
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
-                      <p>The region name</p>
+                      <p>The region name (varies by languageCode)</p>
                     </dd>
                     <dt data-property-name="numCities" class="has-description">
                       <span class="json-property-name">numCities:</span>
@@ -9411,7 +9644,7 @@
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
                     <dd>
-                      <p>The region name</p>
+                      <p>The region name (varies by languageCode)</p>
                     </dd>
                     <dt data-property-name="wikiDataId" class="has-description">
                       <span class="json-property-name">wikiDataId:</span>
@@ -9630,19 +9863,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/some/resource?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/some/resource?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/some/resource?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/some/resource?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/some/resource?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/some/resource?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/some/resource?offset=95&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/some/resource?offset=95&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -9759,19 +9992,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries?offset=195&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries?offset=195&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -9912,54 +10145,49 @@
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"AWG"</span>,
       <span class="hljs-attr">"countryCodes"</span>: [
         <span class="hljs-string">"AW"</span>
-      ],
-      <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"AWG"</span>
+      ]
     },
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"AZN"</span>,
       <span class="hljs-attr">"countryCodes"</span>: [
         <span class="hljs-string">"AZ"</span>
-      ],
-      <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"AZN"</span>
+      ]
     },
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"BAM"</span>,
       <span class="hljs-attr">"countryCodes"</span>: [
         <span class="hljs-string">"BA"</span>
-      ],
-      <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"BAM"</span>
+      ]
     },
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"BBD"</span>,
       <span class="hljs-attr">"countryCodes"</span>: [
         <span class="hljs-string">"BB"</span>
-      ],
-      <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"BBD"</span>
+      ]
     },
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"BDT"</span>,
       <span class="hljs-attr">"countryCodes"</span>: [
         <span class="hljs-string">"BD"</span>
-      ],
-      <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"BDT"</span>
+      ]
     }
   ],
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/currencies?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/currencies?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/currencies?offset=5&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/currencies?offset=5&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/currencies?offset=15&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/currencies?offset=15&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/currencies?offset=200&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/currencies?offset=200&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -10158,19 +10386,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/languages?offset=0&amp;limit=3"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/languages?offset=0&amp;limit=3"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/languages?offset=0&amp;limit=3"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/languages?offset=0&amp;limit=3"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/languages?offset=6&amp;limit=3"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/languages?offset=6&amp;limit=3"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/languages?offset=6&amp;limit=3"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/languages?offset=6&amp;limit=3"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -10244,42 +10472,41 @@
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"data"</span>: [
     {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"nds"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Low German"</span>
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"eu"</span>
     },
     {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ti_ET"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Tigrinya (Ethiopia)"</span>
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ar_MR"</span>
     },
     {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ta_SG"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Tamil (Singapore)"</span>
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"es_DO"</span>
     },
     {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"lv"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Latvian"</span>
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ru"</span>
     },
     {
-      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"en_NU"</span>,
-      <span class="hljs-attr">"name"</span>: <span class="hljs-string">"English (Niue)"</span>
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"az"</span>
     }
   ],
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/locales?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/locales?offset=0&amp;limit=5"</span>
+    },
+    {
+      <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/locales?offset=45&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/locales?offset=5&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/locales?offset=55&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/locales?offset=770&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/locales?offset=770&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
-    <span class="hljs-attr">"currentOffset"</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">"currentOffset"</span>: <span class="hljs-number">50</span>,
     <span class="hljs-attr">"totalCount"</span>: <span class="hljs-number">772</span>
   }
 }
@@ -10412,19 +10639,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/cities?offset=273685&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/cities?offset=273685&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -10672,19 +10899,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries/US/regions?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries/US/regions?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries/US/regions?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries/US/regions?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries/US/regions?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries/US/regions?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/geo/countries/US/regions?offset=55&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/geo/countries/US/regions?offset=55&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -10840,19 +11067,19 @@
   <span class="hljs-attr">"links"</span>: [
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"first"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/timezones?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/timezones?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"prev"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/timezones?offset=0&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/timezones?offset=0&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"next"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/timezones?offset=10&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/timezones?offset=10&amp;limit=5"</span>
     },
     {
       <span class="hljs-attr">"rel"</span>: <span class="hljs-string">"last"</span>,
-      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/v1/locale/timezones?offset=595&amp;limit=5"</span>
+      <span class="hljs-attr">"href"</span>: <span class="hljs-string">"/data/world/v1/locale/timezones?offset=595&amp;limit=5"</span>
     }
   ],
   <span class="hljs-attr">"metadata"</span>: {
@@ -10902,7 +11129,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"PARAM_INVALID"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param 'someParam[invalidValue]' has invalid value"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Param [someParam] has invalid value: invalidValue"</span>
     }
   ]
 }
@@ -10994,7 +11221,7 @@
   <span class="hljs-attr">"errors"</span>: [
     {
       <span class="hljs-attr">"code"</span>: <span class="hljs-string">"ENTITY_NOT_FOUND"</span>,
-      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity for id 'someId' not found"</span>
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Entity not found for id: someEntityId"</span>
     }
   ]
 }

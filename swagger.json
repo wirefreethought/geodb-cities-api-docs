@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "GeoDB Cities API",
-    "description": "The GeoDB API focuses on getting global city and region data.<ul> <li>Filter cities by name prefix, country, location, time-zone, and even minimum population</li> <li>Sort cities by name, country code, elevation, and population - or any combination of these</li> <li>Get nearby cities</li> <li>Get distances between cities</li> <li>Get all country regions</li> <li>Get all cities in a given region</li> <li>Display results in multiple languages</li> <li>Backed by cloud-based load-balanced infrastructure for resiliency and performance</li> <li>Data is periodically refreshed from GeoNames and WikiData</li> </ul> </ul> <hr/> <h3>Useful Resources</h3><ul> <li>SDKs <ul> <li> <a href='https://www.npmjs.com/package/wft-geodb-angular-client'>Angular</a>, <a href='https://github.com/wirefreethought/geodb-sample-angular-app'>Sample App</a> </li> <li><a href='https://github.com/wirefreethought/geodb-java-client'>Java</a></li> <li><a href='https://www.npmjs.com/package/wft-geodb-js-client'>JavaScript</a></li> </ul> <li><a href='swagger.json'>Swagger Docs</a></li> <li><a href='http://creativecommons.org/licenses/by/3.0/'>Usage License</a></li> </li></ul>",
+    "description": "The GeoDB API focuses on getting global city and region data. Easily obtain country, region, and city data for use\nin your apps! \n<ul>\n  <li>Filter cities by name prefix, country, location, time-zone, and even minimum population.</li>\n  <li>Sort cities by name, country code, elevation, and population - or any combination of these.</li> \n  <li>Get all country regions.</li> <li>Get all cities in a given region.</li>\n  <li>\n    Display results in multiple languages.</li> <li>RESTful API adheres to industry best-practices, including\n    HATEOAS-style links to facilitate paging results.\n  </li> \n  <li>Backed by cloud-based load-balanced infrastructure for resiliency and performance!</li>\n  <li>Data is periodically refreshed from GeoNames and WikiData.</li>\n</ul>\n<p>Notes:\n<ul>\n  <li>\n    Since the database is periodically updated, this may <strong>very rarely</strong> result in certain cities\n    being marked deleted (e.g., duplicates removed). By default, endpoints returning city data will exclude\n    cities marked deleted. However, in the unlikely event that this occurs while your app is paging through a set\n    of affected results - and you care about the paged results suddenly changing underneath - specify \n    <tt>includeDeleted=SINCE_YESTERDAY</tt> (or <tt>SINCE_LAST_WEEK</tt> if you're really paranoid!).\n  </li>\n</ul>\n<hr/>\n<h3>Useful Resources</h3>\n<ul>\n  <li>\n    SDKs\n    <ul>\n      <li>\n        <a href='https://www.npmjs.com/package/wft-geodb-angular-client'>Angular</a>, \n        <a href='https://github.com/wirefreethought/geodb-sample-angular-app'>Sample App</a>\n      </li>\n      <li><a href='https://github.com/wirefreethought/geodb-java-client'>Java</a></li>\n      <li><a href='https://www.npmjs.com/package/wft-geodb-js-client'>JavaScript</a></li>\n    </ul>\n    <li><a href='swagger.json'>Swagger Docs</a></li>\n    <li><a href='http://creativecommons.org/licenses/by/3.0/'>Usage License</a></li>\n  </li>      \n</ul>\n",
     "license": {
       "name": "Creative Commons Attribution 3.0",
       "url": "http://creativecommons.org/licenses/by/3.0/"
@@ -46,7 +46,7 @@
           "Geo"
         ],
         "summary": "Find administrative divisions",
-        "description": "Find administrative divisions, filtering by optional criteria. If no criteria are set, you will get back all known divisions.",
+        "description": "Find administrative divisions, filtering by optional criteria. If no criteria are set, you will get back all\nknown divisions.\n",
         "operationId": "findAdminDivisionsUsingGET",
         "consumes": [
           "application/json"
@@ -126,7 +126,7 @@
           "Geo"
         ],
         "summary": "Find divisions near division",
-        "description": "Find administrative divisions near the given origin division, filtering by optional criteria. If no criteria are set, you will get back all known divisions.",
+        "description": "Find administrative divisions near the given origin division, filtering by optional criteria. If no criteria\nare set, you will get back all known divisions.\n",
         "operationId": "findDivisionsNearAdminDivisionUsingGET",
         "consumes": [
           "application/json"
@@ -209,7 +209,7 @@
           "Geo"
         ],
         "summary": "Find cities near division",
-        "description": "Find cities near the given administrative division, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
+        "description": "Find cities near the given administrative division, filtering by optional criteria. If no criteria are set, you\nwill get back all known cities.\n",
         "operationId": "findCitiesNearAdminDivisionUsingGET",
         "consumes": [
           "application/json"
@@ -295,7 +295,7 @@
           "Geo"
         ],
         "summary": "Find cities",
-        "description": "Find cities, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
+        "description": "Find cities, filtering by optional criteria. If no criteria are set, you will get back all known cities.\n",
         "operationId": "findCitiesUsingGET",
         "consumes": [
           "application/json"
@@ -378,7 +378,7 @@
           "Geo"
         ],
         "summary": "Find cities near city",
-        "description": "Find cities near the given origin city, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
+        "description": "Find cities near the given origin city, filtering by optional criteria. If no criteria are set, you will get\nback all known cities.\n",
         "operationId": "findCitiesNearCityUsingGET",
         "consumes": [
           "application/json"
@@ -464,7 +464,7 @@
           "Geo"
         ],
         "summary": "Find divisions near location",
-        "description": "Find administrative divisions near the given location, filtering by optional criteria. If no criteria are set, you will get back all known divisions.",
+        "description": "Find administrative divisions near the given location, filtering by optional criteria. If no criteria are set,\nyou will get back all known divisions.\n",
         "operationId": "findDivisionsNearLocationUsingGET",
         "consumes": [
           "application/json"
@@ -544,7 +544,7 @@
           "Geo"
         ],
         "summary": "Find cities near location",
-        "description": "Find cities near the given location, filtering by optional criteria. If no criteria are set, you will get back all known cities.",
+        "description": "Find cities near the given location, filtering by optional criteria. If no criteria are set, you will get back\nall known cities.\n",
         "operationId": "findCitiesNearLocationUsingGET",
         "consumes": [
           "application/json"
@@ -627,7 +627,7 @@
           "Geo"
         ],
         "summary": "Get administrative division details",
-        "description": "Get the details for a specific administrative division, including location coordinates, population, and elevation above sea-level (if available).",
+        "description": "Get the details for a specific administrative division, including location coordinates, population, and\nelevation above sea-level (if available).\n",
         "operationId": "getAdminDivisionUsingGET",
         "consumes": [
           "application/json"
@@ -671,7 +671,7 @@
           "Geo"
         ],
         "summary": "Get city details",
-        "description": "Get the details for a specific city, including location coordinates, population, and elevation above sea-level (if available).",
+        "description": "Get the details for a specific city, including location coordinates, population, and elevation above sea-level\n(if available).\n",
         "operationId": "getCityUsingGET",
         "consumes": [
           "application/json"
@@ -791,6 +791,50 @@
         }
       }
     },
+    "/geo/cities/{cityId}/locatedIn": {
+      "get": {
+        "tags": [
+          "Geo"
+        ],
+        "summary": "Get this city's containing populated place (e.g., its county or other administrative division)",
+        "description": "Get the details for the containing populated place, including location coordinates, population, and elevation above sea-level\n(if available).\n",
+        "operationId": "getCityLocatedInUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/path.cityId"
+          },
+          {
+            "$ref": "#/parameters/query.asciiMode"
+          },
+          {
+            "$ref": "#/parameters/query.languageCode"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/PopulatedPlace"
+          },
+          "400": {
+            "$ref": "#/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/responses/NotFound"
+          }
+        }
+      }
+    },
     "/geo/cities/{cityId}/time": {
       "get": {
         "tags": [
@@ -835,7 +879,7 @@
           "Geo"
         ],
         "summary": "Find countries",
-        "description": "Find countries, filtering by optional criteria. If no criteria are set, you will get back all known countries.",
+        "description": "Find countries, filtering by optional criteria. If no criteria are set, you will get back all known countries.\n",
         "operationId": "getCountriesUsingGET",
         "consumes": [
           "application/json"
@@ -932,7 +976,7 @@
           "Geo"
         ],
         "summary": "Find country regions",
-        "description": "Get all regions in a specific country. These could be states, provinces, districts, or otherwise major political divisions.",
+        "description": "Get all regions in a specific country. These could be states, provinces, districts, or otherwise major\npolitical divisions.\n",
         "operationId": "getRegionsUsingGET",
         "consumes": [
           "application/json"
@@ -1035,7 +1079,7 @@
           "Geo"
         ],
         "summary": "Find country region administrative divisions",
-        "description": "Get the administrative divisions in a specific country region. The country and region info is omitted in the response.",
+        "description": "Get the administrative divisions in a specific country region. The country and region info is omitted in the\nresponse.\n",
         "operationId": "findRegionDivisionsUsingGET",
         "consumes": [
           "application/json"
@@ -1109,7 +1153,7 @@
           "Geo"
         ],
         "summary": "Find country region cities",
-        "description": "Get the cities in a specific country region. The country and region info is omitted in the response.",
+        "description": "Get the cities in a specific country region. The country and region info is omitted in the response.\n",
         "operationId": "findRegionCitiesUsingGET",
         "consumes": [
           "application/json"
@@ -1463,7 +1507,7 @@
     "query.entity.namePrefix": {
       "name": "namePrefix",
       "in": "query",
-      "description": "Only places whose names start with this prefix. If languageCode is set, the prefix will be matched on the name nas it appears in that language.",
+      "description": "Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name\nas it appears in that language.\n",
       "required": false,
       "type": "string"
     },
@@ -1544,14 +1588,14 @@
     "query.place.sort": {
       "name": "sort",
       "in": "query",
-      "description": "How to sort place results. 'Format: ±SORT_FIELD,±SORT_FIELD' where SORT_FIELD = countryCode | elevation | name | population",
+      "description": "How to sort place results. \n'Format: ±SORT_FIELD,±SORT_FIELD' \nwhere SORT_FIELD = countryCode | elevation | name | population\n",
       "required": false,
       "type": "string"
     },
     "query.place.sort.withinRegion": {
       "name": "sort",
       "in": "query",
-      "description": "How to sort place results. 'Format: ±SORT_FIELD,±SORT_FIELD' where SORT_FIELD = elevation | name | population",
+      "description": "How to sort place results. \n'Format: ±SORT_FIELD,±SORT_FIELD' \nwhere SORT_FIELD = elevation | name | population\n",
       "required": false,
       "type": "string"
     },
@@ -1620,14 +1664,14 @@
     "query.sort": {
       "name": "sort",
       "in": "query",
-      "description": "How to sort place results. 'Format: ±SORT_FIELD,±SORT_FIELD' where SORT_FIELD = countryCode | elevation | name | population",
+      "description": "How to sort place results. \n'Format: ±SORT_FIELD,±SORT_FIELD' \nwhere SORT_FIELD = countryCode | elevation | name | population\n",
       "required": false,
       "type": "string"
     },
     "query.includeDeleted": {
       "name": "includeDeleted",
       "in": "query",
-      "description": "Whether to include any places marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
+      "description": "Whether to include any divisions marked deleted: ALL | SINCE_YESTERDAY | SINCE_LAST_WEEK | NONE",
       "required": false,
       "type": "string",
       "default": "NONE"
@@ -1752,7 +1796,7 @@
           }
         },
         "name": {
-          "description": "The country name",
+          "description": "The country name (varies by languageCode)",
           "type": "string"
         },
         "wikiDataId": {
@@ -1774,10 +1818,6 @@
       "title": "Country Details",
       "description": "Full country details",
       "properties": {
-	    "capital": {
-          "description": "The country's capital city",
-          "type": "string"
-        },
         "code": {
           "description": "The ISO-3166 country code",
           "type": "string"
@@ -1794,7 +1834,7 @@
           "type": "string"
         },
         "name": {
-          "description": "The country name",
+          "description": "The country name (varies by languageCode)",
           "type": "string"
         },
         "numRegions": {
@@ -1871,13 +1911,13 @@
       },
       "example": {
         "code": "ENTITY_NOT_FOUND",
-        "message": "Param 'someParam[invalidValue]' has invalid value"
+        "message": "Param [someParam] has invalid value: invalidValue"
       }
     },
     "ErrorCode": {
       "type": "string",
       "title": "ErrorCode",
-      "description": "One of a set of enumerated error codes representing the types of errors that can occur processing a request",
+      "description": "One of a set of enumerated error codes representing the types of errors that can occur processing a\nrequest\n",
       "enum": [
         "ACCESS_DENIED",
         "ENTITY_NOT_FOUND",
@@ -2106,7 +2146,7 @@
       },
       "example": {
         "rel": "next",
-        "href": "/v1/geo/cities?offset=10&limit=10"
+        "href": "/data/world/v1/geo/cities?offset=10&limit=10"
       }
     },
     "Locale": {
@@ -2150,7 +2190,7 @@
       "description": "Full populated-place details",
       "properties": {
         "country": {
-          "description": "The country name",
+          "description": "The country name (varies by languageCode)",
           "type": "string"
         },
         "countryCode": {
@@ -2191,7 +2231,7 @@
           "format": "int32"
         },
         "region": {
-          "description": "The region name",
+          "description": "The region name (varies by languageCode)",
           "type": "string"
         },
         "regionCode": {
@@ -2233,7 +2273,7 @@
       "description": "Minimal populated-place info",
       "properties": {
         "country": {
-          "description": "The country name",
+          "description": "The country name (varies by languageCode)",
           "type": "string"
         },
         "countryCode": {
@@ -2261,11 +2301,11 @@
           "format": "double"
         },
         "name": {
-          "description": "The place name",
+          "description": "The place name (varies by languageCode)",
           "type": "string"
         },
         "region": {
-          "description": "The region name",
+          "description": "The region name (varies by languageCode)",
           "type": "string"
         },
         "regionCode": {
@@ -2296,7 +2336,7 @@
     },
     "PopulatedPlaceType": {
       "type": "string",
-      "description": "One of a set of enumerated populated-place types known by the service (currently only level-2 admin divisions and cities)",
+      "description": "One of a set of enumerated populated-place types known by the service (currently only level-2 admin divisions and\ncities)\n",
       "enum": [
         "ADM2",
         "CITY"
@@ -2309,7 +2349,7 @@
       "description": "Full country region details",
       "properties": {
         "capital": {
-          "description": "The region's capital city",
+          "description": "The region's capital city (varies by languageCode)",
           "type": "string"
         },
         "countryCode": {
@@ -2325,7 +2365,7 @@
           "type": "string"
         },
         "name": {
-          "description": "The region name",
+          "description": "The region name (varies by languageCode)",
           "type": "string"
         },
         "numCities": {
@@ -2366,7 +2406,7 @@
           "type": "string"
         },
         "name": {
-          "description": "The region name",
+          "description": "The region name (varies by languageCode)",
           "type": "string"
         },
         "wikiDataId": {
@@ -2452,19 +2492,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/v1/some/resource?offset=0&limit=5"
+            "href": "/data/world/v1/some/resource?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/v1/some/resource?offset=0&limit=5"
+            "href": "/data/world/v1/some/resource?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/v1/some/resource?offset=10&limit=5"
+            "href": "/data/world/v1/some/resource?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/v1/some/resource?offset=95&limit=5"
+            "href": "/data/world/v1/some/resource?offset=95&limit=5"
           }
         ],
         "metadata": {
@@ -2539,19 +2579,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/v1/geo/countries?offset=0&limit=5"
+            "href": "/data/world/v1/geo/countries?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/v1/geo/countries?offset=0&limit=5"
+            "href": "/data/world/v1/geo/countries?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/v1/geo/countries?offset=10&limit=5"
+            "href": "/data/world/v1/geo/countries?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/v1/geo/countries?offset=195&limit=5"
+            "href": "/data/world/v1/geo/countries?offset=195&limit=5"
           }
         ],
         "metadata": {
@@ -2614,54 +2654,49 @@
             "code": "AWG",
             "countryCodes": [
               "AW"
-            ],
-            "symbol": "AWG"
+            ]
           },
           {
             "code": "AZN",
             "countryCodes": [
               "AZ"
-            ],
-            "symbol": "AZN"
+            ]
           },
           {
             "code": "BAM",
             "countryCodes": [
               "BA"
-            ],
-            "symbol": "BAM"
+            ]
           },
           {
             "code": "BBD",
             "countryCodes": [
               "BB"
-            ],
-            "symbol": "BBD"
+            ]
           },
           {
             "code": "BDT",
             "countryCodes": [
               "BD"
-            ],
-            "symbol": "BDT"
+            ]
           }
         ],
         "links": [
           {
             "rel": "first",
-            "href": "/v1/locale/currencies?offset=0&limit=5"
+            "href": "/data/world/v1/locale/currencies?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/v1/locale/currencies?offset=5&limit=5"
+            "href": "/data/world/v1/locale/currencies?offset=5&limit=5"
           },
           {
             "rel": "next",
-            "href": "/v1/locale/currencies?offset=15&limit=5"
+            "href": "/data/world/v1/locale/currencies?offset=15&limit=5"
           },
           {
             "rel": "last",
-            "href": "/v1/locale/currencies?offset=200&limit=5"
+            "href": "/data/world/v1/locale/currencies?offset=200&limit=5"
           }
         ],
         "metadata": {
@@ -2751,19 +2786,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/v1/locale/languages?offset=0&limit=3"
+            "href": "/data/world/v1/locale/languages?offset=0&limit=3"
           },
           {
             "rel": "prev",
-            "href": "/v1/locale/languages?offset=0&limit=3"
+            "href": "/data/world/v1/locale/languages?offset=0&limit=3"
           },
           {
             "rel": "next",
-            "href": "/v1/locale/languages?offset=6&limit=3"
+            "href": "/data/world/v1/locale/languages?offset=6&limit=3"
           },
           {
             "rel": "last",
-            "href": "/v1/locale/languages?offset=6&limit=3"
+            "href": "/data/world/v1/locale/languages?offset=6&limit=3"
           }
         ],
         "metadata": {
@@ -2792,46 +2827,45 @@
         }
       ],
       "example": {
-  		  "data": [
-  		    {
-  		      "code": "nds",
-  		      "name": "Low German"
-  		    },
-  		    {
-  		      "code": "ti_ET",
-  		      "name": "Tigrinya (Ethiopia)"
-  		    },
-  		    {
-  		      "code": "ta_SG",
-  		      "name": "Tamil (Singapore)"
-  		    },
-  		    {
-  		      "code": "lv",
-  		      "name": "Latvian"
-  		    },
-  		    {
-  		      "code": "en_NU",
-  		      "name": "English (Niue)"
-  		    }
-  		  ],
-  		  "links": [
-  		    {
-  		      "rel": "first",
-  		      "href": "/v1/locale/locales?offset=0&limit=5"
-  		    },
-  		    {
-  		      "rel": "next",
-  		      "href": "/v1/locale/locales?offset=5&limit=5"
-  		    },
-  		    {
-  		      "rel": "last",
-  		      "href": "/v1/locale/locales?offset=770&limit=5"
-  		    }
-  		  ],
-  		  "metadata": {
-  		    "currentOffset": 0,
-  		    "totalCount": 772
-  		  }
+        "data": [
+          {
+            "code": "eu"
+          },
+          {
+            "code": "ar_MR"
+          },
+          {
+            "code": "es_DO"
+          },
+          {
+            "code": "ru"
+          },
+          {
+            "code": "az"
+          }
+        ],
+        "links": [
+          {
+            "rel": "first",
+            "href": "/data/world/v1/locale/locales?offset=0&limit=5"
+          },
+          {
+            "rel": "prev",
+            "href": "/data/world/v1/locale/locales?offset=45&limit=5"
+          },
+          {
+            "rel": "next",
+            "href": "/data/world/v1/locale/locales?offset=55&limit=5"
+          },
+          {
+            "rel": "last",
+            "href": "/data/world/v1/locale/locales?offset=770&limit=5"
+          }
+        ],
+        "metadata": {
+          "currentOffset": 50,
+          "totalCount": 772
+        }
       }
     },
     "PopulatedPlacesResponse": {
@@ -2919,19 +2953,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/v1/geo/cities?offset=0&limit=5"
+            "href": "/data/world/v1/geo/cities?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/v1/geo/cities?offset=0&limit=5"
+            "href": "/data/world/v1/geo/cities?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/v1/geo/cities?offset=10&limit=5"
+            "href": "/data/world/v1/geo/cities?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/v1/geo/cities?offset=273685&limit=5"
+            "href": "/data/world/v1/geo/cities?offset=273685&limit=5"
           }
         ],
         "metadata": {
@@ -3064,19 +3098,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/v1/geo/countries/US/regions?offset=0&limit=5"
+            "href": "/data/world/v1/geo/countries/US/regions?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/v1/geo/countries/US/regions?offset=0&limit=5"
+            "href": "/data/world/v1/geo/countries/US/regions?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/v1/geo/countries/US/regions?offset=10&limit=5"
+            "href": "/data/world/v1/geo/countries/US/regions?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/v1/geo/countries/US/regions?offset=55&limit=5"
+            "href": "/data/world/v1/geo/countries/US/regions?offset=55&limit=5"
           }
         ],
         "metadata": {
@@ -3156,19 +3190,19 @@
         "links": [
           {
             "rel": "first",
-            "href": "/v1/locale/timezones?offset=0&limit=5"
+            "href": "/data/world/v1/locale/timezones?offset=0&limit=5"
           },
           {
             "rel": "prev",
-            "href": "/v1/locale/timezones?offset=0&limit=5"
+            "href": "/data/world/v1/locale/timezones?offset=0&limit=5"
           },
           {
             "rel": "next",
-            "href": "/v1/locale/timezones?offset=10&limit=5"
+            "href": "/data/world/v1/locale/timezones?offset=10&limit=5"
           },
           {
             "rel": "last",
-            "href": "/v1/locale/timezones?offset=595&limit=5"
+            "href": "/data/world/v1/locale/timezones?offset=595&limit=5"
           }
         ],
         "metadata": {
@@ -3190,7 +3224,7 @@
         "errors": [
           {
             "code": "PARAM_INVALID",
-            "message": "Param 'someParam[invalidValue]' has invalid value"
+            "message": "Param [someParam] has invalid value: invalidValue"
           }
         ]
       }
@@ -3226,7 +3260,7 @@
         "errors": [
           {
             "code": "ENTITY_NOT_FOUND",
-            "message": "Entity for id 'someId' not found"
+            "message": "Entity not found for id: someEntityId"
           }
         ]
       }
