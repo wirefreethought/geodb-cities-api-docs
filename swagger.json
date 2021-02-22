@@ -796,8 +796,8 @@
         "tags": [
           "Geo"
         ],
-        "summary": "Get this city's containing populated place (e.g., its county or other administrative division)",
-        "description": "Get the details for the containing populated place, including location coordinates, population, and elevation above sea-level\n(if available).\n",
+        "summary": "Get city admin region",
+        "description": "Get the details for the containing populated place (e.g., its county or other administrative division), including location coordinates, population, and elevation above sea-level\n(if available).\n",
         "operationId": "getCityLocatedInUsingGET",
         "consumes": [
           "application/json"
