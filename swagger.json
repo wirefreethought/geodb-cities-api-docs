@@ -1391,6 +1391,44 @@
         }
       }
     },
+    "/locale/timezones/{zoneId}": {
+      "get": {
+        "tags": [
+          "Locale"
+        ],
+        "summary": "Get time-zone",
+        "description": "Get time-zone",
+        "operationId": "getTimeZoneUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/path.zoneId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/TimeZoneResponse"
+          },
+          "400": {
+            "$ref": "#/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/responses/NotFound"
+          }
+        }
+      }
+    },
     "/locale/timezones/{zoneId}/dateTime": {
       "get": {
         "tags": [
@@ -3148,6 +3186,40 @@
       ],
       "example": {
         "data": "19:21:38.796217"
+      }
+    },
+    "TimeZoneResponse": {
+      "type": "object",
+      "title": "Time-Zone Response",
+      "description": "A time-zone",
+      "allOf": [
+        {
+          "$ref": "#/definitions/BaseResponse"
+        },
+        {
+          "properties": {
+            "id": {
+              "description": "The time-zone id",
+              "type": "string"
+            },
+            "name": {
+              "description": "The time-zone name",
+              "type": "string"
+            },
+            "rawUtcOffsetHours": {
+              "description": "The number of hours this time-zone is offset from UTC",
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      ],
+      "example": {
+        "data": {
+          "id": "America__Marigot",
+          "name": "Atlantic Standard Time",
+          "rawUtcOffsetHours": -4
+        }
       }
     },
     "TimeZonesResponse": {
