@@ -1412,7 +1412,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/responses/TimeZoneResponse"
+            "$ref": "#/responses/TimeZone"
           },
           "400": {
             "$ref": "#/responses/BadRequest"
@@ -1786,6 +1786,12 @@
       "description": "An ISO-8601 time response",
       "schema": {
         "$ref": "#/definitions/TimeResponse"
+      }
+    },
+    "TimeZone": {
+      "description": "A time-zone",
+      "schema": {
+        "$ref": "#/definitions/TimeZoneResponse"
       }
     },
     "TimeZones": {
