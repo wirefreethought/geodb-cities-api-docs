@@ -1587,7 +1587,8 @@
       "in": "query",
       "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.\n",
       "required": false,
-      "type": "string"
+      "type": "boolean",
+      "default": true
     },
     "path.location.id": {
       "name": "locationId",
