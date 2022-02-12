@@ -80,6 +80,9 @@
             "$ref": "#/parameters/query.entity.namePrefix"
           },
           {
+            "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
+          },
+          {
             "$ref": "#/parameters/query.timeZoneIds"
           },
           {
@@ -158,6 +161,9 @@
           },
           {
             "$ref": "#/parameters/query.entity.namePrefix"
+          },
+          {
+            "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
           },
           {
             "$ref": "#/parameters/query.timeZoneIds"
@@ -241,6 +247,9 @@
           },
           {
             "$ref": "#/parameters/query.entity.namePrefix"
+          },
+          {
+            "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
           },
           {
             "$ref": "#/parameters/query.timeZoneIds"
@@ -329,6 +338,9 @@
             "$ref": "#/parameters/query.entity.namePrefix"
           },
           {
+            "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
+          },
+          {
             "$ref": "#/parameters/query.timeZoneIds"
           },
           {
@@ -410,6 +422,9 @@
           },
           {
             "$ref": "#/parameters/query.entity.namePrefix"
+          },
+          {
+            "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
           },
           {
             "$ref": "#/parameters/query.timeZoneIds"
@@ -498,6 +513,9 @@
             "$ref": "#/parameters/query.entity.namePrefix"
           },
           {
+            "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
+          },
+          {
             "$ref": "#/parameters/query.timeZoneIds"
           },
           {
@@ -576,6 +594,9 @@
           },
           {
             "$ref": "#/parameters/query.entity.namePrefix"
+          },
+          {
+            "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
           },
           {
             "$ref": "#/parameters/query.timeZoneIds"
@@ -895,6 +916,9 @@
             "$ref": "#/parameters/query.entity.namePrefix"
           },
           {
+            "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
+          },
+          {
             "$ref": "#/parameters/query.asciiMode"
           },
           {
@@ -990,6 +1014,9 @@
           },
           {
             "$ref": "#/parameters/query.entity.namePrefix"
+          },
+          {
+            "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
           },
           {
             "$ref": "#/parameters/query.asciiMode"
@@ -1104,6 +1131,9 @@
             "$ref": "#/parameters/query.entity.namePrefix"
           },
           {
+            "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
+          },
+          {
             "$ref": "#/parameters/query.timeZoneIds"
           },
           {
@@ -1176,6 +1206,9 @@
           },
           {
             "$ref": "#/parameters/query.entity.namePrefix"
+          },
+          {
+            "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
           },
           {
             "$ref": "#/parameters/query.timeZoneIds"
@@ -1546,6 +1579,13 @@
       "name": "namePrefix",
       "in": "query",
       "description": "Only entities whose names start with this prefix. If languageCode is set, the prefix will be matched on the name\nas it appears in that language.\n",
+      "required": false,
+      "type": "string"
+    },
+    "query.entity.namePrefixDefaultLangResults": {
+      "name": "namePrefixDefaultLangResults",
+      "in": "query",
+      "description": "When name-prefix matching, whether or not to match on names in the default language if a non-default languageCode is set.\n",
       "required": false,
       "type": "string"
     },
