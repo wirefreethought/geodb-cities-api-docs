@@ -919,6 +919,9 @@
             "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
           },
           {
+            "$ref": "#/parameters/query.country.sort"
+          },
+          {
             "$ref": "#/parameters/query.asciiMode"
           },
           {
@@ -1017,6 +1020,9 @@
           },
           {
             "$ref": "#/parameters/query.entity.namePrefixDefaultLangResults"
+          },
+          {
+            "$ref": "#/parameters/query.region.sort"
           },
           {
             "$ref": "#/parameters/query.asciiMode"
@@ -1561,6 +1567,13 @@
       "required": false,
       "type": "string"
     },
+    "query.country.sort": {
+      "name": "sort",
+      "in": "query",
+      "description": "How to sort place results. \n'Format: ±SORT_FIELD \nwhere SORT_FIELD = code | name",
+      "required": false,
+      "type": "string"
+    },
     "query.currency.countryId": {
       "name": "countryId",
       "in": "query",
@@ -1675,6 +1688,13 @@
       "name": "sort",
       "in": "query",
       "description": "How to sort place results. \n'Format: ±SORT_FIELD,±SORT_FIELD' \nwhere SORT_FIELD = elevation | name | population\n",
+      "required": false,
+      "type": "string"
+    },
+    "query.region.sort": {
+      "name": "sort",
+      "in": "query",
+      "description": "How to sort place results. \n'Format: ±SORT_FIELD \nwhere SORT_FIELD = fipsCode | isoCode | name",
       "required": false,
       "type": "string"
     },
